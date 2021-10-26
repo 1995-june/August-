@@ -1,0 +1,149 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-size: .14rem;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-size: 100px;
+    // background-color: #f6f6f6;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    .header {
+        position: sticky;
+        top: -1px;
+        .title {
+            position: relative;
+            background-color: #fff;
+            height: .5rem;
+            line-height: .5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            a {
+                position: absolute;
+                left: .15rem;
+                top: 0;
+                font-size: .3rem;
+                color: #999;
+            }
+            h2 {
+                text-align: center;
+                font-size: .18rem;
+                font-weight: 400;
+            }
+        }
+        .search-wrap-active {
+            width: 100%;
+            height: .6rem;
+            background-color: #fff;
+            overflow: hidden;
+            a {
+                width: 100%;
+                display: flex;
+                margin-top: .12rem;
+                margin-left: .10rem;
+                .search {
+                    position: relative;
+                    width: 95%;
+                    height: .35rem;
+                    background-color: #fff;
+                    border: 1px solid #ff1395;
+                    border-radius: .2rem;
+                    display: flex;
+                    align-items: center;
+                    .iconfont {
+                        color: #999;
+                        margin: 0 .1rem;
+                    }
+                    input {
+                        width: 70%;
+                        height: .35rem;
+                        border: 0;
+                        border-radius: .2rem;
+                        background-color: transparent;
+                        outline: none;
+                    }
+                    button {
+                        position: absolute;
+                        right: .01rem;
+                        width: .7rem;
+                        font-size: .16rem;
+                        height: .3rem !important;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: .4rem;
+                        background-color: #ff1395;
+                        border-radius: .2rem;
+                        color: #fff;
+                        border: 0;
+                    }
+                }
+            }
+        }
+    }
+    .main {
+        .content {
+            .list {
+                width: 100%;
+                li {
+                    display: flex;
+                    justify-content: center;
+                    height: .5rem;
+                    line-height: .5rem;
+                    p {
+                        width: 92%;
+                        padding-left: .1rem;
+                        border-bottom: 1px solid #eeeeee;
+                    }
+                }
+            }
+            .save-wrap {
+                display: flex;
+                flex-wrap: wrap;
+                a {
+                    padding: .08rem .2rem;
+                    text-align: center;
+                    background-color: #f5f5f5;
+                    // background-color: red;
+                    border-radius: .3rem;
+                    margin: .05rem .05rem;
+                }
+                & a:nth-of-type(4) {
+                    margin-right: 0;
+                }
+            }
+            .historical-records {
+                display: flex;
+                flex-wrap: wrap;
+                a {
+                    padding: .08rem .2rem;
+                    text-align: center;
+                    background-color: #f5f5f5;
+                    // background-color: red;
+                    border-radius: .3rem;
+                    margin: .05rem .05rem;
+                }
+                & a:nth-of-type(4) {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}

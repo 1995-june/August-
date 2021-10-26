@@ -1,0 +1,264 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-12 00:15:43
+ * @LastEditTime: 2021-08-12 02:29:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210811-day-6\旋转卫星\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋转卫星</title>
+    <style>
+        body {
+            background-color: #fdfaf0;
+        }
+        
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* transform-style: preserve-3d; */
+        }
+        
+        .text {
+            position: absolute;
+            /* top: 50%; */
+            left: 50%;
+            transform: translate(-50%, 20px);
+            width: 422px;
+        }
+        
+        .text>img {
+            width: 422px;
+        }
+        
+        .star {
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: -150px;
+            width: 350px;
+            animation: star 30s linear infinite alternate;
+        }
+        
+        .star>img {
+            width: 300px;
+        }
+        
+        .bluestar {
+            position: absolute;
+            top: 200px;
+            left: 53%;
+            width: 100px;
+            transform-style: preserve-3d;
+            animation: bluestar 2s linear infinite;
+        }
+        
+        .bluestar>img {
+            width: 100px;
+        }
+        
+        .small-ball {
+            position: relative;
+            width: 100%;
+        }
+        
+        .small-ball>img {
+            width: 20px;
+        }
+        
+        .small-ball>a:nth-of-type(1) {
+            width: 20px;
+            position: absolute;
+            left: 43%;
+            top: 670px;
+            animation: small-ball 5s linear infinite;
+        }
+        
+        .small-ball>a:nth-of-type(2) {
+            width: 20px;
+            position: absolute;
+            right: 30%;
+            top: 300px;
+            animation: small-ball 6s linear .2s infinite;
+        }
+        
+        .small-ball>a:nth-of-type(3) {
+            width: 20px;
+            position: absolute;
+            right: 25%;
+            top: 240px;
+            animation: small-ball 2s linear .1s infinite;
+        }
+        
+        .angular-star {
+            position: relative;
+            width: 100%;
+        }
+        
+        .angular-star>img {
+            width: 20px;
+        }
+        
+        .angular-star>a:nth-of-type(1) {
+            width: 20px;
+            position: absolute;
+            left: 33%;
+            top: 670px;
+            animation: small-ball 2s linear .1s infinite;
+        }
+        
+        .angular-star>a:nth-of-type(2) {
+            width: 20px;
+            position: absolute;
+            left: 50%;
+            top: 700px;
+            animation: small-ball 6s linear infinite;
+        }
+        
+        .angular-star>a:nth-of-type(3) {
+            width: 20px;
+            position: absolute;
+            right: 22%;
+            top: 300px;
+            animation: small-ball 4s linear 2s infinite;
+        }
+        
+        .satellite {
+            position: absolute;
+            left: 34%;
+            top: 412px;
+            width: 253px;
+            height: 100px;
+            animation: satellite 10s linear infinite;
+            transform-origin: right center;
+        }
+        
+        .satellite>img {
+            width: 80px !important;
+        }
+        
+        .cloud {
+            width: 100%;
+            position: relative;
+        }
+        
+        .cloud>img {
+            width: 100px;
+        }
+        
+        .cloud>a:nth-of-type(1) {
+            width: 120px;
+            position: absolute;
+            top: 400px;
+            left: 34%;
+            animation: cloud 7s linear infinite alternate;
+        }
+        
+        .cloud>a:nth-of-type(2) {
+            position: absolute;
+            top: 274px;
+            width: 100px;
+            left: 56%;
+            animation: cloud 8s linear .1s infinite alternate;
+        }
+        
+        .cloud>a:nth-of-type(3) {
+            width: 120px;
+            position: absolute;
+            top: 400px;
+            left: 65%;
+            animation: cloud 9s linear .2s infinite alternate;
+        }
+        
+        @keyframes satellite {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes cloud {
+            0% {}
+            30% {
+                transform: translateX(30px);
+            }
+            60% {
+                transform: translateX(-30px);
+            }
+            90% {
+                transform: translateX(30px);
+            }
+            to {
+                transform: translateX(30px);
+            }
+        }
+        
+        @keyframes bluestar {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+        
+        @keyframes small-ball {
+            0% {}
+            30% {
+                transform: scale(.7);
+            }
+            60% {
+                transform: scale(1);
+            }
+            90% {
+                transform: scale(1.3);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes star {
+            to {
+                transform: rotateZ(-360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="text">
+            <img src="./images/txt1.png" alt="">
+        </div>
+        <div class="star">
+            <img src="./images/earth.png" alt="">
+        </div>
+        <div class="bluestar">
+            <img src="./images/star2.png" alt="">
+        </div>
+        <div class="small-ball one">
+            <a href="#"><img src="./images/star5.png" alt=""></a>
+            <a href="#"><img src="./images/star6.png" alt=""></a>
+            <a href="#"><img src="./images/star5.png" alt=""></a>
+        </div>
+        <div class="angular-star">
+            <a href="#"><img src="./images/star3.png" alt=""></a>
+            <a href="#"><img src="./images/star4.png" alt=""></a>
+            <a href="#"><img src="./images/star3.png" alt=""></a>
+        </div>
+        <div class="satellite">
+            <img src="./images/star1.png" alt="">
+        </div>
+        <div class="cloud">
+            <a href="#"><img src="./images/cloud1.png" alt=""></a>
+            <a href="#"><img src="./images/cloud2.png" alt=""></a>
+            <a href="#"><img src="./images/cloud1.png" alt=""></a>
+        </div>
+    </div>
+</body>
+
+</html>

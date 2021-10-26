@@ -1,0 +1,80 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-23 21:33:25
+ * @LastEditTime: 2021-08-24 09:47:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\画板.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画板</title>
+    <style>
+        #canvas {
+            border: 1px solid #666;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <button type="button">绘制</button>
+    <button type="button">橡皮擦</button>
+    <button type="button">清除画布</button>
+    <script>
+        var cvs = document.querySelector('#canvas');
+        var btn = document.querySelectorAll('button')
+        var ctx = cvs.getContext('2d');
+        var save = null;
+
+        btn[0].onclick = function(e) {
+            cvs.onmousedown = function(e) {
+                save = this;
+                ctx.beginPath(); //开始绘制
+                ctx.moveTo(e.pageX, e.pageY); // 落笔点
+            }
+
+            cvs.onmousemove = function(e) {
+                if (!save) return;
+                ctx.lineTo(e.pageX, e.pageY); // 滑动点
+                ctx.lineWidth = 3; // 线宽
+                ctx.strokeStyle = "#f00"; // 描边颜色、
+                ctx.stroke(); // 描绘动作
+            }
+
+            cvs.onmouseup = function() {
+                save = null;
+            }
+        }
+
+
+        var eliminate = null;
+        btn[1].onmousedown = function() {
+            cvs.onmousedown = function() {
+                eliminate = this;
+            }
+
+            cvs.onmousemove = function(e) {
+                if (!eliminate) return;
+                var x = e.pageX - 30 / 2;
+                var y = e.pageY - 30 / 2;
+                ctx.clearRect(x, y, 30, 30);
+            }
+
+            cvs.onmouseup = function() {
+                eliminate = null;
+            }
+        }
+
+        btn[2].onclick = function() {
+            ctx.clearRect(0, 0, 500, 500);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-09 11:24:35
+ * @LastEditTime: 2021-08-09 22:48:35
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\周考\20210809-周考一\html\city.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>城市</title>
+    <link rel="stylesheet" href="../css/city.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="box">
+                <div class="top">
+                    <span>国内</span>
+                    <span>境外</span>
+                </div>
+            </div>
+
+            <div class="header-search">
+                <input type="search" name="search" placeholder="输入城市名、拼音或首字母查询">
+            </div>
+        </div>
+        <div class="main">
+            <div class="where-region">
+                <div class="region">
+                    <p>你所在地区</p>
+                    <span>北京</span>
+                </div>
+            </div>
+            <div class="history-wrpa">
+                <div class="region">
+                    <p>历史访问目的地</p>
+                </div>
+                <div class="history">
+                    <span>北京</span>
+                    <span>杭州</span>
+                    <span>河间市</span>
+                    <span>深圳</span>
+                </div>
+            </div>
+            <div class="history-wrpa">
+                <div class="region">
+                    <p>历史访问目的地</p>
+                </div>
+                <div class="history">
+                    <span>北京</span>
+                    <span>杭州</span>
+                    <span>河间市</span>
+                    <span>深圳</span>
+                    <span>深圳</span>
+                </div>
+            </div>
+            <div class="city-wrap">
+                <ul class="arrange">
+
+                </ul>
+                <ul class="list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/city.js"></script>
+    <script src="../js/ajax.js"></script>
+    <script>
+        var letter = document.querySelector('.arrange');
+        for (var i = 0; i < data.length; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = `${data[i].title}`;
+            letter.appendChild(li);
+        }
+
+        var list = document.querySelector('.list');
+
+        for (var i = 0; i < data.length; i++) {
+            var li = document.createElement('li');
+            li.innerHTML = `${data[i].title}`;
+            list.appendChild(li);
+            for (var j = 0; j < data[i].city.length; j++) {
+                var li = document.createElement('li');
+                li.innerHTML = `${data[i].city[j].name}`;
+                list.appendChild(li);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-07 19:44:29
+ * @LastEditTime: 2021-08-08 14:09:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\day4\清除浮动.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        浮动会导致父元素高度塌陷
+        1.溢出隐藏 overflow:hidden/auto 若遇到粘性定位就有bug
+        2.额外标签法 clear:both 造成结构上的紊乱
+            在同级盒子中设置一个空盒子
+            
+        //结构清晰 
+        3.伪元素清浮动 :after ::after
+            父级盒子外包一个空盒子 
+            IE6,IE7的版本浏览器已经不出发:after
+            所以 zoom:1
+            * IE6 IE7 的浏览器
+            _ IE6的浏览器
+        .clearfix::after {
+            content: "";
+            height: 0;
+            clear: both;
+            display: block;
+            visibility: hidden;
+        }
+        .clearfix::after {
+             *zoom: 1;
+        }
+        4.双伪元素清浮动
+            父级盒子外包一个空盒子 
+        .clearfix::after,::before {
+            content: "";
+            display: table;
+        }
+        .clearfix::after {
+            clear: both;
+        }
+        .clearfix::before {
+             *zoom: 1;
+        }
+    -->
+    <style>
+        .parent {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .clearfix::after,
+         ::before {
+            content: "";
+            display: table;
+        }
+        
+        .clearfix::after {
+            clear: both;
+        }
+        
+        .clearfix::before {
+            *zoom: 1;
+        }
+        
+        .one {
+            width: 200px;
+            height: 200px;
+            float: left;
+            font-size: 50px;
+            /* text-decoration: blink; */
+        }
+        
+        .two {
+            width: 300px;
+            height: 300px;
+            float: left;
+            background: #ff0;
+        }
+        
+        .three {
+            width: 150px;
+            height: 150px;
+            float: left;
+            background: #00f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="clearfix">
+            <div class="parent">
+                <div class="one">5555555555555555551</div>
+                <div class="two">2</div>
+                <div class="three">3</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

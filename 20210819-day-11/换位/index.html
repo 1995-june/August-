@@ -1,0 +1,85 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-19 11:59:56
+ * @LastEditTime: 2021-08-19 19:06:10
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210819-day-11\拼图\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拼图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap {
+            display: flex;
+            width: 900px;
+            height: 509px;
+            margin: 50px auto;
+        }
+        
+        .content .moveEle {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        li {
+            margin-top: -3px;
+        }
+        
+        .content img {
+            margin: .4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="content">
+            <ul class="moveEle">
+                <li><img src="./images/163.jpg" alt=""></li>
+                <li><img src="./images/baidu.jpg" alt=""></li>
+                <li><img src="./images/hao123.jpg" alt=""></li>
+                <li><img src="./images/qq.jpg" alt=""></li>
+                <li><img src="./images/taobao.jpg" alt=""></li>
+                <li><img src="./images/weibo.jpg" alt=""></li>
+                <li><img src="./images/youku.jpg" alt=""></li>
+                <li><img src="./images/iqiyi.jpg" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var jigsawPuzzle = document.querySelector('.moveEle');
+        var lis = document.querySelectorAll('.moveEle > li');
+        var save = null;
+
+        lis.forEach((item) => {
+
+            item.ondragstart = function() {
+                save = item;
+            }
+            item.ondragover = function(e) {
+                e.preventDefault();
+            }
+            item.ondrop = function() {
+                var temp = null;
+                temp = save.innerHTML;
+                save.innerHTML = item.innerHTML;
+                item.innerHTML = temp
+            }
+        })
+    </script>
+</body>
+
+</html>

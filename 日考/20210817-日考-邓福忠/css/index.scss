@@ -1,0 +1,85 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: .14rem;
+}
+
+html {
+    font-size: 100px;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    .content {
+        .choice {
+            &>div {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: .6rem;
+                border-bottom: 1px solid rgb(192, 191, 191);
+                padding: 0 .15rem;
+                span {
+                    font-size: .14rem;
+                    color: #000;
+                }
+                input {
+                    transform: scale(1.5);
+                }
+            }
+        }
+        .option-list-wrap {
+            padding: .15rem;
+            h6 {
+                display: flex;
+                line-height: .3rem;
+                height: .3rem;
+            }
+            .option-list {
+                margin-top: .1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                button {
+                    padding: .08rem .2rem;
+                    border: .02rem solid turquoise;
+                    color: turquoise;
+                    margin: .1rem .05rem;
+                    background-color: #fff;
+                    font-weight: 600;
+                }
+            }
+            .active {
+                background-color: turquoise !important;
+                color: #fff !important;
+            }
+        }
+        .footer-btn {
+            .btc-wrap {
+                display: flex;
+                justify-content: space-between;
+                height: .5rem;
+                background-color: #f6f4f0;
+                #reset {
+                    padding: 0 .15rem;
+                    border: 0;
+                    color: turquoise;
+                    background-color: #f6f4f0;
+                    font-size: .18rem;
+                }
+                .preservation {
+                    padding: 0 .15rem;
+                    border: 0;
+                    color: turquoise;
+                    background-color: #f6f4f0;
+                    font-size: .18rem;
+                }
+            }
+        }
+    }
+}

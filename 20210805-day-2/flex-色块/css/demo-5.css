@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width: 500px;
+  height: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrap .header {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-basis: 5%;
+  background-color: #ec3da9;
+  position: sticky;
+  top: 0;
+  border-bottom: 2px solid #666;
+}
+
+#wrap .main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 90%;
+  background-color: #00ffff;
+}
+
+#wrap .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+  background-color: #2edf8c;
+}

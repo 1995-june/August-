@@ -1,0 +1,98 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-25 18:27:52
+ * @LastEditTime: 2021-08-26 00:47:09
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-13\每日优鲜\html\address.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>选择城市</title>
+    <link rel="stylesheet" href="../css/address.css">
+    <link rel="stylesheet" href="../fonts/iconfont.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="side-initials-wrap"></div>
+        <div class="title">
+            <h2>选择城市</h2>
+        </div>
+        <div class="header">
+            <div class="search-wrap">
+                <div class="search">
+                    <input type="search" name="search" placeholder="请输入城市名或拼音">
+                </div>
+                <div class="cancel-wrap">
+                    <a href="../html/receivingAddress.html">取消</a>
+                </div>
+            </div>
+            <div class="current-location-wrap">
+                <h6>当前定位</h6>
+            </div>
+            <div class="location-wrap">
+                <div class="location">
+                    <div class="left-location">
+                        <i class="iconfont icon-location"></i><span>郑州市</span>
+                    </div>
+                    <div class="right-again-location">
+                        <p>重新定位</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="fastest-time">
+                    <p>最快30分钟送达</p>
+                </div>
+                <div class="different-address-wrap">
+                    <div class="different-address-list">
+                        <a href="#">北京市</a>
+                        <a href="#">上海市</a>
+                        <a href="#">深圳市</a>
+                        <a href="#">广州市</a>
+                        <a href="#">天津市</a>
+                        <a href="#">杭州市</a>
+                        <a href="#">南京市</a>
+                        <a href="#">武汉市</a>
+                        <a href="#">苏州市</a>
+                        <a href="#">无锡市</a>
+                        <a href="#">合肥市</a>
+                        <a href="#">南通市</a>
+                        <a href="#">济南市</a>
+                        <a href="#">青岛市</a>
+                        <a href="#">石家庄市</a>
+                        <a href="#">太原市</a>
+                        <a href="#">宁波市</a>
+                    </div>
+                </div>
+                <div class="city-classification">
+                    <div class="arrange"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script src="../js/address.js"></script>
+    <script src="../lib/bscroll .js"></script>
+    <script>
+        // 获取本地存储
+        var addressWrap = document.querySelector('.left-location > span');
+        var arr = JSON.parse(localStorage.getItem('cityLis'));
+        addressWrap.innerHTML = arr.con;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html {
+  font-size: 100px;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .content .choice > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: .6rem;
+  border-bottom: 1px solid #c0bfbf;
+  padding: 0 .15rem;
+}
+
+#wrap .content .choice > div span {
+  font-size: .14rem;
+  color: #000;
+}
+
+#wrap .content .choice > div input {
+  transform: scale(1.5);
+}
+
+#wrap .content .option-list-wrap {
+  padding: .15rem;
+}
+
+#wrap .content .option-list-wrap h6 {
+  display: flex;
+  line-height: .3rem;
+  height: .3rem;
+}
+
+#wrap .content .option-list-wrap .option-list {
+  margin-top: .1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+#wrap .content .option-list-wrap .option-list button {
+  padding: .08rem .2rem;
+  border: .02rem solid turquoise;
+  color: turquoise;
+  margin: .1rem .05rem;
+  background-color: #fff;
+  font-weight: 600;
+}
+
+#wrap .content .option-list-wrap .active {
+  background-color: turquoise !important;
+  color: #fff !important;
+}
+
+#wrap .content .footer-btn .btc-wrap {
+  display: flex;
+  justify-content: space-between;
+  height: .5rem;
+  background-color: #f6f4f0;
+}
+
+#wrap .content .footer-btn .btc-wrap #reset {
+  padding: 0 .15rem;
+  border: 0;
+  color: turquoise;
+  background-color: #f6f4f0;
+  font-size: .18rem;
+}
+
+#wrap .content .footer-btn .btc-wrap .preservation {
+  padding: 0 .15rem;
+  border: 0;
+  color: turquoise;
+  background-color: #f6f4f0;
+  font-size: .18rem;
+}

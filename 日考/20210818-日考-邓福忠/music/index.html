@@ -1,0 +1,182 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 09:01:42
+ * @LastEditTime: 2021-08-19 08:09:50
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210819-日考-邓福忠\music\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>music</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="mian">
+            <div class="music-wrap">
+                <div class="top-music-title"></div>
+                <div class="music-content">
+                    <div class="audio-wrap">
+                        <audio src="./素材/1.mp3"></audio>
+                        <div class="text">
+                            <div class="go"><span></span><span></span></div>
+                            <div class="total"></div>
+                        </div>
+                    </div>
+                    <div class="top-btn">
+                        <div class="retreat btn-wrap">
+                            <dl>
+                                <dt><button type="button" class="btn">15s</button></dt>
+                                <dd><span>后退</span></dd>
+                            </dl>
+                        </div>
+                        <div class="multiple btn-wrap">
+                            <dl>
+                                <dt><button type="button"  class="btn">1x</button></dt>
+                                <dd> <span>调整倍数</span></dd>
+                            </dl>
+                        </div>
+                        <div class="enter btn-wrap">
+                            <dl>
+                                <dt><button type="button"  class="btn">15s</button></dt>
+                                <dd><span>快进</span></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="active-wrap">
+                    <div class="active"></div>
+                </div>
+            </div>
+            <div class="switch-wrap">
+                <div class="switch-content">
+                    <div class="timing">
+                        <dl>
+                            <dt><i class="iconfont icon-dingshiqi"></i></dt>
+                            <dd>定时关闭</dd>
+                        </dl>
+                    </div>
+                    <div class="center-switch">
+                        <div class="left">
+                            <i class="iconfont icon-nextaudio"></i>
+                        </div>
+                        <div class="center">
+                            <i class="iconfont icon-bofang"></i>
+                        </div>
+                        <div class="right">
+                            <i class="iconfont icon-xiayishou-"></i>
+                        </div>
+                    </div>
+                    <div class="right-list">
+                        <dl>
+                            <dt><i class="iconfont icon-bofang_liebiao_"></i></dt>
+                            <dd>播放列表</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script>
+        var audio = document.querySelector('.audio-wrap > audio');
+        audio.load();
+        var topBtnS = document.querySelectorAll('.btn');
+        var iconfont = document.querySelectorAll('.iconfont');
+        var goSpan = document.querySelectorAll('.go > span');
+        var totalSpan = document.querySelector('.total');
+        var active = document.querySelector('.active');
+        var num = 1;
+        var count = 0;
+        var time = '';
+        var flag = true;
+        var flag2 = true;
+
+        topBtnS[0].addEventListener('click', function() {
+            audio.currentTime -= 15; // 后退
+        })
+
+        topBtnS[1].addEventListener('click', function() {
+            num = num++ >= 16 ? 1 : num++;
+            audio.playbackRate = num // 快进
+            this.innerHTML = num + 'x';
+        })
+
+        // 前进
+        topBtnS[2].addEventListener('click', function() {
+            audio.currentTime += 15; // 后退
+        })
+
+        // 上一首
+        iconfont[1].addEventListener('click', function() {
+            if (flag) {
+                audio.src = './素材/1.mp3';
+                audio.play() // 暂停当前播放的音频/视频
+                flag = false;
+            } else {
+                audio.src = './素材/2.mp3';
+                audio.play() // 暂停当前播放的音频/视频
+                flag = true;
+            }
+        })
+
+        // 暂停当前播放的音频 / 视频
+        iconfont[2].addEventListener('click', function() {
+            if (flag2) {
+                audio.play() // 暂停当前播放的音频/视频
+                this.className = 'iconfont icon-zantingtingzhi';
+                flag2 = false;
+            } else {
+                audio.pause() // 暂停当前播放的音频/视频
+                this.className = 'iconfont icon-bofang';
+                flag2 = true;
+            }
+        })
+
+        // 下一首
+        iconfont[3].addEventListener('click', function() {
+            if (flag) {
+                audio.src = './素材/2.mp3';
+                audio.play() // 暂停当前播放的音频/视频
+                flag = false;
+            } else {
+                audio.src = './素材/1.mp3';
+                audio.play() // 暂停当前播放的音频/视频
+                flag = true;
+            }
+        })
+        audio.addEventListener('canplaythrough', function() {
+            var branch = Math.floor(audio.duration / 60);
+            var second = Math.floor(audio.duration % 60);
+            totalSpan.innerHTML = `<span>/${branch}</span><span>:${second}</span>`;
+        })
+
+        audio.addEventListener('timeupdate', function() {
+            var currentTime = Math.floor(audio.currentTime);
+            var branch = Math.floor(currentTime / 60 % 60);
+            branch = branch < 9 ? '0' + branch : branch;
+            var second = Math.floor(currentTime % 60);
+            second = second < 9 ? '0' + second : second;
+
+            goSpan[0].innerHTML = branch + ':';
+            goSpan[1].innerHTML = second;
+
+            var currentTime = parseInt(audio.currentTime)
+            active.style.width = Math.floor(audio.currentTime) + 'px';
+        })
+    </script>
+</body>
+
+</html>

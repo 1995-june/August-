@@ -1,0 +1,117 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-25 14:02:19
+ * @LastEditTime: 2021-08-25 14:33:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\折线.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>折线数据</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #myCanvas {
+            border: 1px solid #333;
+            background-color: #efefef;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="800" height="700"></canvas>
+    <script>
+        var cvs = document.querySelector('#myCanvas');
+        var ctx = cvs.getContext('2d');
+        ctx.beginPath();
+        ctx.translate(100, 600);
+        // 左直线
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -500);
+
+        // 下直线
+        ctx.moveTo(0, 0);
+        ctx.lineTo(600, 0);
+
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#666';
+        ctx.stroke();
+        ctx.closePath();
+
+        var dataArr = [{
+            x: 0,
+            y: 300
+        }, {
+            x: 50,
+            y: 167
+        }, {
+            x: 100,
+            y: 456
+        }, {
+            x: 150,
+            y: 567
+        }, {
+            x: 200,
+            y: 400
+        }, {
+            x: 250,
+            y: 300
+        }, {
+            x: 300,
+            y: 450
+        }, {
+            x: 350,
+            y: 200
+        }];
+
+        ctx.beginPath();
+        ctx.fillStyle = 'red';
+        ctx.textAlign = 'center';
+
+        // left 数字数据
+        for (var i = 0; i < 10; i++) {
+            // 左下角 0
+            if (i == 0) {
+                ctx.fillText(i, -15, 15);
+            } else {
+                ctx.fillText(i * 100, -25, -i * 100 * .5);
+            }
+        }
+
+        // bottom 文字
+        dataArr.forEach((val, i) => {
+            if (i != 0) {
+                ctx.fillText(val.x, val.x, 30);
+            }
+        })
+        ctx.closePath();
+
+        // 折线
+        dataArr.forEach(function(item, i) {
+            ctx.lineTo(item.x, -item.y * .5)
+        })
+        ctx.strokeStyle = 'rgb(33, 216, 64)';
+        ctx.stroke();
+
+        ctx.lineWidth = 3;
+        dataArr.forEach(function(item) {
+            ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.arc(item.x, -item.y * .5, 4, 0, Math.PI / 5, true); // 圆点
+            ctx.fillText(item.y, item.x, -item.y * .5 - 30); // 文字
+            ctx.fill();
+            ctx.closePath();
+        })
+    </script>
+</body>
+
+</html>

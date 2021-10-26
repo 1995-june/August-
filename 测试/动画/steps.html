@@ -1,0 +1,54 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-11 00:17:01
+ * @LastEditTime: 2021-08-11 00:26:12
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\动画\steps.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>steps</title>
+    <style>
+        .wrap {
+            width: 400px;
+            margin: 200px auto;
+        }
+        
+        div {
+            font-size: 20px;
+            width: 0;
+            overflow: hidden;
+            height: 30px;
+            white-space: nowrap;
+            /* background-color: rgb(202, 33, 75); */
+            /* steps(10) 就是分几步来完成动画 有了 steps 就别写 ease 或 linear */
+            animation: w 4s steps(10) infinite;
+            /* color: #fff; */
+        }
+        
+        @keyframes w {
+            from {
+                width: 0;
+            }
+            to {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>钟丽婷你就是个大傻逼</div>
+    </div>
+</body>
+
+</html>
+
+</html>

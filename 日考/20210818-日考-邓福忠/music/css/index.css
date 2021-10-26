@@ -1,0 +1,233 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html {
+  font-size: 100px;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+}
+
+#wrap .music-wrap {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  background: url(https://pic.netbian.com/uploads/allimg/210604/200017-1622808017e3d7.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+
+#wrap .music-wrap .music-content {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 4rem;
+  height: 3rem;
+}
+
+#wrap .music-wrap .music-content .audio-wrap {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: .7rem;
+}
+
+#wrap .music-wrap .music-content .audio-wrap .text {
+  display: flex;
+}
+
+#wrap .music-wrap .music-content .audio-wrap .text .go span {
+  font-size: .4rem;
+  color: #e63232;
+}
+
+#wrap .music-wrap .music-content .audio-wrap .text .total span {
+  font-size: .4rem;
+  color: #fff;
+}
+
+#wrap .music-wrap .music-content .top-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -1rem;
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap {
+  width: 100%;
+  height: 1rem;
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap dl {
+  width: .8rem;
+  height: 1rem;
+  margin: auto;
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap dl dt {
+  width: .8rem;
+  height: .8rem;
+  border: 1px solid #666;
+  border-radius: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap dl dt button {
+  width: .8rem;
+  height: .8rem;
+  border: 0;
+  font-size: .17rem;
+  color: #fff;
+  background-color: transparent;
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap dl dd {
+  text-align: center;
+  margin-top: .1rem;
+}
+
+#wrap .music-wrap .music-content .top-btn .btn-wrap dl dd span {
+  color: #fff;
+}
+
+#wrap .music-wrap .active-wrap {
+  position: absolute;
+  bottom: 1px;
+  width: 100%;
+  height: .06rem;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  border-radius: .8rem;
+}
+
+#wrap .music-wrap .active-wrap .active {
+  width: 0%;
+  height: .04rem;
+  border-radius: .8rem;
+  background-color: #e7183b;
+}
+
+#wrap .switch-wrap {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .switch-wrap .switch-content {
+  display: flex;
+  align-items: center;
+  width: 4.14rem;
+  height: 1.5rem;
+}
+
+#wrap .switch-wrap .switch-content .timing {
+  width: 1rem;
+  height: 0.6rem;
+}
+
+#wrap .switch-wrap .switch-content .timing dl dt {
+  width: .5rem;
+  height: .4rem;
+  margin: auto;
+}
+
+#wrap .switch-wrap .switch-content .timing dl dt .iconfont {
+  font-size: .4rem;
+  color: #999;
+}
+
+#wrap .switch-wrap .switch-content .timing dl dd {
+  text-align: center;
+  margin-top: .1rem;
+}
+
+#wrap .switch-wrap .switch-content .center-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 2.14rem;
+  height: 0.6rem;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .left {
+  width: .5rem;
+  height: .8rem;
+  text-align: center;
+  line-height: .8rem;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .left .icon-nextaudio {
+  width: .5rem;
+  height: .5rem;
+  font-size: .3rem;
+  color: #ea5f5a;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .center {
+  width: .8rem;
+  height: .8rem;
+  border: 1px solid #ea5f5a;
+  border-radius: 100%;
+  text-align: center;
+  line-height: .8rem;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .center .icon-zantingtingzhi {
+  font-size: .3rem;
+  color: #ea5f5a;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .center .icon-bofang {
+  font-size: .3rem;
+  color: #ea5f5a;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .right {
+  width: .5rem;
+  height: .8rem;
+  text-align: center;
+  line-height: .8rem;
+}
+
+#wrap .switch-wrap .switch-content .center-switch .right .icon-xiayishou- {
+  width: .5rem;
+  height: .5rem;
+  font-size: .3rem;
+  color: #ea5f5a;
+}
+
+#wrap .switch-wrap .switch-content .right-list {
+  width: 1rem;
+  height: 0.6rem;
+}
+
+#wrap .switch-wrap .switch-content .right-list dl dt {
+  width: .5rem;
+  height: .4rem;
+  margin: auto;
+}
+
+#wrap .switch-wrap .switch-content .right-list dl dt .iconfont {
+  font-size: .4rem;
+  color: #999;
+}
+
+#wrap .switch-wrap .switch-content .right-list dl dd {
+  text-align: center;
+  margin-top: .1rem;
+}

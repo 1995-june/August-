@@ -1,0 +1,188 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>垃圾箱</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #wrap {
+            width: 300px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .list {
+            width: 100px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: center;
+            border: 2px solid rgb(8, 245, 20);
+        }
+        
+        .people {
+            overflow: hidden;
+            width: 80px;
+            height: 300px;
+            border: 2px solid rgb(38, 16, 230);
+            text-align: center;
+            line-height: 200px;
+            font-size: 18px;
+            color: red;
+        }
+        
+        img {
+            width: 60px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul class="list">
+            <li draggable="true"><img src="./images/1.jpg" alt="" draggable="false"></li>
+            <li draggable="true"><img src="./images/2.jpg" alt="" draggable="false"></li>
+            <li draggable="true"><img src="./images/3.jpg" alt="" draggable="false"></li>
+            <li draggable="true"><img src="./images/4.jpg" alt="" draggable="false"></li>
+        </ul>
+        <ul class="people"></ul>
+    </div>
+    <script>
+        var list = document.querySelector('.list');
+        var imgs = [...document.querySelectorAll('.list li > img')];
+        console.log(imgs[0].getAttribute('src'));
+
+        var people = document.querySelector('.people');
+        var save = null;
+
+        list.ondragstart = function(e) {
+            var tag = e.target;
+            if (tag.nodeName != "LI") return;
+            save = tag;
+            console.log(save);
+        
+            e.dataTransfer.setData('name', "200")
+            console.log(e.dataTransfer.getData('name'));
+        }
+
+        list.ondragover = function(e) {
+            var tag = e.target;
+            save.innerHTML = '<img src="./images/icon.png" alt="" draggable="true">'
+            console.log(save);
+        }
+
+
+
+        people.ondragover = function(e) {
+            e.preventDefault()
+        }
+
+        people.ondrop = function(e) {
+            this.append(save)
+    
+        }
+    </script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con,
+        .box {
+            width: 500px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #f00;
+            text-align: center;
+            margin: 50px auto;
+            padding: 10px;
+        }
+        
+        .con img {
+            border: 1px solid #f00;
+        }
+        
+        .con img.select {
+            border: 2px solid blue;
+        }
+        
+        .box {
+            border: 1px solid #000;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>你拖动的图片是<span class="text"></span></h3>
+    <div class="con">
+        <img src="./images/1.jpg" alt="图片1" id="1">
+        <img src="./images/2.jpg" alt="图片2" id="2">
+        <img src="./images/3.jpg" alt="图片3" id="3">
+        <img src="./images/4.jpg" alt="图片4" id="4">
+    </div>
+    <div class="box"></div>
+    <script>
+        var con = document.querySelector(".con");
+        var text = document.querySelector(".text");
+        var box = document.querySelector(".box");
+        var icon = new Image();
+        console.log(icon);
+
+        icon.src = "images/icon.png";
+        // 拖放
+        con.addEventListener("dragstart", function(e) {
+            e.target.className = "select";
+            e.dataTransfer.setData('Text', e.target.id);
+            console.log(e.dataTransfer.getData("Text"));
+            e.dataTransfer.setDragImage(icon, -10, -10);
+            e.dataTransfer.effectAllowed = "copyMove";
+        }, false);
+        con.addEventListener("drag", function(e) {
+            text.innerHTML = e.target.alt;
+        }, false);
+        con.addEventListener("dragend", function(e) {
+            e.target.className = "";
+        }, false);
+        //投放
+        box.addEventListener("dragenter", function(e) {
+            this.style.border = "1px solid #0f0"
+        }, false);
+        box.addEventListener("dragover", function(e) {
+            e.preventDefault();
+            this.style.border = "1px solid yellow";
+            // e.dataTransfer.dropEffect = "move";
+        })
+        box.addEventListener("dragleave", function(e) {
+            this.style.border = "1px solid #000";
+        }, false);
+        box.addEventListener("drop", function(e) {
+            var getID = e.dataTransfer.getData("Text");
+            var obj = document.getElementById(getID)
+            this.append(obj)
+        }, false)
+    </script>
+</body>
+
+</html>

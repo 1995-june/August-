@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .header {
+  width: 1116px;
+  margin: 0 auto;
+}
+
+#wrap .header .header-logo-search {
+  overflow: hidden;
+}
+
+#wrap .header .header-logo-search .logo {
+  float: left;
+  width: 225px;
+  height: 43px;
+  margin-top: 10px;
+}
+
+#wrap .header .header-logo-search .header-search {
+  float: right;
+  margin-top: 10px;
+  width: 252px;
+  height: 26px;
+  border: 1px solid #414141;
+}
+
+#wrap .header .header-logo-search .header-search input {
+  width: 200px;
+  height: 22px;
+  border: 0;
+  outline: none;
+}
+
+#wrap .header .header-logo-search .header-search button {
+  width: 50px;
+  height: 24px;
+  background-color: #008cca;
+  color: #fff;
+  border: 0;
+}
+
+#wrap .header .header-journalism {
+  overflow: hidden;
+  height: 120px;
+  padding-top: 20px;
+}
+
+#wrap .header .header-journalism dl {
+  float: left;
+}
+
+#wrap .header .header-journalism dl dt {
+  float: left;
+  width: 89px;
+  height: 72px;
+  margin-right: 15px;
+}
+
+#wrap .header .header-journalism dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .header .header-journalism dl dd {
+  width: 434px;
+}
+
+#wrap .header .header-journalism dl dd h4 {
+  color: #000;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wrap .header .header-journalism dl dd p {
+  margin-top: 20px;
+  color: #414141;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wrap .header .header-journalism .right {
+  float: right;
+}
+
+#wrap .header .header-journalism .right dt {
+  float: left;
+  width: 89px;
+  height: 72px;
+  margin-right: 15px;
+}
+
+#wrap .header .header-journalism .right dt img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .header .header-journalism .right dd {
+  width: 434px;
+}
+
+#wrap .header .header-journalism .right dd h4 {
+  color: #000;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wrap .header .header-journalism .right dd p {
+  margin-top: 20px;
+  color: #414141;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wrap .main {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .main .header-nav {
+  width: 100%;
+  height: 41px;
+  border-top: 2px solid #a49174;
+  border-bottom: 2px solid #ccc;
+}
+
+#wrap .main .header-nav nav {
+  overflow: hidden;
+  width: 1116px;
+  margin: 0 auto;
+  height: 38px;
+  line-height: 38px;
+}
+
+#wrap .main .header-nav nav a {
+  display: block;
+  float: left;
+  font-size: 14px;
+  color: #414141;
+  padding: 0 25px;
+}
+
+#wrap .main .header-nav nav a:nth-child(1) {
+  background-color: #a49174;
+}
+
+#wrap .main .header-nav nav a:nth-child(14) {
+  padding-right: 0;
+}
+
+#wrap .main #content {
+  overflow: hidden;
+  width: 1116px;
+  margin: 0 auto;
+}
+
+#wrap .main #content .left-icon {
+  float: left;
+  width: 216px;
+  padding: 25px;
+}
+
+#wrap .main #content .left-icon dl {
+  margin-bottom: 30px;
+}
+
+#wrap .main #content .left-icon dl dt {
+  width: 100px;
+}
+
+#wrap .main #content .left-icon dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .main #content .left-icon dl dd {
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+#wrap .main #content .left-icon dl dd a {
+  text-align: center;
+  color: #414141;
+  font-size: 18px;
+}
+
+#wrap .main #content .middle-content {
+  overflow: hidden;
+}
+
+#wrap .main #content .middle-content .middle-top {
+  padding-top: 25px;
+  width: 900px;
+  float: left;
+  height: 56px;
+  line-height: 56px;
+  margin-bottom: 20px;
+}
+
+#wrap .main #content .middle-content .middle-top h2 {
+  float: left;
+  color: #a49174;
+  margin-right: 30px;
+}
+
+#wrap .main #content .middle-content .middle-top p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  float: left;
+}
+
+#wrap .main #content .middle-content .image {
+  width: 600px;
+  float: left;
+}
+
+#wrap .main #content .middle-content .image img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .main #content .middle-content .right-content {
+  float: left;
+  margin-left: 20px;
+}
+
+#wrap .main #content .middle-content .right-content .small-img {
+  height: 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+#wrap .main #content .middle-content .right-content .small-img img {
+  width: 106px;
+}

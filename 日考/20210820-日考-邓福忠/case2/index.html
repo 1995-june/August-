@@ -1,0 +1,87 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-20 09:00:52
+ * @LastEditTime: 2021-08-20 09:56:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210820-日考-邓福忠\case2\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>案例2</title>
+    <link rel="stylesheet" href="./css/inddex.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header"></div>
+        <div class="main">
+            <div class="content">
+                <div class="input-wrap">
+                    <textarea name="" id="" cols="56" rows="8" placeholder="这一刻的想法..."></textarea>
+                </div>
+                <div class="con-text">
+                    <div class="list">
+                        <img src="./images/1.jpg" alt="">
+                        <img src="./images/2.jpg" alt="">
+                        <img src="./images/3.jpg" alt="">
+                        <img src="./images/4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="remove-wrap">
+                <span class="remove">拖到此处删除</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        var list = document.querySelector('.list');
+        var removeWrap = document.querySelector('.remove-wrap');
+        var remove = document.querySelector('.remove');
+        var save = null;
+
+        list.ondragstart = function(e) {
+            var tag = e.target;
+            if (tag.nodeName != 'IMG') return;
+            save = tag;
+            removeWrap.style.display = 'block';
+        }
+
+        list.ondragend = function(e) {
+            var tag = e.target;
+            if (tag.nodeName != 'IMG') return;
+            save = tag;
+            removeWrap.style.display = 'none';
+        }
+
+        removeWrap.ondragover = function(e) {
+            e.preventDefault()
+        }
+
+        removeWrap.ondragenter = function(e) {
+            remove.innerHTML = '松手即可删除';
+        }
+
+        removeWrap.ondragleave = function(e) {
+            remove.innerHTML = '拖到此处删除';
+        }
+
+        removeWrap.ondrop = function(e) {
+            save.remove();
+            removeWrap.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 23:21:46
+ * @LastEditTime: 2021-08-17 21:18:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210816-day-8\淘宝登录页面\html\index3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="
+    width=device-width,
+    user-scalable = no,
+    minimum-scale = 1.0,
+    maximum-scale = 1.0,
+    initial-scale=1.0">
+    <title>手机号注册</title>
+    <link rel="stylesheet" href="../css/index3.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="phoneRegister">
+            <h1>手机号注册</h1>
+            <span>亲，欢迎注册淘宝账号</span>
+        </div>
+        <div class="input-wrap">
+            <div class="tel-wrap">
+                <div class="div">+86 </div><input type="tel" name="tel" placeholder="请输入手机号">
+            </div>
+            <div class="verification">
+                <input type="text" name="text" placeholder="请输入验证码">
+                <button type="button" id="get-code">获取验证码</button>
+            </div>
+            <div class="prompt">
+                短信验证码已发送，可能会有延后请耐心等待
+            </div>
+        </div>
+        <div class="register">
+            <button type="button" class="register-ren">同意并注册</button>
+        </div>
+        <div class="footer">
+            <p>已阅读并同意以下协议 <span>淘宝平台服务协议</span>、<span>淘宝平台服务协议</span>、<span>淘宝平台服务协议</span>、<span>淘宝平台服务协议</span></p>
+        </div>
+        <div class="tel-prompt-wrap">
+            <div class="tel-prompt">手机号码或验证码格式不正确，请重新输入</div>
+        </div>
+        <div class="choose-code-wrap">
+            <div class="choose-code">
+                <div class="btn-wrap">
+                    <button type="button" class="cancel">取消</button>
+                    <button type="button" class="determine">确定</button>
+                </div>
+                <div class="box">
+                    <ul class="phoneList">
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                        <li>+86 中国大陆</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/regexp.js"></script>
+    <script src="../js/register.js"></script>
+    <script>
+        new RegisterPage({
+            tel: '.tel-wrap > input', // 手机号
+            getCode: '.verification > #get-code', // 获取到验证码
+            input: '.verification > input', // 获取到验证码
+            telPrompWwrap: '.tel-prompt-wrap', // 输入验证码
+            registerRen: '.register-ren', // 输入验证码
+            prompt: '.prompt',
+            cancel: '.cancel',
+            chooseCodeWrap: '.choose-code-wrap',
+            div: '.div',
+            flag: true,
+            flag2: true,
+        })
+    </script>
+</body>
+
+</html>

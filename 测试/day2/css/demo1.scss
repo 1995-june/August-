@@ -1,0 +1,42 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+@mixin  num($w,$h) {
+    width: $w;
+    height: $h; 
+}
+.box {
+    width: 150px;
+    height: 600px;
+    // @include num(150px,600px);
+    border: 1px solid #000;
+    //开启弹性盒
+    display: flex;
+    // flex-wrap: wrap-reverse;
+    // flex-direction: row-reverse;
+    // flex-flow: row-reverse wrap-reverse;
+    // justify-content: space-evenly;
+    // align-items:baseline;
+    flex-wrap: wrap;
+    margin: 30px;
+    align-content: stretch;
+    // padding-top: 100px;
+    .box1 {
+        width: 150px;
+        height: 150px;
+        // @include num(150px,0);
+        background: #f00;
+        // padding: 20px;
+    }
+    .box2 {
+        @include num(150px,150px );
+        background: #ff0;
+        padding-bottom: 30px;
+    }
+    .box3 {
+        @include num(150px,150px );
+        background: #0ff;
+    }
+}

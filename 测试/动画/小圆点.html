@@ -1,0 +1,87 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 00:55:31
+ * @LastEditTime: 2021-08-10 08:17:59
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\动画\动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+        
+        .map {
+            width: 500px;
+            height: 500px;
+            margin: 200px auto;
+        }
+        
+        .city {
+            position: relative;
+        }
+        
+        .dotted {
+            width: 40px;
+            height: 40px;
+            background-color: #09f;
+            border-radius: 50%;
+        }
+        
+        .city div[class^="pulse"] {
+            position: absolute;
+            top: 50%;
+            left: 4%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            box-shadow: 0 0 12px #009dfd;
+            border-radius: 50%;
+            animation: pulse 1.5s linear infinite;
+        }
+        
+        .pulse2 {
+            animation-delay: 0.4S !important;
+        }
+        
+        .pulse3 {
+            animation-delay: 0.8S !important;
+        }
+        
+        @keyframes pulse {
+            0% {}
+            70% {
+                width: 80px;
+                height: 80px;
+                opacity: 1;
+            }
+            100% {
+                width: 110px;
+                height: 110px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="map">
+        <div class="city">
+            <div class="dotted"></div>
+            <div class="pulse1"></div>
+            <div class="pulse2"></div>
+            <div class="pulse3"></div>
+
+        </div>
+    </div>
+</body>
+
+</html>

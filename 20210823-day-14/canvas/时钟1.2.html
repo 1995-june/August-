@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>canvas钟表</title>
+    <meta name="Keywords" content="">
+    <meta name="author" content="@my_programmer">
+    <style type="text/css">
+        body {
+            width: 400px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body onload="run()">
+    <canvas id="canvas" width="400" height="400" </canvas>
+    <script>
+        window.onload = draw;
+
+        function draw() {
+            var cvs = document.getElementById('canvas');
+            var ctx = cvs.getContext('2d');
+
+            ctx.save(); //保存
+            ctx.translate(200, 200);
+            var deg = 2 * Math.PI / 12;
+            //表盘
+            ctx.save();
+            ctx.beginPath();
+            for (var i = 0; i < 13; i++) {
+                var x = Math.sin(i * deg);
+                var y = -Math.cos(i * deg);
+                ctx.lineTo(x * 150, y * 150);
+            }
+            var c = ctx.createRadialGradient(0, 0, 0, 0, 0, 130); //方法创建径向的渐变对象
+            c.addColorStop(0, "#22f");
+            c.addColorStop(1, "#0ef")
+            ctx.fillStyle = c;
+            ctx.fill();
+            ctx.closePath();
+            ctx.restore();
+
+            //数字
+            ctx.save();
+            ctx.beginPath();
+            for (var i = 1; i < 13; i++) {
+                var x1 = Math.sin(i * deg);
+                var y1 = -Math.cos(i * deg);
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 20px Calibri";
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(i, x1 * 120, y1 * 120);
+            }
+            ctx.closePath();
+            ctx.restore();
+
+            //大刻度
+            ctx.save();
+            ctx.beginPath();
+            for (var i = 0; i < 12; i++) {
+                var x2 = Math.sin(i * deg);
+                var y2 = -Math.cos(i * deg);
+                ctx.moveTo(x2 * 148, y2 * 148);
+                ctx.lineTo(x2 * 135, y2 * 135);
+            }
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            //小刻度
+            ctx.save();
+            var deg1 = 2 * Math.PI / 60;
+            ctx.beginPath();
+            for (var i = 0; i < 60; i++) {
+                var x2 = Math.sin(i * deg1);
+                var y2 = -Math.cos(i * deg1);
+                ctx.moveTo(x2 * 146, y2 * 146);
+                ctx.lineTo(x2 * 140, y2 * 140);
+            }
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            //文字
+            ctx.save();
+            ctx.strokeStyle = "#fff";
+            ctx.font = ' 34px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.strokeText('canvas', 0, 65);
+            ctx.restore();
+
+            //new Date
+            var time = new Date();
+            var h = (time.getHours() % 12) * 2 * Math.PI / 12;
+            var m = time.getMinutes() * 2 * Math.PI / 60;
+            var s = time.getSeconds() * 2 * Math.PI / 60;
+
+            //时针
+            ctx.save();
+            ctx.rotate(h + m / 12 + s / 720);
+            ctx.beginPath();
+            ctx.moveTo(0, 6);
+            ctx.lineTo(0, -85);
+            ctx.strokeStyle = "#fff";
+            ctx.lineWidth = 6;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            //分针
+            ctx.save();
+            ctx.rotate(m + s / 60);
+            ctx.beginPath();
+            ctx.moveTo(0, 8);
+            ctx.lineTo(0, -105);
+            ctx.strokeStyle = "#fff";
+            ctx.lineWidth = 4;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            //秒针
+            ctx.save();
+            ctx.rotate(s);
+            ctx.beginPath();
+            ctx.moveTo(0, 10);
+            ctx.lineTo(0, -120);
+            ctx.strokeStyle = "#fff";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+            ctx.restore(); //栈出
+            setTimeout(draw, 1000); //计时器
+        }
+    </script>
+</body>
+
+</html>

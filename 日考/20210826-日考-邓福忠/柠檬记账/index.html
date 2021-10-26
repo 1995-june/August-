@@ -1,0 +1,158 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-26 08:57:34
+ * @LastEditTime: 2021-08-26 14:36:05
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210826-日考-邓福忠\柠檬记账\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柠檬记账</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="title">
+                <h2>柠檬记账</h2>
+            </div>
+            <div class="bookkeeping">
+
+                <div class="money-wrap">
+                    <p>本月支出(元)</p>
+                    <span>2775.00</span>
+                </div>
+
+                <div class="month-wrap">
+                    <select name="" id="">
+                        <option value="月">月</option>
+                        <option value="1">1月</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="月">2019-02</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="lis-wrap">
+                    <div class="sort">
+                        <i class="iconfont icon-shaixuanguolv"></i>
+                    </div>
+                    <div class="tab-wrap">
+                        <span>账单</span>
+                        <span>图表</span>
+                    </div>
+                    <div class="search-wrap">
+                        <i class="iconfont icon-sousuo"></i>
+                    </div>
+                </div>
+                <div class="center-data">
+                    <div class="data-wrap">
+                        <canvas id="canvas"></canvas>
+                    </div>
+                </div>
+                <div class="data-lis-wrap">
+                    <dl>
+                        <dt>
+                            <i class="iconfont icon-canyin"></i>
+                        </dt>
+                        <dd>
+                            <div class="left">
+                                <p>餐饮</p>
+                                <span></span>
+                            </div>
+                            <div class="right">
+                                <p>888.00</p>
+                                <span>1笔</span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <i class="iconfont icon-qiche"></i>
+                        </dt>
+                        <dd>
+                            <div class="left">
+                                <p>餐饮</p>
+                                <span></span>
+                            </div>
+                            <div class="right">
+                                <p>999.00</p>
+                                <span>1笔</span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <i class="iconfont icon-tingzhenqi"></i>
+                        </dt>
+                        <dd>
+                            <div class="left">
+                                <p>餐饮</p>
+                                <span></span>
+                            </div>
+                            <div class="right">
+                                <p>888.00</p>
+                                <span>1笔</span>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="add-wrap">
+                <div class="add-menu">
+                    <i class="iconfont icon-jiahao"></i>
+                </div>
+            </div>
+            <dl>
+                <dt>
+                    <i class="iconfont icon-index-copy"></i>
+                </dt>
+                <dd>首页</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <i class="iconfont icon-ren"></i>
+                </dt>
+                <dd>圈子</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <i class="iconfont icon-hongbao"></i>
+                </dt>
+                <dd>发现</dd>
+            </dl>
+            <dl>
+                <dt>
+                    <i class="iconfont icon-xiaolian"></i>
+                </dt>
+                <dd>我的</dd>
+            </dl>
+        </div>
+    </div>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var cvs = document.querySelector('#canvas');
+        var ctx = cvs.getContext('2d');
+        var data = {
+            val: [0.35, 0.3, 0.2],
+            color: ['#9f4aff', '#ffe244', '#fac257'],
+            text: ['一月', '二月', '三月', '四月']
+        }
+        ctx.
+    </script>
+</body>
+
+</html>

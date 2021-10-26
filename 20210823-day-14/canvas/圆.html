@@ -1,0 +1,32 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-24 09:21:15
+ * @LastEditTime: 2021-08-24 23:02:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\圆.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圆</title>
+</head>
+
+<body>
+    <canvas id="canvas" width="500" height="700"></canvas>
+    <script>
+        var cvs = document.querySelector('#canvas');
+        var cxt = cvs.getContext('2d');
+
+        cxt.arc(300, 400, 280, 150, Math.PI * 1.5, true); // 画圆
+        // 填充圆
+        cxt.fillStyle = '#ffff00';
+        cxt.fill();
+    </script>
+</body>
+
+</html>

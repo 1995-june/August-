@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企鹅</title>
+    <style>
+        body {
+            background-color: rgb(55, 58, 235);
+        }
+        
+        .penguin {
+            margin-top: 300px;
+            margin-left: 650px;
+            position: relative;
+            animation: penguin 2s 0s infinite;
+        }
+        
+        .body {
+            width: 135px;
+            height: 186px;
+            background-image: url(./images/penguin_loading.png);
+            position: absolute;
+            z-index: 999;
+        }
+        
+        .right-hand {
+            width: 37px;
+            height: 54px;
+            background-image: url(./images/penguin_loading.png);
+            background-position: -140px 0;
+            position: absolute;
+            top: 85px;
+            left: -25px;
+            animation: right-hand 1s linear 0s infinite;
+        }
+        
+        .left-hand {
+            width: 52px;
+            height: 84px;
+            background-image: url(./images/penguin_loading.png);
+            background-position: -140px -60px;
+            position: absolute;
+            top: 20px;
+            left: 120px;
+            animation: left-hand 1s linear 0s infinite;
+        }
+        
+        .left-foot {
+            width: 64px;
+            height: 16px;
+            background-image: url(./images/penguin_loading.png);
+            background-position: -143px -150px;
+            position: absolute;
+            top: 167.5px;
+            left: 0px;
+            animation: left-foot 2s linear 0s infinite;
+        }
+        
+        .right-foot {
+            width: 64px;
+            height: 16px;
+            background-image: url(./images/penguin_loading.png);
+            background-position: -140px -167px;
+            position: absolute;
+            top: 166.5px;
+            left: 76.5px;
+            animation: right-foot 2s linear 0s infinite;
+        }
+        
+        @keyframes right-hand {
+            0% {
+                transform: rotate(0);
+            }
+            50% {
+                transform: rotate(20deg);
+                transform-origin: right top;
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+        
+        @keyframes left-hand {
+            0% {
+                transform: rotate(20deg);
+                transform-origin: left bottom;
+            }
+            50% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(20deg);
+                transform-origin: left bottom;
+            }
+        }
+        
+        @keyframes penguin {
+            20% {
+                transform: scaleY(1) translateY(0);
+            }
+            30% {
+                transform: scaleY(0.96) translateY(0);
+            }
+            35% {
+                transform: scaleY(1) translateY(-80px);
+            }
+            50% {
+                transform: scaleY(1) translateY(-100px);
+            }
+            70% {
+                transform: scaleY(1) translateY(-100px);
+            }
+            80% {
+                transform: scaleY(1) translateY(-20px);
+            }
+            90% {
+                transform: scaleY(1) translateY(0);
+            }
+        }
+        
+        @keyframes left-foot {
+            30% {
+                transform: rotate(0);
+                transform-origin: right top;
+            }
+            40% {
+                transform: rotate(-10deg);
+                transform-origin: right top;
+            }
+            50% {
+                transform: rotate(0deg);
+                transform-origin: right top;
+            }
+            60% {
+                transform: rotate(-10deg);
+                transform-origin: right top;
+            }
+            70% {
+                transform: rotate(0deg);
+                transform-origin: right top;
+            }
+        }
+        
+        @keyframes right-foot {
+            30% {
+                transform: rotate(0);
+                transform-origin: left top;
+            }
+            40% {
+                transform: rotate(10deg);
+                transform-origin: left top;
+            }
+            50% {
+                transform: rotate(0deg);
+                transform-origin: left top;
+            }
+            60% {
+                transform: rotate(10deg);
+                transform-origin: left top;
+            }
+            70% {
+                transform: rotate(0deg);
+                transform-origin: left top;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="penguin">
+        <div class="body"></div>
+        <div class="right-hand"></div>
+        <div class="left-hand"></div>
+        <div class="left-foot"></div>
+        <div class="right-foot"></div>
+    </div>
+</body>
+
+</html>

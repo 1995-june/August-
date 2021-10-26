@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="
+    width=device-width, 
+    user-scalable = no,
+    minimum-scale = 1.0,
+    maximum-scale = 1.0,
+    initial-scale=1.0">
+    <title>积分</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="icon">
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+            </div>
+            <div>
+                <p>积分商城</p>
+            </div>
+            <div class="icon">
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div id="main">
+            <div class="searchBox">
+                <div class="search">
+                    <input type="text" placeholder="搜索商品">
+                    <img src="../images/Fangdajing.png" alt="">
+                </div>
+                <img src="../images/icon／24／卡片展示@3x.png" alt="">
+            </div>
+            <ul class="nav">
+                <li>综合</li>
+                <li>价格</li>
+                <li>积分</li>
+            </ul>
+            <div class="goods">
+                <dl>
+                    <dt>
+                        <img src="https://img10.360buyimg.com/n7/jfs/t1/123650/34/2/235641/5eb2895eE88c44a85/b3e9f779bd90c31b.jpg" alt="">
+
+                    </dt>
+                    <dd>
+                        <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                        <li class="price">￥39</li>
+                        <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="https://img14.360buyimg.com/n1/s190x190_jfs/t1/124659/39/8507/206150/5f23d8caE84d37c5e/d596673cb6c458aa.jpg" alt="">
+
+                    </dt>
+                    <dd>
+                        <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                        <li class="price">￥39</li>
+                        <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="https://img11.360buyimg.com/n7/jfs/t1/201188/38/1972/166035/611a30ebE20948182/dec79731dd203629.jpg" alt="">
+
+                    </dt>
+                    <dd>
+                        <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                        <li class="price">￥39</li>
+                        <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>
+                        <img src="https://img13.360buyimg.com/n7/jfs/t1/194626/33/18445/210997/611a30daEa1111a69/c3e2650cc7c01547.jpg" alt="">
+                    </dt>
+                    <dd>
+                        <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                        <li class="price">￥39</li>
+                        <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <script>
+        var goodsList = document.querySelectorAll("#main .goods dl");
+        goodsList.forEach(function(val) {
+            val.onclick = function() {
+                var goodsListObj = {
+                    "src": this.children[0].children[0].src,
+                    "content": this.children[1].children[0].innerHTML,
+                    "price": this.children[1].children[1].innerHTML,
+                    "point": this.children[1].children[2].innerHTML,
+                }
+
+                localStorage.setItem("goodsListStr", JSON.stringify(goodsListObj));
+                location.href = "./index1.html";
+            }
+        })
+    </script>
+</body>
+
+</html>

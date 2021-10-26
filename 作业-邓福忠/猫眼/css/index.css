@@ -1,0 +1,478 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html {
+  font-size: 100px;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 100%;
+}
+
+/* base 头部共同样式 */
+#wrap {
+  width: 100%;
+  height: 100%;
+  /* 页脚 */
+}
+
+#wrap .footer {
+  width: 100%;
+  height: .5rem;
+  position: fixed;
+  bottom: 0;
+}
+
+#wrap .footer .footer-nav {
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  height: .5rem;
+  box-shadow: 0px 0px 3px #ccc;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#wrap .footer .footer-nav a {
+  display: flex;
+}
+
+#wrap .footer .footer-nav a dl dt {
+  width: .25rem;
+  height: .25rem;
+  margin: auto;
+}
+
+#wrap .footer .footer-nav a dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .footer .footer-nav a dl dd {
+  font-size: .1rem;
+  color: #696969;
+}
+
+/* 头部 */
+.header {
+  position: fixed;
+  top: 0;
+  height: 194px;
+  z-index: 1;
+  width: 100%;
+  /* 头部菜单导航 */
+  /* 打开app */
+  /* 导航菜单 */
+}
+
+.header .header-nav {
+  background-color: #e54847;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.header .header-nav h2 {
+  width: 360px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+}
+
+.header .header-nav .right-menu {
+  width: 17px;
+  height: 16px;
+  line-height: 58px;
+}
+
+.header .header-nav .right-menu img {
+  width: 100%;
+  height: 100%;
+}
+
+.header .header-app {
+  background-color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: .6rem;
+  border-bottom: .01rem solid #e8e8e8;
+  /* logo */
+}
+
+.header .header-app .logo {
+  position: absolute;
+  left: .1rem;
+  top: .1rem;
+  width: .94rem;
+  height: .39rem;
+}
+
+.header .header-app .logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.header .header-app span:nth-of-type(1) {
+  height: .17rem;
+  line-height: .17rem;
+  font-size: .14rem;
+  font-weight: 620;
+  color: #666;
+  margin-right: .3rem;
+}
+
+.header .header-app span:nth-of-type(2) {
+  height: .2rem;
+  line-height: .2rem;
+  font-size: .15rem;
+  color: #b37e7e;
+  font-weight: 700;
+  margin-right: .1rem;
+}
+
+.header .header-app span:nth-of-type(2) img {
+  width: .12rem;
+  height: .12rem;
+  margin-left: -.03rem;
+}
+
+.header .nav-menu {
+  width: 100%;
+}
+
+.header .nav-menu .topbar {
+  background-color: #fff;
+  height: .44rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-bottom: .01rem solid #e8e8e8;
+  /* 导航 */
+  /* 搜索图标 */
+}
+
+.header .nav-menu .topbar .city {
+  padding-left: .15rem;
+  font-size: .15rem;
+  color: #666;
+  display: flex;
+  margin-right: .05rem;
+  align-items: center;
+}
+
+.header .nav-menu .topbar .city a {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: .7rem;
+  color: #666;
+  max-width: 19.2vw;
+}
+
+.header .nav-menu .topbar .city a h6 {
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: .7rem;
+  color: #666;
+  max-width: 19.2vw;
+  margin-right: 0.05rem;
+}
+
+.header .nav-menu .topbar .city a b {
+  border-color: #999 transparent #999 transparent;
+  border-width: .05rem .05rem 0;
+  border-style: solid;
+  font-size: 0;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.header .nav-menu .topbar nav {
+  display: flex;
+  height: .44rem;
+}
+
+.header .nav-menu .topbar nav a {
+  width: 15.33333vw;
+  text-align: center;
+  line-height: .44rem;
+  color: #666;
+  font-size: .13rem;
+  font-weight: 700;
+}
+
+.header .nav-menu .topbar .icon-search {
+  width: .2rem;
+  height: .2rem;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAABC1JREFUWAntWEtrU1EQPpO+ArYm1Y1I3VRXgu5EoSpVQaxCxUVxYTeCv8CtoFVxW0F/gBsLiguxoBaxWHyLS0EEdWWobrRprZC+cpzv3NyTOfeR3DS3duOF5M6ZMzPflzmvOVHq/9NcBqhRdz001D43UziktR5k35382ao1bUUcIj3NL3w+EtH4xu6eZ3Tv3iL6VvskJjh/vH/Lcql0UZM6o7TamAiQ1BxpNdaazV7pfDT1I5FPwKguQT0w0FFcLF5QSp9nYhsC/smapP5wfkfz7flr9PjxQjInz6omQZO1hdJ9rdW+RoLG2RKpt60d2VONZDOW4PyRA7uX9NJDBuuJACzwhHuQ0ZmHPNe+dm1qxbxTv38t83zU28tUPqG0Phnn25ah451P33yIiBtSRRJE5pZKpfchAKJp0vpSbvO2Wzz5V0LRhIIXU8vsz29nNdFlJmsWkegutGWze5JkMkQQc252cWYqYljH850twzT+6rcAqivqwb6u4vzKbTbEqrcPhjvX3t1fb05mrEdFwIIIkSN1I3/w2KlGySEkfOCrVOamxAKGt/ikNiw7GTRDu1D6Elit44bcyEg57J5co0dGMsXnE/fZo5pJXt1tHdkdtYbaySD2OYcczzkzrE2Sw88gjoFYvLjMgjI/jbctg2ka0V+WIE4IswkLOyyI1QyrCOGIiIWYUglMYEudlC1BHF+BE6KA1SqN05ArMQs2Fp9KBtsqXMESrJyt1V7e5+ptJVXj5JKJybGlRwhbdFqCrMPBbx9swraRshAR28GWcJKgs5nihJCGacoRsR1siWUJ+iWT3+kfX347zXcwdhBbYlmCUrkOso7DtAQrxaa1w8FvGykLwdiM/T0OwhJkg+oGyg1UJXFOzeojYjvYMr4k+FF2mJJJKlKUI2I72BLKEsQdQnagnkPJ5OhSaJiYXq1oo4WwbQ+XGL6MC47iO4Tf5ncP6jnRTkWsxKwWwYxpsGOiW4K4feGCI+1QbKKek7pmZMQyBawIAkxgC5UjWoLQ4vbFWeQLTuXhShjFJkolX7Xatym3ULjK6pqxDGaNoA6wV5fRaMB+sPhi4nozJL1a8IlbCxoQGq1VC8LEKVih+Icl/2cu+Xc1XPLDAVdD5loticCcK+Hin/Kn4uF955KsbtjAFj7wNRGcL+qdW5wFTs0nlEHfeg2vnT4EF9e0QoqGc5Ov71hlQIglCLs1uLh/5lnVyyeJ3V9Bkne7M/nJV3cD3EzTWSRBA0xgXA35p151VnfQsF4bOwPHwJwDGY+U5+SRLY8Vj/SdjgpTM4PSwWQzpT+PPDLlsSSZTEzQJ8uTP5W/35KSbJigTzSNdxxJamnpyz15+Q4YNedgGiRqxfAWRnhO6pWy3ZbWlSDIR5EkpV/4P2xdh9gngffs0f17kTmQy02+mZB9/+VmMvAXE7/38O8tTYkAAAAASUVORK5CYII=) no-repeat;
+  background-size: .2rem;
+  padding: .1rem .3rem .1rem .1rem;
+  background-position: .1rem;
+  margin-left: .1rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  /* 影院 */
+  /* 待映 */
+  /* 经典电影 */
+}
+
+.main .well-received {
+  height: 100%;
+  display: none;
+  margin: 1.66rem 0 0;
+}
+
+.main .well-received h3 {
+  display: flex;
+  width: 4rem;
+  font-size: .14rem;
+  color: #333;
+  margin-bottom: .12rem;
+  margin-left: .1rem;
+}
+
+.main .well-received .tab-content {
+  display: flex;
+  justify-content: center;
+  margin-top: .1rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main .well-received .tab-content .top-praise-film {
+  padding: .1rem .15rem;
+  width: 400%;
+  height: 1.8rem;
+  background-color: #fff;
+  display: flex;
+}
+
+.main .well-received .tab-content .top-praise-film .praise-film-content {
+  display: flex;
+  width: 400%;
+}
+
+.main .well-received .tab-content .top-praise-film .praise-film-content dl {
+  width: .85rem;
+  height: 1.40rem;
+  margin: 0 .05rem;
+}
+
+.main .well-received .tab-content .top-praise-film .praise-film-content dl dt {
+  width: .85rem;
+  height: 1.3rem;
+}
+
+.main .well-received .tab-content .top-praise-film .praise-film-content dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+.main .well-received .tab-content .top-praise-film .praise-film-content dl dd {
+  margin-top: .1rem;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: .13rem;
+  color: #222;
+  font-weight: bold;
+}
+
+.main .well-received .con-wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.main .well-received .con-wrap .con {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.main .well-received .con-wrap .con .w-content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.main .well-received .con-wrap .con .w-content .base {
+  width: 100%;
+  height: .5rem;
+  text-align: center;
+  line-height: .5rem;
+  color: #999;
+  font-size: .16rem;
+  margin-top: -.5rem;
+}
+
+.main .well-received .con-wrap .con .w-content .rotate {
+  position: absolute;
+  left: 145px;
+  top: 20px;
+  content: '';
+  width: 0;
+  height: 0;
+  margin-top: -.5rem;
+  border-style: solid;
+  border-width: 10px;
+  border-color: #999 transparent transparent transparent;
+}
+
+.main .well-received .con-wrap .con .w-content .up {
+  margin-top: -.5rem;
+}
+
+.main .well-received .con-wrap .con .w-content .list {
+  width: 4rem;
+  margin-top: .15rem;
+  background-color: #fff;
+  margin-bottom: .5rem;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl {
+  padding: .1rem;
+  padding-right: 0;
+  display: flex;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dt {
+  width: .64rem;
+  height: .9rem;
+  margin-right: .1rem;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dt img {
+  width: 100%;
+  height: 100%;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid #f3eded;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd .ticket {
+  position: absolute;
+  right: .2rem;
+  top: .3rem;
+  width: 47px;
+  height: 27px;
+  line-height: 28px;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #f03d37;
+  color: #fff;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd h4 {
+  max-height: .24rem;
+  margin-bottom: .07rem;
+  line-height: .24rem;
+  overflow: hidden;
+  font-size: .15rem;
+  color: #333;
+  font-weight: 700;
+  padding-right: .05rem;
+  flex-shrink: 1;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd span {
+  font-size: .13rem;
+  color: #666;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd span b {
+  font-weight: bold;
+  color: #faaf00;
+  font-size: .14rem;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 2.3rem;
+  font-size: .13rem;
+  color: #666;
+  margin-top: .06rem;
+  margin-bottom: .1rem;
+  line-height: .15rem;
+}
+
+.main .well-received .con-wrap .con .w-content .list dl dd p:nth-last-of-type(2) {
+  margin-bottom: 0;
+}
+
+.main .active {
+  border-bottom: .02rem solid red;
+}
+
+.main .visible {
+  display: block !important;
+}
+
+.main .cinema {
+  width: 100%;
+  height: 80rem;
+  display: none;
+  margin: 1.66rem 0 .5rem;
+  background-color: #136f8b;
+}
+
+.main .to-be-shown {
+  width: 100%;
+  height: 80rem;
+  display: none;
+  margin: 1.66rem 0 .5rem;
+  background-color: sandybrown;
+}
+
+.main .classic {
+  width: 100%;
+  height: 80rem;
+  display: none;
+  margin: 1.66rem 0 .5rem;
+  background-color: tomato;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}

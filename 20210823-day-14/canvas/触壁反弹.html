@@ -1,0 +1,78 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-24 15:15:32
+ * @LastEditTime: 2021-08-24 16:27:46
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\触笔反弹.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>触笔反弹</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #cvs {
+            border: 1px solid #333;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="cvs" width="500" height="500"></canvas>
+    <script>
+        var cvs = document.querySelector('#cvs');
+        var ctx = cvs.getContext('2d');
+        var x = 0,
+            y = 0,
+            moveX = true,
+            moveY = true;
+
+        setInterval(function() {
+            ctx.clearRect(0, 0, cvs.width, cvs.height);
+            if (moveX) {
+                x++;
+                if (x >= cvs.width - 80) {
+                    x = cvs.width - 80;
+                    moveX = false;
+                }
+            } else {
+                x--;
+                if (x <= 0) {
+                    x = 0;
+                    moveX = true;
+                }
+            }
+
+            if (moveY) {
+                y++;
+                if (y >= cvs.height - 80) {
+                    y = cvs.height - 80;
+                    moveY = false;
+                }
+            } else {
+                y--;
+                if (y <= 0) {
+                    y = 0;
+                    moveY = true;
+                }
+            }
+
+            ctx.beginPath();
+            ctx.fillStyle = 'red';
+            ctx.fillRect(x, y, 80, 80)
+            ctx.closePath();
+        }, 5)
+    </script>
+</body>
+
+</html>

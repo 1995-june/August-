@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-12 14:58:12
+ * @LastEditTime: 2021-08-21 08:34:48
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210811-day-6\猫眼\html\city.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>城市</title>
+    <link rel="stylesheet" href="../css/city.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="content">
+            <div class="location">
+                定位失败
+            </div>
+            <div class="location-title">
+                <div class="location-title-con">
+                    定位失败，请点击重试
+                </div>
+            </div>
+            <div class="location">
+                最近访问城市
+            </div>
+            <div class="location-title-c">
+                <div class="location-title-con">
+                    北京
+                </div>
+            </div>
+            <div class="location">
+                热门城市
+            </div>
+            <div class="hot-city">
+                <div class="hot-city-title-con">
+                    上海
+                </div>
+                <div class="hot-city-title-con">
+                    北京
+                </div>
+                <div class="hot-city-title-con">
+                    深圳
+                </div>
+                <div class="hot-city-title-con">
+                    武汉
+                </div>
+                <div class="hot-city-title-con">
+                    天津
+                </div>
+                <div class="hot-city-title-con">
+                    西安
+                </div>
+                <div class="hot-city-title-con">
+                    南京
+                </div>
+                <div class="hot-city-title-con">
+                    杭州
+                </div>
+                <div class="hot-city-title-con">
+                    成都
+                </div>
+                <div class="hot-city-title-con">
+                    重庆
+                </div>
+                <div class="hot-city-title-con">
+                    山西
+                </div>
+            </div>
+            <div class="city-classification">
+                <div class="arrange-wrap">
+
+                </div>
+            </div>
+        </div>
+        <div class="side-initials-wrap">
+
+        </div>
+    </div>
+    <script src="../common/city.js"></script>
+    <script src="../js/CctyRendering.js"></script>
+    <script src="../js/bscroll (1).js"></script>
+    <script>
+        var sideInitialsWrap = document.querySelector('.side-initials-wrap');
+        var nav = document.querySelectorAll('.side-initials-wrap > .nav');
+        var Initials = document.querySelectorAll('.Initials');
+
+        var bs = new BScroll('.city-classification')
+
+        var floorHeight = new BScroll('#wrap')
+
+        sideInitialsWrap.addEventListener('touchstart', (e) => {
+            var tar = e.target;
+            if (tar.className == "nav") {
+                var index = [...nav].indexOf(tar);
+                console.log(index);
+                floorHeight.scrollToElement(Initials[index], 500)
+                console.log(Initials[index]);
+            }
+        })
+    </script>
+</body>
+
+</html>

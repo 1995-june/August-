@@ -1,0 +1,92 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-20 18:59:26
+ * @LastEditTime: 2021-08-20 19:18:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210820-day-12\分页\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .btn-wrap>button {
+            width: 200px;
+            height: 60px;
+        }
+        
+        .list {
+            margin-top: 20px;
+        }
+        
+        li {
+            width: 400px;
+            height: 50px;
+            box-shadow: 0 0 8px teal;
+            margin-left: 8px;
+            text-align: center;
+            line-height: 50px;
+            margin-bottom: 15px;
+            color: rgb(221, 20, 20);
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="btn-wrap">
+            <button type="btn">切换下一页</button>
+        </div>
+        <ul class="list"></ul>
+    </div>
+    <script>
+        var btn = document.querySelector('.btn-wrap > button');
+        var list = document.querySelector('.list');
+        var arr = []
+        for (var i = 0; i < 50; i++) {
+            arr.push({
+                id: i,
+                text: 'item' + i
+            })
+        }
+
+        function renderPage(arr) {
+            list.innerHTML = arr.map(function(item) {
+                return `
+                    <li>
+                        <span>${item.id}</span>
+                        <span>${item.text}</span>
+                    </li>
+            `
+            }).join('')
+        }
+
+        var maxPage = Math.ceil(arr.length / 10);
+        var page = 1;
+        renderPage(arr.slice(0, 10))
+
+        btn.addEventListener('click', () => {
+            page = page++ >= maxPage ? 1 : page++;
+            renderPage(arr.slice((page - 1) * 10, page * 10))
+        })
+    </script>
+</body>
+
+</html>

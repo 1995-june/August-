@@ -1,0 +1,33 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-11 09:01:51
+ * @LastEditTime: 2021-08-11 11:44:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210811-日考-邓福忠\html\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日考</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <ul id="heart3d"></ul>
+    <script>
+        var num = 10;
+        for (var i = 1; i <= 36; i++) {
+            var li = document.createElement('li');
+            li.classList.add('rib');
+            li.style.transform = `rotateY(${num+=10}deg) rotateZ(45deg) translateX(30px)`
+            heart3d.appendChild(li);
+        }
+    </script>
+</body>
+
+</html>

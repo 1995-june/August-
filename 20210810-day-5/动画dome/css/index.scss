@@ -1,0 +1,110 @@
+@charset "UTF-8";
+$cube-size: 300px;
+$half: $cube-size / 2;
+body {
+    background-image: linear-gradient(115deg, rgb(0, 195, 255), rgb(216, 25, 25));
+}
+
+#demo {
+    position: relative;
+    width: $cube-size;
+    height: $cube-size;
+    margin: 220px auto;
+    perspective: 1000px;
+    cursor: pointer;
+    h1 {
+        position: absolute;
+        top: -75px;
+        left: 0;
+        margin: auto;
+        font-size: 300px;
+        display: none;
+        background-image: linear-gradient(135deg, red, rgb(238, 255, 0));
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    .cube {
+        width: $cube-size;
+        height: $cube-size;
+        position: absolute;
+        transform-style: preserve-3d;
+        animation: rotatePlay 8s linear infinite alternate;
+        &.show-default:hover h1 {
+            display: block;
+        }
+        /* 滑过散开 */
+        &.show-default:hover .is-front {
+            transform: translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &.show-default:hover .is-after {
+            transform: rotateX(-180deg) translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &.show-default:hover .is-right {
+            transform: rotateY(90deg) translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &.show-default:hover .is-left {
+            transform: rotateY(-90deg) translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &.show-default:hover .is-top {
+            transform: rotateX(90deg) translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &.show-default:hover .is-bottom {
+            transform: rotateX(-90deg) translateZ(250px);
+            box-shadow: 0 0 30px rgb(230, 24, 86);
+        }
+        &-face {
+            width: $cube-size;
+            height: $cube-size;
+            position: absolute;
+            opacity: .8;
+            backface-visibility: visible;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        @keyframes rotatePlay {
+            form {
+                transform: rotateX(0) rotateY(0);
+            }
+            20% {
+                transform: rotateX(60deg) rotateY(-60deg);
+            }
+            40% {
+                transform: rotateX(120deg) rotateY(-120deg);
+            }
+            60% {
+                transform: rotateX(180deg) rotateY(-180deg);
+            }
+            80% {
+                transform: rotateX(240deg) rotateY(-240deg);
+            }
+            to {
+                transform: rotateX(300deg) rotateY(-300deg);
+            }
+        }
+        .is-front {
+            transform: translateZ($half);
+        }
+        .is-after {
+            transform: rotateX(-180deg) translateZ($half);
+        }
+        .is-right {
+            transform: rotateY(90deg) translateZ($half);
+        }
+        .is-left {
+            transform: rotateY(-90deg) translateZ($half);
+        }
+        .is-top {
+            transform: rotateX(90deg) translateZ($half);
+        }
+        .is-bottom {
+            transform: rotateX(-90deg) translateZ($half);
+        }
+    }
+}

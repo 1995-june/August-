@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrap .header {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#wrap .header .header-left {
+  font-size: 14px;
+  font-weight: 500;
+  color: #EE3344;
+}
+
+#wrap .header .header-right {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323232;
+}
+
+#wrap .main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+#wrap .main .img-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#wrap .main .img-text dl {
+  margin: 15px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#wrap .main .img-text dl dt {
+  width: 130px;
+  height: 130px;
+}
+
+#wrap .main .img-text dl dt img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+#wrap .main .img-text dl dd {
+  width: 216px;
+}
+
+#wrap .main .img-text dl dd p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #323232;
+  line-height: 18px;
+  margin-bottom: 40px;
+}
+
+#wrap .main .img-text dl dd small {
+  width: 27px;
+  height: 12px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #888888;
+  line-height: 12px;
+}
+
+#wrap .main .img-text dl dd .price b {
+  width: 12px;
+  height: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #EE3344;
+  line-height: 12px;
+}
+
+#wrap .main .img-text dl dd .price span {
+  font-size: 20px;
+  font-weight: 500;
+  color: #EE3344;
+  line-height: 20px;
+}
+
+#wrap .main .img-text dl:nth-child(2) p {
+  margin-bottom: 10px;
+}
+
+#wrap .main .img-text dl:nth-child(2) span {
+  background: #BBBBBB;
+  border-radius: 2px;
+  font-size: 12px;
+  padding: 2px;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 14px;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="search-wrap">
+                <a href="./html/search.html" class="search">人间惊鸿客</a>
+            </div>
+            <div class="nav-wrap">
+                <nav>
+                    <a href="#">推荐</a>
+                    <a href="#" class="active">听书.电台</a>
+                    <a href="#">直播</a>
+                    <a href="#">视频</a>
+                </nav>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="down">
+                    <img src="./images/转7.jpeg" alt="">
+                </div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="./images/banner_03.png" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/2.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/3.jpg" alt=""></div>
+                        <div class="swiper-slide"><img src="./images/4.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="nav-wrap">
+                    <nav>
+                        <dl>
+                            <dt>
+                                <img src="./images/1_03.png" alt="">
+                            </dt>
+                            <dd>
+                                全部分类
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="./images/1_03.png" alt="">
+                            </dt>
+                            <dd>
+                                排行榜
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="./images/1_03.png" alt="">
+                            </dt>
+                            <dd>
+                                免费畅听
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="./images/1_03.png" alt="">
+                            </dt>
+                            <dd>
+                                睡眠解压
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>
+                                <img src="./images/1_03.png" alt="">
+                            </dt>
+                            <dd>
+                                酷剧场
+                            </dd>
+                        </dl>
+                    </nav>
+                </div>
+                <div class="lately-wrap">
+                    <div class="lately-play">
+                        <h6>最近播放</h6>
+                        <span>.</span>
+                        <p>两个人，一些事-我没都曾为爱...</p>
+                    </div>
+                </div>
+                <div class="itemize-wrap">
+                    <div class="itemize-nav">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                        <img src="./images/fenlei_03.png" alt="">
+                    </div>
+                </div>
+                <div class="recommend-wrap">
+                    <div class="title">
+                        <h2>必听推荐</h2>
+                    </div>
+                    <div class="recommend-con"></div>
+                    <div class="change-it-wrap">
+                        <div class="change-it">换一换</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bottom-wrap">
+                <div class="left">
+                    <dl>
+                        <dt>
+                            <img src="./images/home_03.png" alt="">
+                        </dt>
+                        <dd>首页</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <img src="./images/po_03.png" alt="">
+                        </dt>
+                        <dd>曲库</dd>
+                    </dl>
+                </div>
+                <div class="center">
+                    <img src="./images/play_03.png" alt="">
+                </div>
+                <div class="right">
+                    <dl>
+                        <dt>
+                        <img src="./images/po_03.png" alt="">
+                    </dt>
+                        <dd>直播</dd>
+                    </dl>
+                    <dl>
+                        <dt>
+                        <img src="./images/po_03.png" alt="">
+                    </dt>
+                        <dd>我的</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/ajax.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./lib/bscroll (1).js"></script>
+    <script>
+        var img = document.querySelector('.down > img')
+        var pullDown = document.querySelector('.down')
+        var swiper = new Swiper('.swiper-container', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // 滚动
+        new BScroll('.itemize-wrap', {
+            scrollX: true,
+        })
+
+
+        var bs = new BScroll('.main', {
+            pullDownRefresh: { // 选项对象
+                threshold: 90, // 配置顶部下拉的距离来决定刷新时机。
+                stop: 50 //回弹悬停的距离。  
+            },
+
+        })
+
+        // 当顶部下拉的距离大于 threshold 值时，触发一次 pullingDown
+        bs.on('pullingDown', function() {
+            // pullDown.innerHTML = '正在刷新';
+            img.style.animation = 'rotate 1s linear infinite';
+            setTimeout(function() {
+                bs.finishPullDown(); // 结束下拉刷新行为。
+                bs.refresh();
+                pullDown.innerHTML = '加载完成';
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

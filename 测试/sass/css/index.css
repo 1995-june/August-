@@ -1,0 +1,42 @@
+@charset "UTF-8";
+#wrap {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .header {
+  height: 50px;
+  background-color: pink;
+}
+
+#wrap .header .content {
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+}
+
+#wrap .header .content nav {
+  height: 50px;
+  background-color: teal;
+}
+
+#wrap .header .content nav a {
+  display: block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin: 5px 10px;
+  background-color: #7d31c4;
+  /* 在嵌套的代码块内，可以使用&引用父元素。比如a:hover伪类 */
+}
+
+#wrap .header .content nav a:hover {
+  background-color: turquoise;
+}
+
+#wrap .header .content .box {
+  width: 200px;
+  height: 200px;
+  background-color: greenyellow;
+  box-shadow: 20px 20px 20px #ff0;
+}

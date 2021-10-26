@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画-2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+        
+        .box {
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            background-color: lightseagreen;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            color: #fff;
+            transition: all 2s ease-out;
+        }
+        
+        .box:hover {
+            transform: rotate(360deg);
+            border-radius: 50%;
+            background-color: rgb(216, 31, 62);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        变圆
+    </div>
+</body>
+
+</html>

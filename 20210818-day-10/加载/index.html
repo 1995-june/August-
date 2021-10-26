@@ -1,0 +1,201 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 11:54:38
+ * @LastEditTime: 2021-08-23 17:15:32
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210818-day-10\吸顶\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>加载</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: teal;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main {
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .content .lis-wrap {
+            overflow: hidden;
+        }
+        
+        .content .lis-wrap li {
+            font-size: 25px;
+            text-align: center;
+            line-height: 70px;
+            color: #fff;
+            height: 70px;
+            margin-bottom: 5px;
+            background-color: rgb(241, 53, 84);
+        }
+        
+        .base {
+            height: 50px;
+            font-size: 16px;
+            color: #999;
+            text-align: center;
+            line-height: 50px;
+        }
+        
+        .down {
+            margin-top: -50px;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 100px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header"></div>
+        <div class="main">
+            <div class="content">
+                <div class="down base">下拉刷新</div>
+                <ul class="lis-wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="up base">上拉加载</div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="./js/bscroll (1).js"></script>
+    <script src="./js/ajax.js"></script>
+    <script>
+        var pullDown = document.querySelector('.down');
+        var pullUp = document.querySelector('.up');
+        var lisWrap = document.querySelector('.lis-wrap');
+        var lis = document.querySelectorAll('.lis-wrap > li');
+        lis.forEach((val, i) => {
+            val.innerHTML = i;
+        })
+
+        var bs = new BScroll('.main', {
+            pullDownRefresh: { // 选项对象
+                threshold: 90, // 配置顶部下拉的距离来决定刷新时机。
+                stop: 40 //回弹悬停的距离。  
+            },
+
+            // 触发上拉事件的阈值。
+            pullUpLoad: {
+                threshold: 90,
+            }
+        })
+
+        // 当顶部下拉的距离大于 threshold 值时，触发一次 pullingDown
+        bs.on('pullingDown', function() {
+            pullDown.innerHTML = '正在刷新';
+            ajax('./js/data.json', function(res) {
+                setTimeout(function() {
+                    renderDomnDara(res);
+
+                    bs.finishPullDown(); // 结束下拉刷新行为。
+                    bs.refresh();
+
+                }, 1000)
+            })
+        })
+
+        function renderDomnDara(res) {
+            lisWrap.innerHTML = res.map(function(item) {
+                return `<dl>
+                        <dt><img src="${item.img}" alt=""></dt>
+                        <dd>
+                            <h4>${item.nm}</h4>
+                            <span>观众评 <b>${item.sc}</b></span>
+                            <p class="to-star">${item.star}</p>
+                            <p>${item.showInfo}</p>
+                            <a href="#" class="ticket">购票</a>
+                        </dd>
+                    </dl>`;
+            }).join('')
+        }
+
+        // 当顶部下拉的距离大于 threshold 值时，触发一次 pullingDown
+        bs.on('pullingUp', function() {
+            pullUp.innerHTML = '正在加载';
+            ajax('./js/data.json', function(res) {
+                setTimeout(function() {
+                    renderUpDara(res);
+                    bs.finishPullUp(); //结束上拉加载行为。
+                    bs.refresh();
+                }, 1000)
+            })
+        })
+
+        function renderUpDara(res) {
+            lisWrap.innerHTML += res.map(function(item) {
+                return `<dl>
+                        <dt><img src="${item.img}" alt=""></dt>
+                        <dd>
+                            <h4>${item.nm}</h4>
+                            <span>观众评 <b>${item.sc}</b></span>
+                            <p class="to-star">${item.star}</p>
+                            <p>${item.showInfo}</p>
+                            <a href="#" class="ticket">购票</a>
+                        </dd>
+                    </dl>`;
+            }).join('')
+        }
+    </script>
+</body>
+
+</html>

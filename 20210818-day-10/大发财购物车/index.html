@@ -1,0 +1,111 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-19 15:32:43
+ * @LastEditTime: 2021-08-19 23:41:00
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210818-day-10\大发财购物车\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>大发财购物车</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="title">
+            <h1>购物车</h1>
+        </div>
+        <div class="header">
+            <div class="left-wrap">
+                <dl>
+                    <dt>
+                        <img src="./images/icon／18.png">
+                    </dt>
+                    <dd>
+                        <h3>大希地</h3>
+                    </dd>
+                </dl>
+            </div>
+            <div class="right-wrap">
+                <button type="button">删除</button>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="goods-wrap">
+
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="settlement-wrap">
+                <div class="left-all">
+                    <dl>
+                        <dt>
+                            <div class="all"></div>
+                        </dt>
+                        <dd>全选</dd>
+                    </dl>
+                </div>
+                <div class="right-price">
+                    <div class="center-wrap">
+                        <div class="subtotal">
+                            <span>小计：</span><b>￥116</b>
+                        </div>
+                        <p>运费<span>￥20</span>再买<span>￥88.50</span>免运费</p>
+                    </div>
+                    <div class="right-total-wrap">
+                        <a href="#">结算<span>(3)</span></a>
+                    </div>
+                </div>
+            </div>
+            <nav>
+                <a href="#">
+                    <dl>
+                        <dt><img src="./images/icon／foorx.png"></dt>
+                        <dd>
+                            分类
+                        </dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="./images/icon／24／购物车@3x.png"></dt>
+                        <dd>
+                            购物车
+                        </dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="./images/icon／24／我的@3x.png"></dt>
+                        <dd>
+                            我的
+                        </dd>
+                    </dl>
+                </a>
+            </nav>
+        </div>
+    </div>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/renderPage.js"></script>
+    <script src="./js/bscroll (1).js"></script>
+    <script>
+        var bs = new BScroll('.main', {
+            probeType: 2
+        })
+    </script>
+</body>
+
+</html>

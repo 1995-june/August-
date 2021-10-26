@@ -1,0 +1,80 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-25 21:25:08
+ * @LastEditTime: 2021-08-26 00:09:21
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-13\每日优鲜\html\receivingAddress.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>收货地址</title>
+    <link rel="stylesheet" href="../css/receivingAddress.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="title">
+                <a href="../html/shoppingCart.html">&lt;</a>
+                <h2>每日优鲜</h2>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="main-search">
+                    <div class="search-wrap">
+                        <a href="../html/address.html" class="address-wrap">北京</a><input type="search" name="search" placeholder="请输入你的收货地址">
+                    </div>
+                </div>
+                <div class="selected-address">
+                    <span>已选地址:</span>
+                    <p>郑州市中原区纪检委</p>
+                </div>
+                <div class="current-positioning">
+                    <a href="#">当前定位</a>
+                    <a href="#"><b>+</b>新增地址</a>
+                </div>
+                <div class="selected-wrap">
+                    <div class="left-address">
+                        <a href="#">
+                            <h5>郑州市中原区纪检委</h5>
+                            <p>各地商品和配送时效不同，请准确选择地址</p>
+                        </a>
+                    </div>
+                    <div class="right-refresh-address">
+                        <span>重新定位</span>
+                    </div>
+                </div>
+                <div class="my-receiving-address">
+                    <p>我的收货地址</p>
+                </div>
+                <div class="receiving-wrap">
+                    <p>暂无收货地址</p>
+                </div>
+                <div class="nearby-address">
+                    <p>附近地址</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script>
+        var addressWrap = document.querySelector('.address-wrap');
+        var selectedAddress = document.querySelector('.selected-address > p');
+        var arr = JSON.parse(localStorage.getItem('cityLis'));
+        selectedAddress.innerHTML = arr.con;
+        addressWrap.innerHTML = arr.con;
+    </script>
+</body>
+
+</html>

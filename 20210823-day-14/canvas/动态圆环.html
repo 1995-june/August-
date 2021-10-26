@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-26 08:16:29
+ * @LastEditTime: 2021-08-26 16:26:19
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\动态圆环.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动圆饼</title>
+    <style>
+        .myCanvas {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="myCanvas" width="800" height="500"></canvas>
+    <script>
+        var cvs = document.querySelector(".myCanvas");
+        var ctx = cvs.getContext("2d")
+        ctx.translate(200, 200)
+        var start = 0,
+            end = 0,
+            deg = Math.PI / 180;
+
+        function draw() {
+            start++;
+            if (start < 360) {
+                requestAnimationFrame(draw)
+            } else {
+                cancelAnimationFrame(draw)
+            }
+            ctx.beginPath()
+            ctx.clearRect(-20, -20, 40, 40)
+            ctx.arc(0, 0, 150, -90 * deg, -90 * deg + deg * start)
+            ctx.strokeStyle = "red"
+            ctx.lineWidth = 20
+            ctx.stroke()
+            ctx.closePath()
+            ctx.fillStyle = "red"
+            ctx.textAlign = "center"
+            ctx.fillText(Math.ceil(start * 100 / 360) + "%", 0, 0)
+
+        }
+        requestAnimationFrame(draw)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>太极图</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        body {
+            text-align: center;
+        }
+        
+        #myCanvas {
+            background-color: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+
+    <script>
+        // 获取到画布元素
+        let myCanvas = document.getElementById("myCanvas");
+        // 通过画布元素获取到上下文（画笔）
+        let ctx = myCanvas.getContext("2d");
+
+        // 右边白色的半圆
+        ctx.fillStyle = "#fff";
+        ctx.beginPath();
+        ctx.arc(300, 300, 100, (Math.PI / 180) * 270, (Math.PI / 180) * 90);
+        ctx.fill();
+
+        // 左边黑色的圆
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 300, 100, (Math.PI / 180) * 270, (Math.PI / 180) * 90, true);
+        ctx.fill();
+
+        // 左边白色的小圆
+        ctx.fillStyle = "#fff";
+        ctx.beginPath();
+        ctx.arc(300, 250, 50, (Math.PI / 180) * 270, (Math.PI / 180) * 90, true);
+        ctx.fill();
+
+        // 右边黑色的小圆
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 350, 50, (Math.PI / 180) * 270, (Math.PI / 180) * 90);
+        ctx.fill();
+
+        // 黑色的小圆点
+        ctx.fillStyle = "#000";
+        ctx.beginPath();
+        ctx.arc(300, 250, 5, 0, Math.PI * 2);
+        ctx.fill();
+
+        // 白色的小圆点
+        ctx.fillStyle = "#fff";
+        ctx.beginPath();
+        ctx.arc(300, 350, 5, 0, Math.PI * 2);
+        ctx.fill();
+    </script>
+</body>
+
+</html>

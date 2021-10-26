@@ -1,0 +1,79 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-26 13:59:45
+ * @LastEditTime: 2021-08-26 14:16:27
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\动态扇形.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态扇形</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 500px;
+            margin: 100px auto;
+        }
+        
+        #myCanvas {
+            border: 1px solid #999;
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        var cvs = document.querySelector('#myCanvas');
+        var ctx = cvs.getContext('2d');
+        var data = {
+            val: [0.35, 0.3, 0.2, 0.15],
+            color: ['red', 'yellow', 'blue', 'pink'],
+            text: ['一月', '二月', '三月', '四月']
+        }
+
+        var deg = Math.PI / 180;
+        var start = 0,
+            end = 0;
+        ctx.translate(250, 250);
+        for (var i = 0; i < data.val.length; i++) {
+            var other = data.val[i] * 360; // 每一项的
+
+            draw(start, start + other, data.color[i])
+            start += other;
+        }
+
+        function draw(start, end, color) {
+            var step = 0;
+
+            function main() {
+                step++;
+                if (start + step < end) {
+                    requestAnimationFrame(main);
+                } else {
+                    cancelAnimationFrame(main);
+                }
+                ctx.beginPath();
+                ctx.moveTo(0, 0, );
+                ctx.arc(0, 0, 150, start * deg, (start + step) * deg, false);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.closePath();
+            }
+            requestAnimationFrame(main);
+        }
+    </script>
+</body>
+
+</html>

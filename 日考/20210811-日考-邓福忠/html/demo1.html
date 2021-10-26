@@ -1,0 +1,65 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-11 12:11:05
+ * @LastEditTime: 2021-08-11 14:07:38
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210811-日考-邓福忠\html\demo1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {}
+        
+        .box {
+            width: 100px;
+            height: 160px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            list-style: none;
+            transform-style: preserve-3d;
+            animation: move 5s linear infinite;
+        }
+        
+        .bar {
+            position: absolute;
+            width: 100px;
+            height: 160px;
+            border: solid red;
+            border-width: 1px 1px 0 0;
+            border-radius: 50% 50% 0 50%;
+        }
+        
+        @keyframes move {
+            to {
+                transform: rotateY(360deg) rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="box"></ul>
+    <script>
+        var ul = document.querySelector(".box")
+        var num = 10;
+        for (var i = 1; i <= 36; i++) {
+            var li = document.createElement("li");
+            li.classList.add("bar");
+            li.style.transform = `rotateY(${num+=10}deg) rotateZ(45deg) translateX(30PX)`
+            ul.appendChild(li)
+        }
+    </script>
+</body>
+
+</html>

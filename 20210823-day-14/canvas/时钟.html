@@ -1,0 +1,162 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-27 14:02:27
+ * @LastEditTime: 2021-08-27 19:48:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\时钟.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时钟</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 700px;
+            margin: 100px auto;
+            background-color: rgba(0, 0, 0, .6);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="600" height="600"></canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var cvs = document.querySelector('#canvas');
+        var ctx = cvs.getContext('2d');
+        ctx.translate(300, 300);
+        var deg = Math.PI / 180;
+
+        function draw() {
+            // 获取时间
+            var time = new Date();
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            hours = hours > 12 ? hours - 12 : hours;
+            hours += minutes / 60;
+            minutes += minutes / 60;
+
+            // 圆盘
+            ctx.beginPath();
+            ctx.arc(0, 0, 150, 0, 2 * Math.PI, false);
+            ctx.fillStyle = '#ccc';
+            ctx.fill();
+            ctx.closePath();
+
+            // 时刻度
+            for (var i = 0; i < 12; i++) {
+                ctx.save(); // 保存
+                ctx.beginPath();
+                ctx.translate(0, 0);
+                ctx.rotate(i * 30 * deg);
+                ctx.moveTo(0, -130);
+                ctx.lineTo(0, -150);
+                ctx.lineWidth = 6;
+                ctx.strokeStyle = 'teal';
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore();
+            }
+
+            // 分刻度
+            for (var i = 1; i <= 60; i++) {
+                ctx.save(); // 保存
+                ctx.beginPath();
+                ctx.translate(0, 0);
+                ctx.rotate(i * 6 * deg);
+                ctx.moveTo(0, -140);
+                ctx.lineTo(0, -150);
+                ctx.lineWidth = 2;
+                ctx.strokeStyle = 'teal';
+                ctx.stroke();
+                ctx.closePath();
+                ctx.restore();
+            }
+
+            // 文字时间
+            for (var i = 1; i <= 12; i++) {
+                ctx.save(); // 保存
+                ctx.beginPath();
+                ctx.translate(0, 0);
+                ctx.rotate(i * 30 * deg);
+                ctx.fillStyle = '#333';
+                ctx.font = '20px 黑体';
+                ctx.textAlign = 'center';
+                ctx.fillText(i, 0, -110);
+                ctx.fill();
+                ctx.closePath();
+                ctx.restore();
+            }
+
+            // 中间小圆点
+            ctx.beginPath();
+            ctx.arc(0, 0, 8, 2 * Math.PI, false);
+            ctx.fillStyle = '#333';
+            ctx.fill();
+            ctx.closePath()
+
+            // 时针
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(hours * 30 * deg);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -70);
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 5;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            // 分针
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(minutes * 6 * deg);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -100);
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = 4;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            // 秒针
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(seconds * 6 * deg);
+            ctx.moveTo(0, 0);
+            ctx.lineTo(0, -110);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'red';
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+
+            // 秒针小圆圈
+            ctx.save();
+            ctx.beginPath();
+            ctx.rotate(seconds * 6 * deg);
+            ctx.arc(0, -80, 4, 0, 2 * Math.PI, false);
+            ctx.strokeStyle = '#fff';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            ctx.closePath();
+            ctx.restore();
+        }
+        setInterval(function() {
+            draw()
+        }, 1000)
+    </script>
+</body>
+
+</html>

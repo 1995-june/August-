@@ -1,0 +1,171 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 10:59:50
+ * @LastEditTime: 2021-08-19 00:35:20
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210818-day-10\楼层\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>楼层</title>
+    <style>
+        body,
+        html,
+        #wrap {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .flexd {
+            position: fixed;
+            list-style: none;
+            top: 100px;
+            right: 15px;
+        }
+        
+        li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="content">
+            <h2>A</h2>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <span>111111</span>
+            <h2>B</h2>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <span>222222</span>
+            <h2>C</h2>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <span>333333</span>
+            <h2>D</h2>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <span>444444</span>
+            <h2>E</h2>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <span>555555</span>
+            <h2>F</h2>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <span>666666</span>
+            <h2>G</h2>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <span>777777</span>
+            <h2>H</h2>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+            <span>88888</span>
+        </div>
+    </div>
+    <ul class="flexd">
+        <li>A</li>
+        <li>B</li>
+        <li>C</li>
+        <li>D</li>
+        <li>E</li>
+        <li>F</li>
+        <li>G</li>
+        <li>H</li>
+    </ul>
+    <script src="./js/bScroll.js"></script>
+    <script>
+        var wrap = document.querySelector('#wrap')
+        var h2 = document.querySelectorAll('.content h2');
+        var flexd = document.querySelector('.flexd');
+
+        var floorHeight = new BScroll('#wrap')
+
+        flexd.addEventListener('click', (e) => {
+            var tar = e.target;
+            if (tar.nodeName == "LI") {
+                var index = [...flexd.children].indexOf(tar);
+                floorHeight.scrollToElement(h2[index], 1000)
+            }
+        })
+    </script>
+</body>
+
+</html>

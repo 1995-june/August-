@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-26 22:24:35
+ * @LastEditTime: 2021-08-27 00:24:25
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\带线饼图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>带线饼图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 700px;
+            margin: auto;
+        }
+        
+        .cvs {
+            background-color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="cvs" width="700" height="700"></canvas>
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var cvs = document.querySelector('.cvs');
+        var ctx = cvs.getContext('2d');
+        var data = [{
+            name: "鸡蛋",
+            num: 60,
+            color: "green"
+        }, {
+            name: "煤气罐",
+            num: 70,
+            color: "purple"
+        }, {
+            name: "打火机",
+            num: 40,
+            color: "red"
+        }, {
+            name: "榴莲",
+            num: 88,
+            color: "orange"
+        }];
+
+        ctx.translate(350, 350);
+
+        var deg = Math.PI / 180;
+        var start = 0,
+            end = 0;
+        var degCount = 0;
+
+        data.forEach((val) => {
+            degCount += val.num;
+        })
+
+        data.forEach((item, i) => {
+            var degNum = item.num / degCount * 360;
+            end = start + degNum;
+
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.fillStyle = item.color;
+            ctx.arc(0, 0, 150, start * deg, end * deg, false);
+            ctx.fill();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.arc(0, 0, 130, 0, 2 * Math.PI, false);
+            ctx.fillStyle = '#999';
+            ctx.fill();
+            ctx.closePath();
+
+            var midDeg = (start + degNum * 0.5) * deg;
+            var x1 = Math.cos(midDeg) * 150;
+            var y1 = Math.sin(midDeg) * 150;
+
+            var x2 = Math.cos(midDeg) * 200;
+            var y2 = Math.sin(midDeg) * 200;
+
+            var x3 = x2 > 0 ? x2 + 40 : x2 - 40;
+            var x4 = x2 > 0 ? x2 + 50 : x2 - 120;
+            ctx.beginPath();
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = item.color;
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.lineTo(x3, y2)
+            ctx.stroke();
+            ctx.closePath();
+
+            ctx.beginPath();
+            ctx.fillStyle = item.color;
+            ctx.font = '20px 宋体';
+            ctx.fillText(item.name, x4, y2)
+
+            start = end
+        })
+    </script>
+</body>
+
+</html>

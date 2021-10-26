@@ -1,0 +1,75 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-23 16:59:15
+ * @LastEditTime: 2021-08-24 16:55:38
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\柱形图.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>柱形图</title>
+    <style>
+        #myCanvas {
+            background-color: rgba(0, 0, 0, .2);
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="1000" height="700"></canvas>
+    <script>
+        var cvs = document.querySelector('#myCanvas');
+        var ctx = cvs.getContext('2d');
+
+        var data = {
+            x: ['1月', '2月', '3月', '4月', '5月', '6月'],
+            y: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+            val: [320, 100, 150, 170, 450, 800],
+            color: ['yellow', 'green', 'orange', 'blue', 'pink', 'red']
+        }
+
+        ctx.beginPath();
+
+        ctx.translate(100, 600);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(700, 0);
+        ctx.moveTo(0, 0);
+        ctx.lineTo(0, -550);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#333';
+        ctx.stroke();
+        ctx.closePath();
+
+        for (var i = 0; i < data.val.length; i++) {
+            ctx.beginPath();
+            ctx.moveTo(100 + i * 100, 0);
+            ctx.lineTo(100 + i * 100, -data.val[i] * .5); // 滑动点
+            ctx.lineWidth = 40;
+            ctx.strokeStyle = data.color[i];
+            ctx.stroke();
+            ctx.closePath()
+
+            ctx.textAlign = 'center';
+            ctx.fillStyle = data.color[i];
+            ctx.fillText(data.val[i], 100 + i * 100, -data.val[i] * .5 - 30); // fillText(text,x,y): 填充绘制 text表示文字    x、y为坐标
+
+            ctx.textAlign = 'center';
+            ctx.font = '16px 宋体';
+            ctx.fillStyle = data.color[i];
+            ctx.fillText(data.x[i], i * 100 + 100, 30);
+            ctx.closePath();
+        }
+
+        data.y.forEach((val, i) => {
+            ctx.fillText(val, -30, -i * 50);
+        })
+    </script>
+</body>
+
+</html>

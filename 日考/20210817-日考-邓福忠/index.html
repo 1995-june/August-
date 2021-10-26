@@ -1,0 +1,97 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-17 08:47:42
+ * @LastEditTime: 2021-08-17 11:54:56
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210817-日考-邓福忠\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日考</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="content">
+            <div class="choice">
+                <div class="order">
+                    <span>只看免预约</span> <input type="checkbox" name="heckbox">
+                </div>
+                <div class="available">
+                    <span>节假日可用</span> <input type="checkbox" name="heckbox">
+                </div>
+            </div>
+            <div class="option-list-wrap">
+                <h6>用餐人数</h6>
+                <div class="option-list">
+                    <button type="button">不限</button type="button">
+                    <button type="button">单人餐</button type="button">
+                    <button type="button">双人餐</button type="button">
+                    <button type="button">3~4人餐</button type="button">
+                    <button type="button">5~10人餐</button type="button">
+                    <button type="button">10人以上</button type="button">
+                    <button type="button">代金卷</button type="button">
+                    <button type="button">其它</button type="button">
+                </div>
+            </div>
+            <div class="footer-btn">
+                <div class="btc-wrap">
+                    <input type="reset" id="reset" name="reset" placeholder="重置">
+                    <button type="button" class="preservation" class="btn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var optionList = document.querySelector('.option-list');
+        var button = document.querySelectorAll('.option-list > button');
+        var flag = 1;
+        var arr = []; // 存放值
+
+        // 绑定事件委托
+        optionList.addEventListener('touchstart', function(e) {
+            var tar = e.target;
+            // 过滤非法元素
+            if (tar.nodeName != 'BUTTON') return;
+            if (flag++ == 1) {
+                tar.classList.add('active');
+            }
+
+            // 获取到当前所选择按钮的内容，并存到一个对象里
+            var obj = {
+                    "text": tar.innerHTML
+                }
+                // 去重
+            if (arr.indexOf(obj.text) == -1) {
+                arr.push(obj.text); // 数组前插入
+            }
+        })
+
+        var btWrap = document.querySelector('.btc-wrap');
+        btWrap.addEventListener('touchstart', (e) => {
+            var tar = e.target;
+            // 保存按钮
+            if (tar.nodeName == 'BUTTON') {
+                localStorage.setItem('lis', JSON.stringify(arr)); // 设置被本地数据为JSON字符串
+            }
+
+            //重置按钮
+            if (tar.id == 'reset') {
+                button.forEach((val) => {
+                    val.className = '';
+                    localStorage.clear();
+                    flag = 1;
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>

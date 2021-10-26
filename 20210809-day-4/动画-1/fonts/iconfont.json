@@ -1,0 +1,44 @@
+{
+  "id": "2732956",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "23403635",
+      "name": "飞镖",
+      "font_class": "feibiao",
+      "unicode": "e650",
+      "unicode_decimal": 58960
+    },
+    {
+      "icon_id": "23403638",
+      "name": "电子竞技",
+      "font_class": "dianzijingji",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "23403639",
+      "name": "车辆模型",
+      "font_class": "cheliangmoxing",
+      "unicode": "e651",
+      "unicode_decimal": 58961
+    },
+    {
+      "icon_id": "23403670",
+      "name": "滑翔",
+      "font_class": "huaxiang",
+      "unicode": "e652",
+      "unicode_decimal": 58962
+    },
+    {
+      "icon_id": "23403693",
+      "name": "跳伞",
+      "font_class": "tiaosan",
+      "unicode": "e654",
+      "unicode_decimal": 58964
+    }
+  ]
+}

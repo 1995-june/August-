@@ -1,0 +1,351 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html {
+  font-size: 100px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  /* 头部 */
+  /* 内容 */
+  /* 页脚 */
+}
+
+#wrap .header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #1f3c53, #3e928c);
+  width: 100%;
+}
+
+#wrap .header .header-top {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: .08rem;
+  align-items: center;
+}
+
+#wrap .header .header-top .logo {
+  width: .26rem;
+  height: .32rem;
+  background-image: url(https://www.iqiyipic.com/common/fix/h5-aura/headerLogo-iqiyi.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#wrap .header .header-top .header-search {
+  display: flex;
+  flex: 0.9;
+  margin: 0 .12rem;
+  height: .28rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: #255765;
+  border-radius: 0.4rem;
+}
+
+#wrap .header .header-top .header-search input {
+  font-size: .13rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: .29rem;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: 0;
+  padding-left: 0.1rem;
+  outline: none;
+  background-color: transparent;
+}
+
+#wrap .header .header-top .header-search button {
+  height: .28rem;
+  width: .39rem;
+  background-color: #255765;
+  border: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#wrap .header .header-top .header-btn {
+  background-image: url(https://www.iqiyipic.com/common/fix/h5-aura/header-rightBtn.png);
+  box-sizing: border-box;
+  height: .23rem;
+  width: .73rem;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#wrap .header .header-nav {
+  display: flex;
+  height: .5rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#wrap .header .header-nav ul {
+  display: flex;
+}
+
+#wrap .header .header-nav ul li a {
+  text-align: center;
+  padding: 0 .11rem;
+  line-height: .36rem;
+  font-size: .16rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#wrap .main {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .main .rotation-chart {
+  width: 100%;
+  height: 2.33rem;
+}
+
+#wrap .main .rotation-chart .banner-wrap {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  height: 2.33rem;
+}
+
+#wrap .main .rotation-chart .banner-wrap .banner {
+  position: absolute;
+  display: flex;
+  width: 20.70rem;
+  height: 100%;
+  white-space: nowrap;
+}
+
+#wrap .main .rotation-chart .banner-wrap .banner > a {
+  width: 4.14rem;
+  height: 100%;
+}
+
+#wrap .main .rotation-chart .banner-wrap .Pager-wrap {
+  display: flex;
+  position: absolute;
+  right: .1rem;
+  bottom: 10px;
+}
+
+#wrap .main .rotation-chart .banner-wrap .Pager-wrap .Pager {
+  width: .15rem;
+  height: .03rem;
+  margin: 0 2.5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #013333;
+}
+
+#wrap .main .rotation-chart .active {
+  background-color: #3e928c !important;
+}
+
+#wrap .main .Jump {
+  height: .56rem;
+  margin: .1rem;
+}
+
+#wrap .main .video-wrap {
+  width: 100%;
+}
+
+#wrap .main .video-wrap .video-list {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+#wrap .main .video-wrap .video-list dl {
+  width: 1.94rem;
+  height: 1.70rem;
+}
+
+#wrap .main .video-wrap .video-list dl dt {
+  width: 1.94rem;
+  height: 1.09rem;
+}
+
+#wrap .main .video-wrap .video-list dl dd {
+  margin-top: .05rem;
+}
+
+#wrap .main .video-wrap .video-list dl dd h4 {
+  color: #222;
+  font-weight: 550;
+}
+
+#wrap .main .video-wrap .video-list dl dd p {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wrap .main .m-box {
+  height: .95rem;
+}
+
+#wrap .main .m-box .title {
+  width: 100%;
+  padding: .07rem .12rem;
+  border-top: 1px solid #f7f7f7;
+  font-size: .15rem;
+}
+
+#wrap .main .m-box .m-news a {
+  display: flex;
+  line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: .19rem;
+  padding: 0 .12rem;
+  color: #333;
+}
+
+#wrap .main .change-it .img-text {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#wrap .main .change-it .img-text dl {
+  width: 1.94rem;
+}
+
+#wrap .main .change-it .img-text dl dt {
+  width: 1.94rem;
+  height: 1.09rem;
+}
+
+#wrap .main .change-it .img-text dl dd {
+  color: #222;
+  margin-top: 0.06rem;
+}
+
+#wrap .main .change-it .change-btn {
+  display: flex;
+  margin-top: .2rem;
+}
+
+#wrap .main .change-it .change-btn a {
+  flex: 1;
+  margin: 0 .05rem;
+  background-color: #f5f7fa;
+  border-radius: .02rem;
+  font-size: .13rem;
+  line-height: .35rem;
+  color: #222;
+  text-align: center;
+}
+
+#wrap .main .change-it-2 .change-it-title {
+  height: .5rem;
+  line-height: .5rem;
+  padding: .07rem .12rem;
+  font-size: .15rem;
+}
+
+#wrap .main .change-it-2 .img-text-2 {
+  margin-top: 0.05rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+#wrap .main .change-it-2 .img-text-2 dl {
+  width: 1.27rem;
+}
+
+#wrap .main .change-it-2 .img-text-2 dl dt {
+  width: 1.27rem;
+  height: 1.70rem;
+}
+
+#wrap .main .change-it-2 .img-text-2 dl dd {
+  color: #222;
+  margin: .1rem 0;
+}
+
+#wrap .main .change-it-2 .change-btn-2 {
+  display: flex;
+  margin-top: .2rem;
+}
+
+#wrap .main .change-it-2 .change-btn-2 a {
+  flex: 1;
+  margin: 0 .05rem;
+  background-color: #f5f7fa;
+  border-radius: .02rem;
+  font-size: .13rem;
+  line-height: .35rem;
+  color: #222;
+  text-align: center;
+}
+
+#wrap .footer {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap .footer .bottom-wrap .footer-title {
+  height: 0.5rem;
+}
+
+#wrap .footer .bottom-wrap .footer-title h2 {
+  font-size: .15rem;
+  display: inline-block;
+  position: relative;
+  line-height: .5rem;
+  vertical-align: top;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 70%;
+  margin-left: .1rem;
+}
+
+#wrap .footer .bottom-wrap .list-app {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#wrap .footer .bottom-wrap .list-app dl dt {
+  width: .94rem;
+}
+
+#wrap .footer .bottom-wrap .list-app dl dd {
+  text-align: center;
+  height: .3rem;
+  overflow: hidden;
+  line-height: .3rem;
+  font-size: .15rem;
+}
+
+#wrap .footer .m-footer {
+  width: 1rem;
+  margin: .25rem auto;
+}

@@ -1,0 +1,74 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 00:48:44
+ * @LastEditTime: 2021-08-18 01:12:19
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210817-day-9\多媒体\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多媒体</title>
+    <style>
+        #wrap {
+            width: 400px;
+            margin: 200px auto;
+        }
+        
+        audio {
+            margin-right: 10px;
+            width: 400px;
+        }
+        
+        button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <audio src="./mp3/小阿枫 - 爱江山更爱美人.mp3" controls></audio>
+        <button type="button">快进</button>
+        <button type="button">后退</button>
+        <button type="button">暂停</button>
+        <button type="button">播放</button>
+        <button type="button">声音大小</button>
+        <button type="button">播放速度</button>
+    </div>
+    <script>
+        var audio = document.querySelector('audio');
+        var btn = document.querySelectorAll('button');
+
+        btn[0].addEventListener('click', () => {
+            audio.currentTime += 15; // 快进
+        })
+
+        btn[1].addEventListener('click', () => {
+            audio.currentTime -= 15; // 后退
+        })
+
+        btn[2].addEventListener('click', () => {
+            audio.pause() // 暂停当前播放的音频/视频
+        })
+
+        btn[3].addEventListener('click', () => {
+            audio.play() //开始播放音频/视频
+        })
+
+        btn[4].addEventListener('click', () => {
+            audio.volume = .8 //设置或返回音频/视频的音量
+        })
+
+        btn[5].addEventListener('click', () => {
+            audio.playbackRate = 4 // 设置播放的速度,1--16最大16倍速;
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-20 20:23:14
+ * @LastEditTime: 2021-08-30 18:50:28
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210820-day-12\模糊搜索\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模糊搜索</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            box-sizing: border-box;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header {
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        input {
+            height: 40px;
+            width: 90%;
+            padding-left: 10px;
+            border-radius: 50px;
+            outline: none;
+            border: solid turquoise;
+        }
+        
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .list {
+            width: 100%;
+        }
+        
+        .list li {
+            display: flex;
+            align-items: center;
+        }
+        
+        .list li span {
+            flex: 1;
+            text-align: center;
+            color: #551a8b;
+        }
+        
+        .name {
+            font-size: 16px;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header">
+            <input type="search" name="search" placeholder="搜索商品">
+        </header>
+        <div class="main">
+            <div class="content">
+                <ul class="list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/ajax.js"></script>
+    <script>
+        var inputs = document.querySelector('input');
+        var list = document.querySelector('.list');
+
+        inputs.addEventListener('input', function() {
+            var valueS = this.value.trim();
+            console.log(valueS);
+            list.innerHTML = ''
+            if (valueS) {
+                getSearch(valueS)
+            }
+        })
+
+        function getSearch(valueS) {
+            ajax('../js/data.json', function(res) {
+                var lis = res.filter(function(item) {
+                    return String(item.name).includes(valueS) ||
+                        String(item.id).includes(valueS) ||
+                        String(item.price).includes(valueS) ||
+                        String(item.quantity).includes(valueS)
+                })
+                list.innerHTML = lis.map(function(val) {
+                    return `
+                        <li>
+                            <span class="name">${val.name}</span>
+                            <span>${val.id}</span>
+                            <span>${val.price}</span>
+                            <span>${val.quantity}</span>
+                        </li>`
+                }).join('')
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-18 11:54:38
+ * @LastEditTime: 2021-08-18 15:24:15
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210818-day-10\吸顶\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>吸顶</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: teal;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main {
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .content .lis-wrap li {
+            height: 70px;
+            margin-bottom: 5px;
+            background-color: rgb(238, 22, 58);
+        }
+        
+        .content .lis-wrap .active {
+            background-color: turquoise;
+        }
+        
+        .setting {
+            width: 100%;
+            height: 70px;
+            display: none;
+            background-color: rgb(15, 62, 216);
+        }
+        
+        .footer {
+            width: 100%;
+            height: 100px;
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header"></div>
+        <div class="setting"></div>
+        <div class="main">
+            <div class="content">
+                <ul class="lis-wrap">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer"></div>
+    </div>
+    <script src="./js/bscroll (1).js"></script>
+    <script>
+        var setting = document.querySelector('.setting');
+        var active = document.querySelector('.active');
+        var activeTop = active.offsetTop;
+        var bs = new BScroll('.main', {
+            probeType: 2 // 0 ~ 1 代表手指不在屏幕滑动  2 代表手指在屏幕滑动 3 代表手指离开屏幕
+        })
+
+        bs.on('scroll', function() {
+            if (Math.abs(bs.y) > activeTop * .75) {
+                setting.style.display = 'block';
+                active.style.display = 'none';
+                console.log(setting);
+            } else {
+                setting.style.display = 'none';
+                active.style.display = 'block';
+            }
+        })
+    </script>
+</body>
+
+</html>

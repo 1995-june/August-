@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  background-color: #f5f6f8;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrap .title-wrap {
+  height: 0.6rem;
+  position: relative;
+  padding: 0 .2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+#wrap .title-wrap a {
+  position: absolute;
+  left: .2rem;
+  font-size: .22rem;
+  color: #333;
+}
+
+#wrap .title-wrap h2 {
+  font-size: .22rem;
+  font-weight: 500;
+  color: #333;
+}
+
+#wrap .header {
+  width: 100%;
+  background-color: #f5f6f8;
+}
+
+#wrap .header .search-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: .1rem;
+}
+
+#wrap .header .search-wrap .search {
+  width: 92%;
+  height: .4rem;
+  border-radius: .2rem;
+  background-color: #fff;
+}
+
+#wrap .header .search-wrap .search .iconfont {
+  position: absolute;
+  left: 20%;
+}
+
+#wrap .header .search-wrap .search input {
+  width: 100%;
+  height: 100%;
+  border-radius: .2rem;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+#wrap .main {
+  flex: 1;
+  overflow: hidden;
+  margin-top: .1rem;
+}
+
+#wrap .main .search-result {
+  width: 100%;
+  background-color: #fff;
+}
+
+#wrap .main .search-result .list .time {
+  height: .5rem;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+  padding-left: .2rem;
+}
+
+#wrap .main .content .top-address {
+  border-bottom: 1px solid #d8dbde;
+  padding-bottom: .2rem;
+}
+
+#wrap .main .content .top-address .city-record {
+  height: .4rem;
+  display: flex;
+  align-items: center;
+  padding-left: .2rem;
+}
+
+#wrap .main .content .top-address .city-record p {
+  color: #999;
+}
+
+#wrap .main .content .top-address .positioning-wrap {
+  width: 100%;
+  display: flex;
+}
+
+#wrap .main .content .top-address .positioning-wrap .positioning {
+  padding-left: .2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#wrap .main .content .top-address .positioning-wrap .positioning a {
+  margin: .05rem .05rem;
+  padding: .08rem .4rem;
+  background-color: #fff;
+  color: #999;
+}
+
+#wrap .main .content .top-address .historical-visit-wrap {
+  width: 100%;
+  display: flex;
+}
+
+#wrap .main .content .top-address .historical-visit-wrap .historical-visit {
+  padding-left: .12rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#wrap .main .content .top-address .historical-visit-wrap .historical-visit a {
+  margin: .05rem .05rem;
+  padding: .08rem .3rem;
+  background-color: #fff;
+  color: #999;
+}
+
+#wrap .main .content .top-address .hot-city-wrap {
+  width: 100%;
+  display: flex;
+}
+
+#wrap .main .content .top-address .hot-city-wrap .hot-city {
+  padding-left: .2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#wrap .main .content .top-address .hot-city-wrap .hot-city a {
+  margin: .05rem .05rem;
+  padding: .08rem .4rem;
+  background-color: #fff;
+  color: #999;
+}
+
+#wrap .main .content .address-wrap .address-lis .title {
+  background-color: #f6f6f6;
+  height: .5rem;
+  line-height: .5rem;
+}
+
+#wrap .main .content .address-wrap .address-lis .title h3 {
+  width: 100%;
+  font-weight: 400;
+  font-size: .16rem;
+  padding: 0 .25rem;
+  color: #333;
+}
+
+#wrap .main .content .address-wrap .address-lis .lis {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+#wrap .main .content .address-wrap .address-lis .lis p {
+  line-height: .5rem;
+  height: .5rem;
+  width: 90%;
+  font-size: .16rem;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+#wrap .side-initials-wrap {
+  height: 100%;
+  position: fixed;
+  right: .1rem;
+  top: 30%;
+  z-index: 111;
+}
+
+#wrap .side-initials-wrap .box p {
+  color: #82bbf1;
+}
+
+#wrap .side-initials-wrap .side-initials {
+  display: flex;
+  flex-direction: column;
+}
+
+#wrap .side-initials-wrap .side-initials span {
+  text-align: right;
+  color: #82bbf1;
+}

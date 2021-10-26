@@ -1,0 +1,82 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 22:18:15
+ * @LastEditTime: 2021-08-17 22:18:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210816-day-8\淘宝登录页面\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>淘宝登录页面</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="header">
+            <div class="logo">
+                <img src="https://gw.alicdn.com/tfs/TB1puqzr6MZ7e4jSZFOXXX7epXa-160-160.png" alt="">
+            </div>
+        </div>
+        <div class="main">
+            <form action="" class="form">
+                <div class="input-text">
+                    <input type="text" name="text" placeholder="手机号/邮箱/会员名">
+                </div>
+                <div class="password">
+                    <input type="password" name="password" placeholder="请输入登录密码">
+                </div>
+            </form>
+            <div class="login-blocks">
+                <div class="verification"><a href="./html/index2.html">短信验证码登录</a></div>
+                <div class="register"><a href="./html/index3.html">免费注册</a></div>
+            </div>
+            <div class="fm-btn">
+                <div class="faaa-btn">
+                    <button class="submit" type="submit">登录</button>
+                </div>
+            </div>
+        </div>
+        <div class="tel-prompt-wrap">
+            <div class="tel-prompt">手机号码或密码格式不正确，请重新输入</div>
+        </div>
+        <a href="#" class="flex">打开手机淘宝</a>
+    </div>
+    <script>
+        var data = JSON.parse(localStorage.getItem('register'));
+
+        var input = document.querySelector('.input-text > input');
+        var password = document.querySelector('.password > input');
+        var telPromptWrap = document.querySelector('.tel-prompt-wrap');
+        var submit = document.querySelector('.submit');
+
+        console.log(data.tal);
+        submit.addEventListener('click', function() {
+            if (input.value == '' || password.value == '') {
+                telPromptWrap.style.display = 'block';
+            }
+
+            if (input.value == data.tal && password.value == '123456') {
+                location.href = './html/index4.html';
+            } else {
+                telPromptWrap.style.display = 'block';
+            }
+        })
+
+        setInterval(function() {
+            telPromptWrap.style.display = 'none';
+        }, 2500)
+    </script>
+</body>
+
+</html>

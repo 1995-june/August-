@@ -1,0 +1,101 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-25 08:54:59
+ * @LastEditTime: 2021-08-25 09:58:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210825-日考-邓福忠\canvas模拟数据.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cvs {
+            border: 1px solid #333;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="cvs" width="1100" height="800"></canvas>
+    <script>
+        var cvs = document.querySelector('#cvs');
+        var ctx = cvs.getContext('2d');
+        ctx.beginPath();
+        ctx.translate(100, 750)
+        ctx.moveTo(0, 0)
+        ctx.lineTo(900, 0);
+
+        ctx.moveTo(0, 0)
+        ctx.lineTo(0, -700);
+
+        // ctx.translate(0, -700)
+        // ctx.moveTo(0, 0)
+        // ctx.lineTo(-5, 0);
+
+        // ctx.translate(900, 700)
+        // ctx.moveTo(0, 0)
+        // ctx.lineTo(0, 5);
+
+
+
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#666';
+        ctx.lineCap = 'square'
+
+        ctx.stroke();
+        ctx.closePath();
+
+
+        var data = {
+            week: ['星期日', '星期六', '星期五', '星期四', '星期三', '星期二', '星期一'],
+            x: [0, 500, 1000, 1500, 2000, 2500, 3000],
+            color: ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae'],
+            text: ['直接访问', '邮件营销', '联盟广告', '视频广告', '搜索引擎']
+        }
+
+        function random(max, min) {
+            return Math.floor(min + (max - min) * Math.random())
+        }
+
+        for (var i = 0; i < data.x.length; i++) {
+            ctx.beginPath();
+            // ctx.translate(20, -500)
+            ctx.moveTo(100 + i * 100, 0);
+            ctx.lineTo(100 + i * 100, -data.x[i] * .5); // 滑动点
+            ctx.lineWidth = 40;
+            ctx.strokeStyle = data.color[i];
+            ctx.stroke();
+            ctx.closePath()
+        }
+
+        // for (var i = 0; i < data.text.length; i++) {
+        //     ctx.beginPath();
+        //     // ctx.translate(-50, -200)
+        //     ctx.moveTo(0, -700);
+        //     ctx.lineTo(5, 5); // 滑动点
+
+        //     ctx.lineWidth = 10;
+        //     ctx.strokeStyle = data.color[i];
+
+        //     ctx.stroke();
+
+        //     // ctx.textAlign = 'center';
+        //     ctx.fillStyle = data.color[i];
+
+        //     // ctx.textAlign = 'center';
+        //     ctx.font = '16px 宋体';
+        //     ctx.fillStyle = data.color[i];
+        //     ctx.closePath();
+
+        // }
+    </script>
+</body>
+
+</html>

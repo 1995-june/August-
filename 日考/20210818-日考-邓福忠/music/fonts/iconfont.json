@@ -1,0 +1,65 @@
+{
+  "id": "2730888",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4814453",
+      "name": "下一首",
+      "font_class": "xiayishou-",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "8882338",
+      "name": "暂停 停止",
+      "font_class": "zantingtingzhi",
+      "unicode": "e674",
+      "unicode_decimal": 58996
+    },
+    {
+      "icon_id": "11118000",
+      "name": "播放_列表_54",
+      "font_class": "bofang_liebiao_",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "11770476",
+      "name": "定时器",
+      "font_class": "dingshiqi",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13785369",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e703",
+      "unicode_decimal": 59139
+    },
+    {
+      "icon_id": "15443430",
+      "name": "上一首",
+      "font_class": "nextaudio",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "16656468",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "19104875",
+      "name": "爱心收藏",
+      "font_class": "aixinshoucang",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}

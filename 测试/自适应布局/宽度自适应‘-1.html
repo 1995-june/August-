@@ -1,0 +1,61 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-07 10:56:16
+ * @LastEditTime: 2021-08-07 11:23:17
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\自适应布局\高度自适应.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高度自适应</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            font-size: 30px;
+            text-align: center;
+            margin: 0;
+        }
+        
+        .header,
+        .footer {
+            width: 200px;
+            height: 100%;
+            background-color: aqua;
+        }
+        
+        .header {
+            float: left;
+        }
+        
+        .footer {
+            float: right;
+        }
+        
+        .main {
+            height: 100%;
+            position: absolute;
+            left: 200px;
+            right: 200px;
+            background-color: rgb(255, 0, 64);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 针对自适应模块使用绝对定位，
+        在把left和right设置为左右两列的宽，
+        其实原理和高度自适应一样，
+        另外左右两列分别左右浮动 -->
+    <div class="header">header</div>
+    <div class="main">main</div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

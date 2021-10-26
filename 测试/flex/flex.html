@@ -1,0 +1,51 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-06 08:11:22
+ * @LastEditTime: 2021-08-08 14:40:08
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\flex\flex.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex</title>
+    <style>
+        .box {
+            display: flex;
+            justify-content: space-between;
+            width: 700px;
+            height: 500px;
+            margin: 100px auto;
+            border: 1px solid #666;
+        }
+        
+        .box span {
+            /* align-self: center; */
+            /* align-self: flex-end; */
+            align-self: auto;
+            width: 150px;
+            height: 150px;
+            background-color: rgb(236, 33, 67);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+
+    </div>
+    <script>
+        var s = 'abcdefg'
+        console.log(s.substring(1, 3));
+    </script>
+</body>
+
+</html>

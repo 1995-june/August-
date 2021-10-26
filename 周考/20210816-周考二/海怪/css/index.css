@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+#wrap {
+  position: relative;
+}
+
+#wrap .water-wrap {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+#wrap .water-wrap > div {
+  position: absolute;
+  bottom: 0;
+}
+
+#wrap .water-wrap > div img {
+  width: 100%;
+}
+
+#wrap .water-wrap > div:nth-of-type(1) img {
+  height: 250px;
+}
+
+#wrap .water-wrap > div:nth-of-type(2) {
+  bottom: 76px;
+  animation: water 10s linear infinite .5s alternate;
+}
+
+#wrap .water-wrap > div:nth-of-type(3) {
+  bottom: 32px;
+  z-index: 111;
+  animation: water 10s linear infinite alternate;
+}
+
+#wrap .water-wrap > div:nth-of-type(4) {
+  bottom: 9px;
+  z-index: 111;
+  animation: water 10s linear infinite 1s alternate;
+}
+
+#wrap .water-wrap > div:nth-of-type(5) {
+  bottom: 0px;
+  z-index: 111;
+  animation: water 10s linear infinite 2s alternate;
+}
+
+#wrap .ship-wrap {
+  position: relative;
+  perspective: 1000px;
+}
+
+#wrap .ship-wrap .subject {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  animation: subject 3s linear infinite;
+}
+
+#wrap .ship-wrap .eye {
+  position: absolute;
+  bottom: 290px;
+  left: 220px;
+  width: 60px;
+  height: 90px;
+  background: url(../images/image_27.png) no-repeat;
+  background-position: -58px 0;
+  animation: eye 3s linear infinite;
+}
+
+#wrap .ship-wrap .eye img {
+  width: 100%;
+}
+
+#wrap .ship-wrap .tail {
+  position: absolute;
+  bottom: 90px;
+  left: 90px;
+  animation: tail .1s linear infinite;
+}
+
+@keyframes eye {
+  0% {
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  to {
+    background: url(../images/image_27.png) no-repeat;
+    background-position: -58px 0;
+  }
+}
+
+@keyframes subject {
+  0% {
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes tail {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes water {
+  0% {
+  }
+  30% {
+    transform: translateX(-20px);
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  90% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}

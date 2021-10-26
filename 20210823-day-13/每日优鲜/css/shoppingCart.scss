@@ -1,0 +1,463 @@
+    @charset "UTF-8";
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        font-size: .14rem;
+    }
+    
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        font-size: 100px;
+        background-color: #f6f6f6;
+    }
+    
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .title {
+            width: 100%;
+            height: .55rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #Fff;
+            h2 {
+                font-weight: 400;
+                font-size: .18rem;
+            }
+        }
+        .header {
+            width: 100%;
+            .header-address {
+                height: .5rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #fff;
+                padding: 0 .2rem;
+                .left-address {
+                    .iconfont {
+                        color: #999;
+                    }
+                    a {
+                        font-size: .16rem;
+                        color: #333;
+                    }
+                }
+                .right-remove {
+                    button {
+                        border: 0;
+                        background-color: transparent;
+                        color: #333;
+                        font-size: .16rem;
+                    }
+                }
+            }
+        }
+        .main {
+            flex: 1;
+            overflow: hidden;
+            .content {
+                .sow {
+                    .goods-count-wrap {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                        padding-top: .1rem;
+                        .top-all {
+                            width: 95%;
+                            height: .5rem;
+                            padding-left: .15rem;
+                            display: flex;
+                            align-items: center;
+                            background-color: #fff;
+                            border-top-left-radius: .15rem;
+                            border-top-right-radius: .15rem;
+                            border-bottom: 1px solid #eeeeee;
+                            .all {
+                                transform: scale(1.5);
+                            }
+                            .characteristic-one {
+                                display: flex;
+                                display: flex;
+                                align-items: center;
+                                margin-left: .15rem;
+                                li {
+                                    font-size: .12rem;
+                                    color: #1395ff;
+                                    margin: 0 .05rem;
+                                    &.active {
+                                        font-size: .2rem;
+                                    }
+                                }
+                            }
+                        }
+                        .goods-count {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            .bj-goods {
+                                width: 95%;
+                                padding-top: .1rem;
+                                background-color: #fff;
+                                padding-bottom: .2rem;
+                                border-bottom-left-radius: .15rem;
+                                border-bottom-right-radius: .15rem;
+                                .certer-con {
+                                    padding-left: .15rem;
+                                    display: flex;
+                                    align-items: center;
+                                    .single-choice {
+                                        transform: scale(1.5);
+                                    }
+                                    dl {
+                                        display: flex;
+                                        dt {
+                                            width: 1rem;
+                                        }
+                                        dd {
+                                            display: flex;
+                                            flex-direction: column;
+                                            margin-left: .1rem;
+                                            // p {}
+                                            .price-wrap {
+                                                display: flex;
+                                                justify-content: space-between;
+                                                margin-top: .35rem;
+                                                span {
+                                                    color: #ff1395;
+                                                    font-size: .18rem;
+                                                }
+                                                .btn-wrap {
+                                                    display: flex;
+                                                    .reduce-btn {
+                                                        width: .25rem;
+                                                        height: .25rem;
+                                                        border: 1px solid #ccc;
+                                                        border-radius: 50%;
+                                                        text-align: center;
+                                                        button {
+                                                            background: 100%;
+                                                            border: 0;
+                                                            font-size: .18rem;
+                                                            color: #999;
+                                                            font-weight: bold;
+                                                            line-height: .25rem;
+                                                        }
+                                                    }
+                                                    input {
+                                                        width: .3rem;
+                                                        text-align: center;
+                                                        margin: 0 .08rem;
+                                                        border: 0;
+                                                        outline: none;
+                                                    }
+                                                    .daa-btn {
+                                                        width: .25rem;
+                                                        height: .25rem;
+                                                        border: 1px solid #ccc;
+                                                        border-radius: 50%;
+                                                        text-align: center;
+                                                        button {
+                                                            background: 100%;
+                                                            border: 0;
+                                                            font-size: .18rem;
+                                                            color: #999;
+                                                            font-weight: bold;
+                                                            line-height: .25rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .distribution-wrap {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    margin-bottom: .2rem;
+                                    p {
+                                        width: 95%;
+                                        height: .4rem;
+                                        line-height: .4rem;
+                                        padding-left: .2rem;
+                                        border-radius: .07rem;
+                                        background-color: #f8f8f8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .empty-wrap {}
+                .seckill-wrap {
+                    margin: .1rem 0;
+                    display: flex;
+                    justify-content: center;
+                    .seckill {
+                        width: 95%;
+                        background-color: #fff;
+                        border-radius: .15rem;
+                        display: flex;
+                        .left-seckill {
+                            width: 50%;
+                            padding: .1rem .05rem;
+                            border-right: 1px solid #edf;
+                            .title-wrap {
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                h3 {
+                                    font-size: .2rem;
+                                    font-weight: 400;
+                                    margin-right: .08rem;
+                                }
+                                .count-down {
+                                    width: .9rem;
+                                    height: .2rem;
+                                    text-align: center;
+                                    // padding: 0 .1rem;
+                                    background-color: #ff243e;
+                                    background-image: linear-gradient(135deg, #ff710d, #ff243e);
+                                    border-radius: .2rem;
+                                    span {
+                                        // line-height: 2;
+                                        margin: 0 .04rem;
+                                        font-size: .1rem;
+                                        color: #fff;
+                                    }
+                                    b {
+                                        color: #fff;
+                                        font-size: .1rem;
+                                    }
+                                }
+                                p {
+                                    color: #ff6513;
+                                    margin: .1rem 0;
+                                }
+                            }
+                            .con-img {
+                                flex: 25%;
+                                display: flex;
+                                dl {
+                                    width: 70%;
+                                    dt {
+                                        width: .8rem;
+                                        margin: auto;
+                                    }
+                                    dd {
+                                        margin-top: .3rem;
+                                        text-align: center;
+                                        color: #ff243e;
+                                    }
+                                }
+                            }
+                        }
+                        .right-supermarket {
+                            width: 50%;
+                            padding: .1rem .05rem;
+                            border-right: 1px solid #edf;
+                            .title-wrap {
+                                display: flex;
+                                flex-wrap: wrap;
+                                align-items: center;
+                                h3 {
+                                    font-size: .2rem;
+                                    font-weight: 400;
+                                    margin-right: .08rem;
+                                }
+                                .count-down {
+                                    width: .9rem;
+                                    height: .2rem;
+                                    text-align: center;
+                                    // padding: 0 .1rem;
+                                    background-color: #ff243e;
+                                    background-image: linear-gradient(135deg, #ff710d, #ff243e);
+                                    border-radius: .2rem;
+                                    span {
+                                        // line-height: 2;
+                                        margin: 0 .04rem;
+                                        font-size: .1rem;
+                                        color: #fff;
+                                    }
+                                    b {
+                                        color: #fff;
+                                        font-size: .1rem;
+                                    }
+                                }
+                                p {
+                                    color: #ff6513;
+                                    margin: .1rem 0;
+                                }
+                            }
+                            .con-img {
+                                flex: 25%;
+                                display: flex;
+                                dl {
+                                    width: 70%;
+                                    dt {
+                                        width: .8rem;
+                                        margin: auto;
+                                    }
+                                    dd {
+                                        margin-top: .45rem;
+                                        text-align: center;
+                                        color: #ff243e;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .tex {
+                    height: .4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    h5 {
+                        font-size: .18rem;
+                        font-weight: 400;
+                    }
+                }
+                .goods-wrap {
+                    margin-top: .15rem;
+                    .goods-list {
+                        .goods {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: space-evenly;
+                            dl {
+                                background-color: #fff;
+                                width: 1.9rem;
+                                margin: .05rem 0;
+                                border-radius: .1rem;
+                                padding: 0.05rem .1rem;
+                                dt {
+                                    a {
+                                        width: 100%;
+                                    }
+                                }
+                                dd {
+                                    h6 {
+                                        height: .42rem;
+                                        margin-top: .1rem;
+                                        width: 1.5rem;
+                                        font-size: .16rem;
+                                        font-weight: 400;
+                                        color: #191d21;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+                                        display: -webkit-box;
+                                        -webkit-line-clamp: 2; // 限制在一个块元素显示的文本行数
+                                        -webkit-box-orient: vertical; // 设置或检索伸缩盒子的子元素的排列方式
+                                    }
+                                    p {
+                                        width: 1.5rem;
+                                        color: #919398;
+                                        margin-top: .1rem;
+                                        overflow: hidden; // 超出的部分隐藏
+                                        text-overflow: ellipsis; // 文字用省略号代替超出的部分
+                                        white-space: nowrap; // 强制一行内显示文本 （默认-normal 自动换行）
+                                    }
+                                    .subtitle-wrap {
+                                        width: 100%;
+                                        display: flex;
+                                        margin: .08rem 0 .05rem .1rem;
+                                        & span:nth-of-type(1) {
+                                            border-radius: .1rem;
+                                            padding: .01rem .1rem;
+                                            border: 1px solid #ff2b8a;
+                                            font-size: .08rem;
+                                            color: #ff2b8a;
+                                        }
+                                        & span:nth-of-type(2) {
+                                            border-radius: .1rem;
+                                            padding: .01rem .1rem;
+                                            border: 1px solid #1395ff;
+                                            font-size: .08rem;
+                                            color: #1395ff;
+                                            margin-left: .08rem;
+                                        }
+                                    }
+                                    .price-wrap {
+                                        padding: .1rem;
+                                        width: 100%;
+                                        display: flex;
+                                        justify-content: space-between;
+                                        align-items: center;
+                                        span {
+                                            color: #ff2b8a;
+                                        }
+                                        button {
+                                            background-color: #ff2b8a;
+                                            width: .27rem;
+                                            height: .27rem;
+                                            border-radius: 50%;
+                                            font-size: .25rem;
+                                            border: 0;
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .up {
+                            height: .4rem;
+                            text-align: center;
+                            line-height: .4rem;
+                            color: #666;
+                        }
+                    }
+                }
+            }
+        }
+        .footer {
+            width: 100%;
+            .footer-nav {
+                width: 100%;
+                z-index: 111;
+                background-color: #fff;
+                height: .6rem;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                a {
+                    dl {
+                        position: relative;
+                        dt {
+                            width: .4rem;
+                        }
+                        dd {
+                            color: #999;
+                            text-align: center;
+                            & .num {
+                                position: absolute;
+                                top: 0;
+                                right: -.1rem;
+                                padding: .03rem .08rem;
+                                display: none;
+                                background-color: red;
+                                border-radius: 100%;
+                                font-size: .16rem;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

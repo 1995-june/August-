@@ -1,0 +1,50 @@
+@charset "UTF-8";
+$cube-size: 300px;
+$half: $cube-size / 2;
+#demo {
+    position: relative;
+    width: $cube-size;
+    height: $cube-size;
+    border: 1px solid #ccc;
+    margin: 200px auto;
+    perspective: 1000px;
+    .cube {
+        width: $cube-size;
+        height: $cube-size;
+        transition: all 2s linear;
+        position: absolute;
+        transform-style: preserve-3d;
+        &.show-default {
+            transform: rotateX(360deg) rotateY(-360deg);
+        }
+        &-face {
+            width: $cube-size;
+            height: $cube-size;
+            position: absolute;
+            opacity: .7;
+            backface-visibility: visible;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .is-front {
+            transform: translateZ($half);
+        }
+        .is-after {
+            transform: rotateX(-180deg) translateZ($half);
+        }
+        .is-right {
+            transform: rotateY(90deg) translateZ($half);
+        }
+        .is-left {
+            transform: rotateY(-90deg) translateZ($half);
+        }
+        .is-top {
+            transform: rotateX(90deg) translateZ($half);
+        }
+        .is-bottom {
+            transform: rotateX(-90deg) translateZ($half);
+        }
+    }
+}

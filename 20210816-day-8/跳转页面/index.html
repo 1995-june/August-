@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 18:30:15
+ * @LastEditTime: 2021-08-16 19:00:49
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210816-day-8\跳转页面\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面跳转</title>
+    <style>
+        .wrap {
+            width: 300px;
+            margin: 100px auto;
+        }
+        
+        .img {
+            width: 300px;
+            height: 300px;
+        }
+        
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="img">
+            <img src="./images/1.jpg" alt="">
+            <h1>.你可能想要给Swiper定义一个大小，当然不要也行。</h1>
+        </div>
+        <div class="img">
+            <img src="./images/1.jpg" alt="">
+            <h1>风险提示：CDN由于不稳定性，在生产环境中请谨慎使用。</h1>
+        </div>
+    </div>
+    <script>
+        /* 获取到所有的 img */
+        var list = document.querySelectorAll('.img');
+        /* 遍历到所有 img */
+        list.forEach((item) => {
+            item.addEventListener('click', () => {
+                var obj = {
+                    "src": item.children[0].src,
+                    "text": item.children[1].innerHTML
+                }
+                localStorage.setItem('data', JSON.stringify(obj)); // 设置被本地数据为JSON字符串
+                location.href = './demo2.html'; //Location 接口表示其链接到的对象的位置（URL）。
+            })
+        })
+    </script>
+</body>
+
+</html>

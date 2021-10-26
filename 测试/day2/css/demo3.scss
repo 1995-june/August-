@@ -1,0 +1,59 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+@mixin num($w,$h){
+    width: $w;
+    height: $h;
+}
+
+.box {
+    @include num(500px,500px);
+    border: 1px solid #000;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    .one {
+        @include num(150px,80px);
+        background: #f0f;
+        align-self: stretch ;
+        // padding: 20px;
+        // order: 3;
+        // flex-shrink: 2;
+        // flex-basis: 20%;
+        // flex: flex-grow flex-shrink flex-basis;
+        // flex: 1 1 20%;
+        // flex: 3;
+
+    }
+    .two {
+        @include num(150px,80px);
+        background: #0ff;
+        padding-top: 10px;
+        align-self: stretch ;
+        // order: 1;
+        // flex-shrink: 1;
+        // flex-basis: 40px
+        // flex: flex-grow flex-shrink flex-basis;
+        // flex: 1 1 60%;
+        // flex: 5;
+
+    }
+    .three {
+        @include num(150px,80px);
+        background: #ff0;
+        align-self: stretch ;
+        // order: -2
+        // flex-shrink: 3;
+        // flex-basis: 20%;
+        // flex: flex-grow flex-shrink flex-basis;
+        // flex: 1 1 20%;
+        // flex: 2;
+
+    }
+
+}

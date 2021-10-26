@@ -1,0 +1,93 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 08:25:49
+ * @LastEditTime: 2021-08-16 08:28:02
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\布局\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            padding-left: 210px;
+            padding-right: 190px;
+        }
+        
+        .main {
+            float: left;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .sub {
+            position: relative;
+            left: -210px;
+            float: left;
+            width: 200px;
+            height: 300px;
+            margin-left: -100%;
+        }
+        
+        .extra {
+            position: relative;
+            right: -190px;
+            float: left;
+            width: 180px;
+            height: 300px;
+            margin-left: -180px;
+        }
+        
+        .main-wrapper {
+            float: left;
+            width: 100%;
+        }
+        
+        .main {
+            height: 300px;
+            margin-left: 210px;
+            margin-right: 190px;
+            background-color: rgba(255, 0, 0, .5);
+        }
+        
+        .sub {
+            float: left;
+            width: 200px;
+            height: 300px;
+            margin-left: -100%;
+            background-color: rgba(0, 255, 0, .5);
+        }
+        
+        .extra {
+            float: left;
+            width: 180px;
+            height: 300px;
+            margin-left: -180px;
+            background-color: rgba(0, 0, 255, .5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="main"></div>
+    </div>
+    <div class="sub"></div>
+    <div class="extra"></div>
+    <!-- <div class="container">
+
+        <div class="main"></div>
+
+        <div class="sub"></div>
+
+        <div class="extra"></div>
+    </div> -->
+</body>
+
+</html>

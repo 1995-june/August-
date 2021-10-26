@@ -1,0 +1,43 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    background-color: #110302;
+}
+
+
+/* heart 心 */
+
+#heart3d {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
+    height: 160px;
+    /* 开启 3D */
+    transform-style: preserve-3d;
+    /* 定义动画序列 infinite无限循环 linear匀速动画 alternate动画反复交替*/
+    animation: spin 8s infinite linear alternate;
+    /* 匹配 #heart3d下 rib 开头的元素*/
+    .rib {
+        position: absolute;
+        width: 100px;
+        height: 160px;
+        border: solid red;
+        border-width: 1px 1px 0 0;
+        border-radius: 50% 50% 0 / 40% 50% 0;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotateY(360deg) rotateX(360deg) scale(3);
+    }
+}

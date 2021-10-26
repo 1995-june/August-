@@ -1,0 +1,59 @@
+{
+    "result": {
+        "page": 1,
+        "pagesize": 10,
+        "data": [{
+                "id": 1,
+                "page": 1,
+                "pagesize": 10,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2021_08/13/pic/f3319434-336e-4f9f-b96c-e2f5084fb029/320x180.jpg",
+                "text": "安阳·创新区|七夕相约直播间 礼遇真“芯"
+            },
+            {
+                "id": 2,
+                "img": "https://img11.soufunimg.com/viewimage/site/2017_12/28/M17/18/2E/ChCE4VpEU3SID67KAAIDPDZHFkAAA7ZGALIx00AAgNU061/320x180.jpg",
+                "text": " 聚变·赋能 爱康企业集团迎春答谢会"
+            },
+            {
+                "id": 3,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2020_02/21/pic/97ed6c8f-d783-419c-8122-b0f30e8a28b7/320x180.png",
+                "text": "新希望锦官府直播购房,主播,胡程林"
+            },
+            {
+                "id": 4,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2020_02/06/pic/f04cb7c1-b723-4dd5-98e4-871a9adfb2fd/320x180.png",
+                "text": "正定新区销冠楼盘华润万橡府项目直播间"
+            },
+            {
+                "id": 5,
+                "img": "https://img11.soufunimg.com/viewimage/site/2017_10/11/M10/12/5A/ChCE4lndwfuILX9QAAIILcJhvPkAAySZAGXl04AAghF051/320x180.jpg",
+                "text": "从格局到细节设计,这个家你可以借鉴的太多"
+            },
+            {
+                "id": 6,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2020_02/08/pic/08726ea5-d040-45d2-a85c-f94f2eb518df/320x180.png",
+                "text": "疫情宅家不无聊,足不出户在线看房"
+            },
+            {
+                "id": 7,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2019_03/25/pic/c3c808a9-43ad-476f-9e99-092216dbf94a/320x180.jpg",
+                "text": "迈向品类之王,2019久盛地板新闻发布会"
+            },
+            {
+                "id": 8,
+                "img": "https://imgwcs3.soufunimg.com/viewimage/live/2020_02/25/pic/e90216f4-dc49-4aea-85c6-1ef8045596ed/320x180.jpg",
+                "text": "中洲华昕府27号晚上7点邀您共赏璀璨星空"
+            },
+            {
+                "id": 9,
+                "img": "https://img11.soufunimg.com/viewimage/site/2017_07/03/M14/09/42/ChCE4FlZ1niID4Y6AAIqHPsC-gcAAkFNwEt86MAAio0853/320x180.jpg",
+                "text": "迈向品类之王,2019久盛地板新闻发布会"
+            },
+            {
+                "id": 10,
+                "img": "https://img11.soufunimg.com/viewimage/site/2017_11/17/M1B/15/4C/ChCE4loOdfKIaylCAAJ7fRUByCUAA249QPGKaoAAnuV088/320x180.jpg",
+                "text": "中洲华昕府27号晚上7点邀您共赏璀璨星空"
+            }
+        ]
+    }
+}

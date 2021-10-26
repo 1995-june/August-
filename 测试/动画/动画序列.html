@@ -1,0 +1,89 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 00:55:31
+ * @LastEditTime: 2021-08-10 01:40:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\动画\动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        /* 1.定义动画 */
+        /* @keyframes move {
+            开始状态 form = 0%
+            form {
+                transform: translate(0, 0);
+                transform: rotate(190deg);
+            }
+            结束状态  to =100%
+            to {
+                transform: translate(100px, 0);
+            }
+        } */
+        /* @keyframes 关键帧 */
+        
+        @keyframes move {
+            0% {
+                /* 水平 0  垂直 0 */
+                /* transform: translate(0, 0); */
+                transform: translateX(0);
+            }
+            /* 25% {
+                水平 1000px  垂直 0
+                transform: translate(1000px, 0);
+            }
+            50% {
+                水平 1000px  垂直 500px
+                transform: translate(1000px, 500px);
+            }
+            75% {
+                水平 0  垂直 500px
+                transform: translate(0, 500px);
+            } */
+            100% {
+                /* 水平 0  垂直 0 复原*/
+                /* transform: translate(0, 0); */
+                transform: translateX(1000px);
+            }
+        }
+        
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            background-color: rgb(231, 63, 100);
+            /* 调用动画  动画名称*/
+            animation-name: move;
+            /* 动画持续时间 */
+            animation-duration: 2s;
+            /* 规定动画播放次数 iteration 重复的 count 次数 infinite 无限的*/
+            animation-iteration-count: infinite;
+            /* 动画运动曲线 */
+            animation-timing-function: ease-in;
+            /* 规定动画何时执行 */
+            animation-delay: 0s;
+            /* 是否反方向播放 默认的是normal 如果想反方向 就写 alternate*/
+            animation-direction: alternate;
+            /* 保持结束状态 forwards  默认状态 backwards*/
+            animation-fill-mode: forwards;
+        }
+        
+        div:hover {
+            /* 鼠标经过 div 停止动画，鼠标离开继续动画  paused 暂停动画 默认值是  running*/
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

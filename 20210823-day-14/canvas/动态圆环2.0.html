@@ -1,0 +1,101 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-26 16:25:03
+ * @LastEditTime: 2021-08-26 18:41:01
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\动态圆环2.0.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态圆环2.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            width: 500px;
+            margin: 100px auto;
+        }
+        
+        #myCanvas {
+            background-color: #999;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        var cvs = document.querySelector("#myCanvas");
+        var ctx = cvs.getContext("2d");
+
+        var deg = Math.PI / 180;
+
+        var start = 0
+        var end = 0;
+        ctx.translate(250, 250);
+
+        var data = [{
+            val: 0.3,
+            color: 'red',
+            month: '1月'
+        }, {
+            val: 0.15,
+            color: 'green',
+            month: '1月'
+        }, {
+            val: 0.25,
+            color: 'orange',
+            month: '1月'
+        }, {
+            val: 0.3,
+            color: 'pink',
+            month: '1月'
+        }]
+
+        var one = data[0].val * 360;
+        var two = data[1].val * 360;
+        var three = data[2].val * 360;
+        var four = data[3].val * 360;
+
+        start = draw(start, start + one, data[0].color, function() {
+            start = draw(start, start + two, data[1].color, function() {
+                start = draw(start, start + three, data[2].color, function() {
+                    start = draw(start, start + four, data[3].color, function() {})
+                })
+            })
+        })
+
+        function draw(start, end, color, callback) {
+            var step = 0;
+
+            function main() {
+                step++;
+                if (start + step < end) {
+                    requestAnimationFrame(main)
+                } else {
+                    callback && callback()
+                }
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.arc(0, 0, 100, start * deg, (start + step) * deg, false);
+                ctx.fillStyle = color;
+                ctx.fill();
+                ctx.closePath();
+            }
+            requestAnimationFrame(main);
+            return end;
+        }
+    </script>
+</body>
+
+</html>

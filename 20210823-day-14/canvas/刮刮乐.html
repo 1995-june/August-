@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-23 20:43:34
+ * @LastEditTime: 2021-08-24 23:05:31
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\刮刮乐.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>刮刮乐</title>
+    <style>
+        #wrap {
+            width: 400px;
+            height: 500px;
+            position: relative;
+        }
+        /* #canvas {
+            border: 1px solid #999;
+            position: absolute;
+            top: 0;
+            z-index: 111;
+        }
+        
+        .scratch {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            color: red;
+        } */
+        /* 移动端 */
+        
+        .scratch {
+            width: 100%;
+            height: 150px;
+            background-color: red;
+            text-align: center;
+            line-height: 150px;
+            font-size: 40px;
+        }
+        
+        #canvas {
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <canvas id="canvas" width="400" height="200"></canvas>
+        <div class="scratch"></div>
+    </div>
+    <script>
+        var cvs = document.querySelector('#canvas');
+        var scratch = document.querySelector('.scratch');
+        // var ctx = cvs.getContext('2d');
+        // var save = null;
+
+        // ctx.fillStyle = '#999';
+        // ctx.fillRect(0, 0, 400, 200);
+
+        // cvs.onmousedown = function() {
+        //     save = this;
+        // }
+
+        // cvs.onmousemove = function(e) {
+        //     if (!save) return;
+        //     var x = e.pageX - 30 / 2,
+        //         y = e.pageY - 30 / 2;
+        //     ctx.clearRect(x, y, 30, 30);
+        // }
+
+        // cvs.onmouseup = function() {
+        //     save = null;
+        // }
+
+        // var arr = ['一等奖', '二等奖', '三等奖', '特等奖', '太难了', '四等奖'];
+        // var index = Math.floor(Math.random() * arr.length);
+        // document.querySelector('.scratch').innerHTML = arr[index];
+
+        /* 移动端 */
+
+        var arr = ['一等奖', '二等奖', '三等奖', '特等奖', '太难了', '四等奖'];
+        var index = Math.floor(Math.random() * arr.length);
+        document.querySelector('.scratch').innerHTML = arr[index];
+
+        var w = scratch.offsetWidth;
+        var h = scratch.offsetHeight;
+        cvs.width = w;
+        cvs.height = h;
+        var ctx = cvs.getContext('2d');
+
+        ctx.fillStyle = '#999';
+        ctx.fillRect(0, 0, w, h);
+        cvs.ontouchmove = function(e) {
+            var x = e.touches[0].pageX - 30 / 2;
+            var y = e.touches[0].pageY - 30 / 2;
+            ctx.clearRect(x, y, 30, 30)
+        }
+    </script>
+</body>
+
+</html>

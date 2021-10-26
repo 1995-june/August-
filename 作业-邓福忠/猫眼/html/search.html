@@ -1,0 +1,157 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-19 00:14:47
+ * @LastEditTime: 2021-08-21 19:51:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210811-day-6\猫眼\html\search.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>搜索</title>
+    <link rel="stylesheet" href="../css/search.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <!-- 头部 -->
+        <div class="header">
+            <!-- 头部菜单 -->
+            <div class="header-nav">
+                <h2>猫眼电影</h2>
+                <div class="right-menu">
+                    <img src="https://p0.meituan.net/scarlett/f05f61e7a8f3f45fd071c068d7a26870356.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <div class="searchs-wrap">
+                    <input type="search" name="search" placeholder="搜电影、搜影院">
+                </div>
+                <div class="cancel"><a href="../index.html">取消</a></div>
+                <div class="list-wrap">
+                    <!-- <h6>电影/电视剧/综艺</h6> -->
+
+                </div>
+                <ul class="con">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../js/ajax (4).js"></script>
+    <script>
+        var input = document.querySelector('input');
+        var listWrap = document.querySelector('.list-wrap');
+        var cons = document.querySelector('.con');
+
+        input.addEventListener('input', function() {
+            listWrap.style.display = 'block';
+            var con = this.value.trim();
+            if (con) {
+                getSearch(con)
+            }
+
+        })
+
+        function getSearch(con) {
+            ajax('../common/data.json', 'get', {}, function(res) {
+                var save = res.movieList;
+                var lis = save.filter(function(item) {
+                    return String(item.nm).includes(con) ||
+                        String(item.star).includes(con)
+                })
+
+                listWrap.innerHTML += lis.map(function(val) {
+                    return `
+                            <a href="#">
+                                <div id="sk">
+                                    <dl>
+                                        <dt><img src="${val.img}" alt=""></dt>
+                                        <dd>
+                                            <h4>${val.nm}</h4>
+                                            <p>${val.star}</p>
+                                            <p>${val.rt}</p>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </a>`
+                }).join('');
+
+                var a = [...listWrap.querySelectorAll('a')]
+                a.forEach(function(ele) {
+                    ele.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        var tag = e.target;
+                        listWrap.style.display = 'none';
+
+                        localStorage.getItem('search') || localStorage.setItem('search', '[]');
+                        var arr = JSON.parse(localStorage.getItem('search')); // 转成 js对象
+
+                        /* 判断 去重 去空格 */
+                        if (arr.indexOf(input.value.trim()) == -1) {
+                            arr.unshift(input.value); // 数值前面插入一个
+                        }
+
+                        // 设置存储 并转化为 JSON字符串
+                        localStorage.setItem('search', JSON.stringify(arr));
+
+                        // map循环遍历 arr值 并写入 ul 里
+                        cons.innerHTML = arr.map((item) => {
+                            return `<li><a href="#" class="title">${item} <div class="remove">X</div><a></li>`
+                        }).join(''); // map 循环遍历后 用 join 去掉 逗号
+
+                        var _a = cons.querySelectorAll('li > a');
+                        var _remove = cons.querySelectorAll('li > a > .remove');
+                        remove(_a, _remove)
+
+                        listWrap.innerHTML = '';
+                        input.value = '';
+
+                        var inner = {
+                            "img": ele.children[0].children[0].children[0].children[0].src,
+                            "h4": ele.children[0].children[0].children[1].children[0].innerHTML,
+                            "p1": ele.children[0].children[0].children[1].children[1].innerHTML,
+                            "p2": ele.children[0].children[0].children[1].children[2].innerHTML,
+                        }
+                        localStorage.setItem('a', JSON.stringify(inner)); // 设置被本地数据为JSON字符串
+                        location.href = './searchDetails.html';
+                    })
+                })
+
+                function remove(_a, _remove) {
+                    _a.forEach(function(val) {
+                        val.addEventListener('click', function(e) {
+                            var tag = e.target;
+                            console.log(tag);
+                            if (tag.className == 'remove') {
+                                var index = [..._remove].indexOf(tag);
+
+                                var arr = JSON.parse(localStorage.getItem('search'));
+                                arr.splice(arr[index] - 1, 1);
+                                localStorage.setItem('search', JSON.stringify(arr));
+                                tag.parentNode.parentNode.remove();
+                            }
+
+                            if (tag.nodeName == 'A') {
+                                input.value = tag.firstChild.nodeValue;
+                            }
+                        })
+                    })
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

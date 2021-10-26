@@ -1,0 +1,121 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 14:21:26
+ * @LastEditTime: 2021-08-10 19:40:33
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\测试\动画dome\dome.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度立方体动画</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            font-size: 50px;
+            text-align: center;
+            line-height: 200px;
+            color: #fff;
+            background-color: rgb(231, 59, 59);
+            animation: turn 6s linear infinite;
+        }
+        
+        @keyframes turn {
+            form {
+                transform: scale(1);
+                border-radius: 15%;
+            }
+            20% {
+                transform: rotate(-720deg) scale(.7);
+                border-radius: 30%;
+            }
+            40% {
+                transform: rotate(-360deg) scale(.5);
+                border-radius: 40%;
+            }
+            50% {
+                transform: rotate(-180deg) scale(1);
+                border-radius: 50%;
+                background-color: teal;
+            }
+            70% {
+                transform: rotate(360deg) scale(1.5);
+                border-radius: 30%;
+            }
+            90% {
+                transform: rotate(180deg) scale(1.3);
+                border-radius: 15%;
+            }
+            90% {
+                transform: scale(1.2);
+                transform: perspective(300px) translateZ(100px) translateX(100px);
+                border-radius: 0%;
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        span:nth-child(1) {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 20px;
+            background-color: teal;
+            animation: one 1s linear infinite;
+        }
+        
+        @keyframes one {
+            form {}
+            40% {
+                transform: scale(.5);
+            }
+            70% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.5);
+            }
+        }
+        
+        span:nth-child(2) {
+            display: inline-block;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-left: 20px;
+            background-color: tomato;
+            animation: two 1s linear infinite;
+        }
+        
+        @keyframes two {
+            form {}
+            40% {
+                transform: scale(1.5);
+            }
+            70% {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(.5);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <span></span>
+    <span></span>
+    <div class="box">傻</div>
+
+</body>
+
+</html>

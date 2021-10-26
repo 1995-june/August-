@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@import "color.scss";
+$a:#000 !default; // 默认变量
+#wrap {
+    width: 100%;
+    height: 100%;
+    .header {
+        height: 50px;
+        background-color: pink;
+        .content {
+            @mixin shadow($shadow...) {
+                box-shadow: $shadow;
+            }
+            overflow: hidden;
+            width: 800px;
+            margin: 0 auto;
+            nav {
+                height: 50px;
+                background-color: teal;
+                a {
+                    display: block;
+                    float: left;
+                    width: 40px;
+                    height: 40px;
+                    margin: 5px 10px;
+                    background-color: $a;
+                    /* 在嵌套的代码块内，可以使用&引用父元素。比如a:hover伪类 */
+                    &:hover {
+                        background-color: $turquoise;
+                    }
+                }
+            }
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: greenyellow;
+                @include shadow(20px 20px 20px #ff0)
+            }
+        }
+    }
+}

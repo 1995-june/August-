@@ -1,0 +1,134 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 21:31:14
+ * @LastEditTime: 2021-08-10 22:29:47
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210810-day-5\弹出.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(207, 34, 63);
+            line-height: 200px;
+            transform: rotate(45deg);
+            position: absolute;
+            top: -200px;
+            left: -200px;
+        }
+        
+        div:nth-of-type(even) {
+            background-color: teal;
+        }
+        
+        span {
+            display: block;
+            font-size: 100px;
+            text-align: center;
+            color: #fff;
+            transform: rotate(-45deg);
+        }
+        
+        div:nth-of-type(1) {
+            animation: one 1s linear;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes one {
+            50% {
+                transform: rotate(780deg);
+            }
+            100% {
+                top: 200px;
+                left: 240px;
+            }
+        }
+        
+        input[type=checkbox]:checked~div:nth-of-type(1) {
+            animation-play-state: running;
+        }
+        /* ================================ */
+        
+        div:nth-of-type(2) {
+            animation: two 1s linear 1s;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes two {
+            50% {
+                transform: rotate(780deg);
+            }
+            100% {
+                top: 200px;
+                left: 540px;
+            }
+        }
+        
+        input[type=checkbox]:checked~div:nth-of-type(2) {
+            animation-play-state: running;
+        }
+        /* ======================================= */
+        
+        div:nth-of-type(3) {
+            animation: three 1s linear 2s;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes three {
+            50% {
+                transform: rotate(780deg);
+            }
+            100% {
+                top: 200px;
+                left: 840px;
+            }
+        }
+        
+        input[type=checkbox]:checked~div:nth-of-type(3) {
+            animation-play-state: running;
+        }
+        /* ============================] */
+        
+        div:nth-of-type(4) {
+            animation: four 1s linear 3s;
+            animation-play-state: paused;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes four {
+            50% {
+                transform: rotate(780deg);
+            }
+            100% {
+                top: 200px;
+                left: 1140px;
+            }
+        }
+        
+        input[type=checkbox]:checked~div:nth-of-type(4) {
+            animation-play-state: running;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox"> 查看滑动
+    <div><span>你</span></div>
+    <div><span>是</span></div>
+    <div><span>傻</span></div>
+    <div><span>子</span></div>
+</body>
+
+</html>

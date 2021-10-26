@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/index1.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="icon">
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+                <div>
+                    <p></p>
+                </div>
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+            </div>
+            <div>
+                <p>商品详情</p>
+            </div>
+            <div class="icon">
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+                <div>
+                    <p></p>
+                </div>
+                <div>
+                    <img src="../images/icon／18／首页@3x.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <dl class="goods">
+                <!-- <dt>
+                    <img src="../images/goods.png" alt="">
+
+                </dt>
+                <dd>
+                    <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    <li class="price">￥39</li>
+                    <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                    <div class="num">
+                        <button class="reduce">-</button>
+                        <input type="number" value="22">
+                        <button class="add">+</button>
+                    </div>
+                </dd> -->
+            </dl>
+            <div class="confirm">
+                <button>去结算</button>
+            </div>
+        </div>
+        <div class="back"></div>
+        <div class="confirmContent">
+            <div class="goods">
+                <!-- <dl>
+                    <dt>
+                        <img src="../images/goods.png" alt="">
+    
+                    </dt>
+                    <dd>
+                        <li class="content">大希地 鸡排健身餐忘不了大鸡排135g</li>
+                        <li class="price">￥39</li>
+                        <li class="point"><span>￥</span>8.8<span>+</span>26<span>积分</span></li>
+                    </dd>
+                </dl>
+                <button>@</button> -->
+            </div>
+            <div class="shopNum">
+                <h3>购买数量<span>（限购5件）</span></h3>
+                <div class="num">
+                    <button class="reduce">-</button>
+                        <input type="number" value="1">
+                        <button class="add">+</button>
+                </div>
+            </div>
+            <div class="confrim">
+                <button>确认</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        var img = document.querySelector(".icon img");
+        var goods = document.querySelector("#main .goods");
+        img.onclick = function() {
+            location.href = "./index.html";
+        }
+        var goodsObj = JSON.parse(localStorage.getItem("goodsListStr"));
+        
+        var confirm = document.querySelector("#main .confirm button");
+        var back = document.querySelector("#wrap>.back");
+        var goodsBox = document.querySelector("#wrap>.confirmContent .goods");
+        var confirmContent = document.querySelector("#wrap>.confirmContent");
+        
+        goods.innerHTML = `
+                <dt>
+                    <img src="${goodsObj.src}" alt="">
+                </dt>
+                <dd>
+                    <li class="point">${goodsObj.point}</li>
+                    <li class="price">${goodsObj.price}</li>
+                    <li class="content">${goodsObj.content}</li>
+                    <div class="num">
+                        <button class="reduce">-</button>
+                        <input type="number" value="1">
+                        <button class="add">+</button>
+                    </div>
+                </dd>
+        `;
+        var reduceBtn1 = document.querySelector("#main .goods .num .reduce");
+        var addBtn1 = document.querySelector("#main .goods .num .add");
+        btnEvent(reduceBtn1, addBtn1);
+        var reduceBtn2 = document.querySelector(".confirmContent .shopNum .num .reduce");
+        var addBtn2 = document.querySelector(".confirmContent .shopNum .num .add");
+        btnEvent(reduceBtn2, addBtn2);
+        goodsBox.innerHTML = `
+            <dl>
+                <dt>
+                    <img src="${goodsObj.src}" alt="">
+
+                </dt>
+                <dd>
+                    <li class="content">${goodsObj.content}</li>
+                    <li class="price">${goodsObj.price}</li>
+                    <li class="point">${goodsObj.point}</li>
+                </dd>
+            </dl>
+            <button>@</button>
+        `
+        confirm.onclick = function(){
+            back.classList.add("block");
+            confirmContent.classList.add("block");
+        }
+        var btn = document.querySelector("#wrap>.confirmContent .goods button");
+        btn.onclick = function() {
+            back.classList.remove("block");
+            confirmContent.classList.remove("block");
+
+        }
+        function btnEvent(reduce,add) {
+            reduce.onclick = function() {
+                var input = this.parentNode.children[1];
+                var num  = input.value * 1;
+                if(num <= 0 ){
+                    input.value = 0;
+                }else{
+                    input.value =  num - 1;
+                }
+            }
+            add.onclick = function() {
+                var input = this.parentNode.children[1];
+                var num  = input.value * 1;
+                if(num >= 5) {
+                    input.value = 5;
+                    alert("本商品最多买5份");
+                }else{
+                    input.value =  num + 1;
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

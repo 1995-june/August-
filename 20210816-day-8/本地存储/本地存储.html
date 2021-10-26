@@ -1,0 +1,70 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 16:34:32
+ * @LastEditTime: 2021-08-21 00:37:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210816-day-8\本地存储\本地存储.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地存储</title>
+</head>
+
+<body>
+    <input type="text">
+    <button type="button">搜索</button>
+    <button type="button">清空</button>
+    <ul class="lis-wrap"></ul>
+    <script>
+        var search = document.querySelectorAll('button')[0];
+        var empty = document.querySelectorAll('button')[1];
+        var input = document.querySelector('input');
+        var lisWrap = document.querySelector('.lis-wrap');
+
+        search.addEventListener('click', () => {
+            /* localStorage.getItem('cityList') 有就 读取
+             * 
+             *  window.localStorage.getItem('cityList', '[]') 没有就 设置
+             */
+            localStorage.getItem('cityList') || localStorage.setItem('cityList', '[]');
+            var arr = JSON.parse(localStorage.getItem('cityList')); // 转成 js对象
+
+            /* 判断 去重 去空格 */
+            if (arr.indexOf(input.value.trim()) == -1) {
+                arr.unshift(input.value); // 数值前面插入一个
+            }
+            // 设置存储 并转化为 JSON字符串
+            localStorage.setItem('cityList', JSON.stringify(arr));
+            // map循环遍历 arr值 并写入 ul 里
+            lisWrap.innerHTML = arr.map((item) => {
+                return `<li>${item}</li>`
+            }).join(''); // map 循环遍历后 用 join 去掉 逗号
+
+            input.value = '';
+        })
+
+        /* 给 ul 绑定事件委托 */
+        lisWrap.addEventListener('click', (e) => {
+            var tar = e.target;
+            if (tar.nodeName != 'LI') return; // 判断非法元素
+            var arr = JSON.parse(localStorage.getItem('cityList')); //获取到本地存储的值 并将 JSON字符串 转换为 js对象
+            arr.splice(arr.indexOf(tar.innerHTML), 1); // 第二个参数指定了从数组中删除的个数
+            localStorage.setItem('cityList', JSON.stringify(arr)); // 设置存储 并转化为 JSON字符串
+            tar.remove(); // 删除当前点击的元素
+        })
+
+        // 清除按钮 绑定事件
+        empty.addEventListener('click', () => {
+            lisWrap.innerHTML = ''; // 清空 ul 内容 
+            localStorage.clear(); // 清空本地存储数据
+        })
+    </script>
+</body>
+
+</html>

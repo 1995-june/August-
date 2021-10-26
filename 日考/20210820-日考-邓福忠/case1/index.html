@@ -1,0 +1,95 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-20 08:52:39
+ * @LastEditTime: 2021-08-20 10:08:07
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\日考\20210820-日考-邓福忠\case1\移动9-2\素材\素材.html
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <title>通过拖动实现添加删除</title>
+    <style type="text/css">
+        div>div {
+            display: inline-block;
+            padding: 10px;
+            background-color: #aaa;
+            margin: 3px;
+        }
+        
+        #dest {
+            width: 288px;
+            height: 300px;
+            border: 1px solid #ccc;
+            float: left;
+        }
+        
+        #gb {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            float: left;
+            margin-left: 10px;
+            text-align: center;
+            line-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-wrap" style="width:600px;border:1px solid #ccc;">
+        <h2>可以将喜欢的项目拖进收藏夹</h2>
+        <div draggable="true">疯狂JAVA联盟</div>
+        <div draggable="true">疯狂软件教育</div>
+        <div draggable="true">源于我们</div>
+        <div draggable="true">疯狂成员</div>
+    </div>
+    <div id="dest">
+        <h2 ondragleave="return false;">收藏夹</h2>
+    </div>
+    <div id="gb" draggable="false">我是垃圾桶</div>
+    <script type="text/javascript">
+        var text = document.querySelector('.text-wrap');
+        var save = null; // 暂存
+
+        // 被拖动元素按下事件
+        text.ondragstart = function(e) {
+            var tag = e.target;
+            if (tag.nodeName != 'DIV') return;
+            save = tag;
+        }
+
+        // 目标元素悬停事件
+        dest.ondragover = function(e) {
+            e.preventDefault(); // 阻止浏览器默认行为
+        }
+
+        // 目标元素释放事件
+        dest.ondrop = function(e) {
+            dest.append(save); // 收藏插入元素
+        }
+
+        // 被拖动元素按下事件
+        dest.ondragstart = function(e) {
+            var tag = e.target;
+            if (tag.nodeName != 'DIV') return;
+            save = tag;
+        }
+
+        // 目标元素悬停事件
+        gb.ondragover = function(e) {
+            e.preventDefault(); // 阻止浏览器默认行为
+        }
+
+        // 目标元素释放事件
+        gb.ondrop = function(e) {
+            save.remove();
+            删除元素
+        }
+    </script>
+</body>
+
+</html>

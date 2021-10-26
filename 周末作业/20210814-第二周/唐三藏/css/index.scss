@@ -1,0 +1,98 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-size: .14rem;
+}
+
+html {
+    font-size: 100px;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    .animation-rotation {
+        width: 100%;
+        height: 7.4rem;
+        overflow: hidden;
+        position: relative;
+        .rotation-wrap {
+            width: 80.30rem;
+            height: 7.3rem;
+            position: absolute;
+            li {
+                width: 4.14rem;
+                height: 7.4rem;
+                animation: lis 4s linear infinite;
+                /* 第一页 */
+                .one {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+                    .main {
+                        width: 100%;
+                        height: 100%;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .Vice {
+                        position: absolute;
+                        height: 6rem;
+                        top: .47rem;
+                        left: .1rem;
+                        width: 100%;
+                        // height: 3rem;
+                        animation: one .3s linear 1s forwards;
+                        img {
+                            width: 3rem !important;
+                            height: 100% !important;
+                        }
+                    }
+                }
+                &>div {
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        width: 100% !important;
+                        height: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* 第一页 */
+
+@keyframes one {
+    0% {
+        background: url(../images/img-2.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    50% {
+        transform: scale(.9);
+    }
+    to {
+        background: url(../images/img-2.png) no-repeat;
+        background-size: 100% 100%;
+        transform: scale(1);
+    }
+}
+
+@keyframes lis {
+    0% {}
+    20% {
+        transform: scale(.97);
+    }
+    to {
+        transform: scale(1);
+        opacity: .7;
+    }
+}

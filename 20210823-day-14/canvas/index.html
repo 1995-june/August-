@@ -1,0 +1,62 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-23 14:53:58
+ * @LastEditTime: 2021-08-24 09:40:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210823-day-14\canvas\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas</title>
+    <style>
+        .canvas {
+            border: 1px solid #999;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas class="canvas" width="900" height="700"></canvas>
+    <script>
+        var cvs = document.querySelector('.canvas');
+        var ctx = cvs.getContext('2d'); // 获取上下文环境
+        // ctx.beginPath(); //开始绘制  
+        // ctx.moveTo(50, 50); // 落笔点
+        // ctx.lineTo(150, 50); // 滑动点
+        // // ctx.lineCap = 'butt'; // 线帽： round 圆点 square 正方形 butt 默认
+        // ctx.lineTo(50, 150); // 滑动点
+        // // ctx.lineJoin = 'miter'; // 折角样式： miter 默认样式  bevel 平角 round 圆角
+        // ctx.lineWidth = 53; // 线宽
+        // ctx.strokeStyle = 'red'; // 描边颜色、
+        // ctx.stroke(); // 描绘动作
+        // ctx.fill(); // 填充动作
+        // ctx.closePath(); // 结束绘制
+
+        // ctx.strokeStyle = 'red';
+        // ctx.storkeRect(50, 50, 150, 100);
+
+        // ctx.fillStyle = 'red';
+        // ctx.fillRect(50, 200, 150, 100);
+
+        ctx.arc(300, 400, 150, 0, Math.PI * 2, false); // 画圆
+        // 填充圆
+        ctx.fillStyle = 'red';
+        ctx.fill();
+        // 描边圆
+        // ctx.strokeStyle = 'red';
+        // ctx.stroke(); //stroke 作
+
+        // ctx.strokeStyle = '#f00';
+        // ctx.font = '50px 宋体';
+        // ctx.strokeText('头疼', 50, 130)
+        // ctx.stroke()
+    </script>
+</body>
+
+</html>

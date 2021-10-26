@@ -1,0 +1,157 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    .header {
+        overflow: hidden;
+        height: 140px;
+        .header-top {
+            height: 43px;
+            background-color: #f9f7f4;
+            border-bottom: 2px solid #d9b23d;
+            .address {
+                width: 1270px;
+                margin: 0 auto;
+                a {
+                    color: #000;
+                    font-weight: bold;
+                    margin-right: 10px;
+                    line-height: 43px;
+                }
+            }
+        }
+        .header-container {
+            width: 1270px;
+            margin: 0 auto;
+            .left-logo {
+                float: left;
+            }
+            .right-search {
+                width: 348px;
+                height: 40px;
+                border-color: #e0e0e0;
+                float: right;
+                margin-top: 27px;
+                input {
+                    width: 348px;
+                    height: 40px;
+                    outline: none;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+    .main {
+        width: 100%;
+        height: 100%;
+        nav {
+            height: 66px;
+            background-color: #dab33e;
+            .nav-content {
+                width: 1270px;
+                margin: 0 auto;
+                ul {
+                    li {
+                        float: left;
+                        line-height: 66px;
+                        color: #f7f1e0;
+                        font-size: 16px;
+                        a {
+                            padding: 0 45px;
+                            font-size: 16px;
+                            color: #f7f1e0;
+                        }
+                    }
+                }
+            }
+        }
+        #content {
+            overflow: hidden;
+            width: 1270px;
+            margin: 0 auto;
+            .left-content {
+                float: left;
+                width: 680px;
+                .report-content {
+                    height: 200px;
+                    border-bottom: 2px solid #f4f4f4;
+                    h2 {
+                        margin: 25px 0;
+                    }
+                    dl {
+                        dt {
+                            float: left;
+                            margin-right: 10px;
+                            p {
+                                color: #bbbbbb;
+                            }
+                        }
+                        dd {
+                            float: left;
+                            .date {
+                                float: right;
+                                margin-top: 20px;
+                                color: #bbbbbb;
+                            }
+                        }
+                    }
+                }
+            }
+            .right-content {
+                width: 496px;
+                float: right;
+                .report-content {
+                    height: 200px;
+                    border-bottom: 2px solid #f4f4f4;
+                    h2 {
+                        margin: 25px 0;
+                    }
+                    dl {
+                        dt {
+                            float: left;
+                            margin-right: 10px;
+                            p {
+                                color: #bbbbbb;
+                            }
+                        }
+                    }
+                }
+                .report-content h2:nth-child(1) {
+                    margin-top: 0;
+                }
+                .list {
+                    margin-top: 15px;
+                    height: 80px;
+                    background-color: #f1f1f0;
+                    padding: 20px;
+                    li {
+                        list-style-type: disc
+                    }
+                }
+                .img-box {
+                    margin: 15px 0 0 0;
+                }
+            }
+        }
+    }
+    .footer {
+        overflow: hidden;
+        height: 113px;
+        background-color: #f9f7f4;
+        .footer-copyright {
+            width: 400px;
+            margin: 40px auto;
+            p {
+                line-height: 1.8;
+            }
+        }
+    }
+}

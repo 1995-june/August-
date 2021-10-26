@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: .14rem;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+#wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrap .header {
+  width: 100%;
+  height: 2rem;
+  background-color: #961e0d;
+}
+
+#wrap .header .search-wrap {
+  height: .6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrap .header .search-wrap .search {
+  width: 80%;
+  height: .35rem;
+  border: 1px solid #ccc;
+  background-color: #ecddda;
+  border-radius: .05rem;
+}
+
+#wrap .header .search-wrap .search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background-color: transparent;
+  padding-left: .1rem;
+}
+
+#wrap .main {
+  flex: 1;
+  margin-top: -20%;
+}
+
+#wrap .main .content .swiper-container {
+  width: 95%;
+  height: 100%;
+}
+
+#wrap .main .content .swiper-container .swiper-wrapper .swiper-slide {
+  height: 1.82rem;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  border-radius: .07rem;
+}
+
+#wrap .main .content .swiper-container .swiper-wrapper .swiper-slide img {
+  border-radius: .07rem;
+}
+
+#wrap .main .content .swiper-container span {
+  width: .15rem;
+  height: .05rem;
+  border-radius: 0;
+  background-color: #ccc;
+}
+
+#wrap .main .content .page-headlines {
+  width: 100%;
+  height: .6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#wrap .main .content .page-headlines .headlines {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  height: .6rem;
+  width: 95%;
+}
+
+#wrap .main .content .page-headlines .headlines p {
+  font-size: .16rem;
+  color: #333;
+  transition: all 2s linear;
+}

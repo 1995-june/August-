@@ -1,0 +1,72 @@
+{
+  "id": "2774383",
+  "name": "no name",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1298865",
+      "name": "淘票票",
+      "font_class": "taopiaopiao",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "1838036",
+      "name": "赞",
+      "font_class": "zan",
+      "unicode": "e671",
+      "unicode_decimal": 58993
+    },
+    {
+      "icon_id": "4236546",
+      "name": "扫码 (1)",
+      "font_class": "saoma",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "6502271",
+      "name": "向右箭头",
+      "font_class": "fanhui-copy-copy",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "6752746",
+      "name": "首页-选中",
+      "font_class": "shouye",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "8361477",
+      "name": "电影",
+      "font_class": "dianying",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "9623254",
+      "name": "放大镜",
+      "font_class": "fangdajing",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "11187729",
+      "name": "钻石",
+      "font_class": "zuanshi",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "19306430",
+      "name": "演出",
+      "font_class": "yanchu",
+      "unicode": "e637",
+      "unicode_decimal": 58935
+    }
+  ]
+}

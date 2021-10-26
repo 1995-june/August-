@@ -1,0 +1,241 @@
+{
+    "list": [{
+            "goods_id": "2193900016",
+            "product_id": "10909",
+            "goods_name": "新品百草味水果干果脯芒果干120g/袋",
+            "desc": "每日海量好货最快次日送达",
+            "seckill_type": "seckill",
+            "goods_price": "6.21",
+            "seckill_Price": "2299",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f6b68de92942022ba3fe7d456d9234d2.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f6b68de92942022ba3fe7d456d9234d2.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4df2c1e3062afb594ff0daaa603dc24b.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2193900016\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2204300019",
+            "product_id": "12970",
+            "goods_name": "福临门葵花籽清香食用植物调和油5L",
+            "desc": "每日海量好货最快次日送达",
+            "seckill_type": "seckill",
+            "goods_price": "53.5",
+            "seckill_Price": "349",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9da626c8de8fb3c4c054a9f4f839a62f.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7e5f89adf98ab3fccb34012b5209cd58.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/919993dddeb4cecc58e579551e369239.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2204300019\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2192500010",
+            "product_id": "10126",
+            "goods_name": "[2件5折]三元小方白纯牛奶250ml*1 6礼盒装",
+            "desc": "每日海量好货最快次日送达",
+            "seckill_type": "seckill",
+            "goods_price": "59.5",
+            "seckill_Price": "949",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8061c1054252b6cfcb2ba0ad4833598e.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3accd497afc0047cfbd40f442e3b17df.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e7d6458c24d0c24db9385ef7355dfd43.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2192500010\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2204100006",
+            "product_id": "12899",
+            "goods_name": "小米真无线蓝牙耳机Air 2 Pro 黑色",
+            "desc": " 主动降噪/持久续航/无线充",
+            "seckill_type": "seckill",
+            "goods_price": "699",
+            "seckill_Price": "649",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5593d7fa091ffec3ff39e2a00be06863.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/49f30069c778b494257320d9da5a1a60.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d3f275690e37160c394b07a07cf95f4d.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2204100006\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2210800001",
+            "product_id": "13570",
+            "goods_name": "米家智能空气炸锅3.5 L 白色",
+            "desc": "无油低脂，健康烹饪新选择",
+            "seckill_type": "seckill",
+            "goods_price": "399",
+            "seckill_Price": "349",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fd81797106e2c058a6ad939964bda227.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6c19fad90ad73f91e13c97cce2b15d82.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4ed69fa94de1edd4e3d5996d14751f3e.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2210800001\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2201700051",
+            "product_id": "11992",
+            "goods_name": "贝医生声波电动牙刷 S7 大理石白色",
+            "desc": "洁齿更智能，刷牙更轻松",
+            "seckill_type": "seckill",
+            "goods_price": "399",
+            "seckill_Price": "249",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74075c3257d0aa98bd653f85a2e01714.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/74075c3257d0aa98bd653f85a2e01714.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5f03fbaa9f17d62b0e2e0687b5d8fabc.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2201700051\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2191300008",
+            "product_id": "9540",
+            "goods_name": "米家防蓝光护目镜 Pro 透白色",
+            "desc": "科学护眼 舒适防污",
+            "seckill_type": "seckill",
+            "goods_price": "149",
+            "seckill_Price": "139",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/79c79d55763c27f2a657a9e2f5849f8e.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/79c79d55763c27f2a657a9e2f5849f8e.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7d8640984fb9e7add801e8842521feed.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2191300008\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2193600014",
+            "product_id": "10747",
+            "goods_name": "米家天然乳胶护颈枕S 灰色",
+            "desc": "大颗粒释压体验，升级好睡眠",
+            "seckill_type": "seckill",
+            "goods_price": "249",
+            "seckill_Price": "189",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/31b511df09a9088a0a6c359769787d5a.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/31b511df09a9088a0a6c359769787d5a.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/68c70474dda33792fe500a9d95523dd3.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2193600014\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2191800006",
+            "product_id": "9731",
+            "goods_name": "米家飞行员太阳镜 椭圆框 灰色",
+            "desc": "偏光镜片，结构升级",
+            "seckill_type": "seckill",
+            "goods_price": "99",
+            "seckill_Price": "89",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5a7cfd3bca771a62a7a7fba221ef8e47.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5a7cfd3bca771a62a7a7fba221ef8e47.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2d066f230676f66a0d0a180f78c2e7c1.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2191800006\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2194100059",
+            "product_id": "10999",
+            "goods_name": "脊安适 颈部按摩器 护颈仪G2",
+            "desc": "恒温热敷 米家APP操控 3大按摩手法",
+            "seckill_type": "seckill",
+            "goods_price": "399",
+            "seckill_Price": "269",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa10314c1a35854254b0c96f10ae758b.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aa10314c1a35854254b0c96f10ae758b.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b7f3ac0cb8b15834692b1d10af134c33.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2194100059\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2204200005",
+            "product_id": "12916",
+            "goods_name": "小莫智能划船机 Pro",
+            "desc": "还原赛艇体验，锻炼全身80%+肌肉",
+            "seckill_type": "seckill",
+            "goods_price": "4899",
+            "seckill_Price": "2149",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/dab85301cbc00cb185eb822c6145d570.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2204200005\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2210100070",
+            "product_id": "12355",
+            "goods_name": "朗菲超声波清洗机 青春版",
+            "desc": "三挡定时清洗，双倍清洁，小身材大容量",
+            "seckill_type": "seckill",
+            "goods_price": "169",
+            "seckill_Price": "99",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d53c3039f3199ad4f758d63abeeea238.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d53c3039f3199ad4f758d63abeeea238.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eabeac5e9c02ba45c05197647b0b6340.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2210100070\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2204200005",
+            "product_id": "12916",
+            "goods_name": "小莫智能划船机 Pro",
+            "desc": "还原赛艇体验，锻炼全身80%+肌肉",
+            "seckill_type": "seckill",
+            "goods_price": "4899",
+            "seckill_Price": "2149",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/dab85301cbc00cb185eb822c6145d570.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2204200005\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        },
+        {
+            "goods_id": "2204200005",
+            "product_id": "12916",
+            "goods_name": "小莫智能划船机 Pro",
+            "desc": "还原赛艇体验，锻炼全身80%+肌肉",
+            "seckill_type": "seckill",
+            "goods_price": "4899",
+            "seckill_Price": "2149",
+            "discount_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/89b4342c5e10029fb19e6aa224e46479.jpg",
+            "pc_img": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/dab85301cbc00cb185eb822c6145d570.png",
+            "label_text": "",
+            "is_test": "0",
+            "action": {
+                "log_code": "31activity_homeseckill#goodsid=2204200005\u0026start_time=1619503200\u0026end_time=1619523720"
+            }
+        }
+    ]
+}

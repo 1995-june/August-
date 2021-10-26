@@ -1,0 +1,115 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-16 21:02:35
+ * @LastEditTime: 2021-08-21 08:28:37
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210811-day-6\猫眼\html\detailPage.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-size: .14rem;
+        }
+        
+        html {
+            font-size: 100px;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+        }
+        
+        #wrap {
+            width: 4.14rem;
+            margin: 0 auto;
+        }
+        
+        .list {
+            width: 4rem;
+            margin-top: .15rem;
+            background-color: #fff;
+        }
+        
+        dl {
+            padding: .1rem;
+            padding-right: 0;
+            display: flex;
+        }
+        
+        dt {
+            width: 1.2rem;
+            margin-right: .1rem;
+        }
+        
+        img {
+            width: 100%;
+        }
+        
+        h4 {
+            max-height: .24rem;
+            margin-bottom: .07rem;
+            line-height: .24rem;
+            overflow: hidden;
+            font-size: .15rem;
+            color: #333;
+            font-weight: 700;
+            padding-right: .05rem;
+            flex-shrink: 1;
+        }
+        
+        span {
+            font-size: .13rem;
+            color: #666;
+        }
+        
+        b {
+            font-weight: bold;
+            color: #faaf00;
+            font-size: .14rem;
+        }
+        
+        p:nth-last-of-type(2) {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <a href="../index.html">返回首页</a>
+        <div class="list-wrap">
+
+        </div>
+    </div>
+    <script>
+        var listWrap = document.querySelector('.list-wrap')
+        var inner = JSON.parse(localStorage.getItem('dl'));
+        console.log(inner);
+        console.log(inner);
+        listWrap.innerHTML += `
+            <dl>
+                <dt><img src="${inner.img}" alt=""></dt>
+                <dd>
+                    <h4>${inner.h4}</h4>
+                    <span>观众评 <b>${inner.b}</b></span>
+                    <p class="to-star">${inner.p1}</p>
+                    <p>${inner.p2}</p>
+                </dd>
+            </dl>`;
+    </script>
+</body>
+
+</html>

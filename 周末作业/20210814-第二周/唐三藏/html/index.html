@@ -1,0 +1,160 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-14 10:38:35
+ * @LastEditTime: 2021-08-15 16:01:52
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\周末作业\20210814-第二周\唐三藏\html\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width = device-width,
+    user-scalable = no,
+    initial-scale = 1.0,
+    maximum-scale = 1.0,
+    minimum-scale = 1.0" />
+    <title>唐三藏</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="animation-rotation">
+            <ul class="rotation-wrap">
+                <li>
+                    <!-- 第一页 -->
+                    <div class="one">
+                        <div class="main">
+                            <img src="../images/img-1.jpg" alt="">
+                        </div>
+                        <div class="Vice"></div>
+                    </div>
+                </li>
+                <li>
+                    <!-- 第二页 -->
+                    <div class="two">
+                        <img src="../images/two-1.gif" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第三页 -->
+                    <div class="three">
+                        <img src="../images/three-1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第四页 -->
+                    <div class="four">
+                        <img src="../images/four-1.gif" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第五页 -->
+                    <div class="five">
+                        <img src="../images/five-1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第六页 -->
+                    <div class="six">
+                        <img src="../images/six-1.gif" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第七页 -->
+                    <div class="seven">
+                        <img src="../images/seven-1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第八页 -->
+                    <div class="eight">
+                        <img src="../images/eight-1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第九页 -->
+                    <div class="nine">
+                        <img src="../images/nine-1.jpg" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第十页 -->
+                    <div class="ten">
+                        <img src="../images/ten-1.gif" alt="">
+                    </div>
+                </li>
+                <li>
+                    <!-- 第十一页 -->
+                    <div class="eleven">
+                        <img src="../images/eleven.png" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <SCript>
+        var myTouch = {
+            swiper: function(ele, dir, callback) {
+                if (ele.nodeType != 1) return;
+
+                var startSeat = null;
+                var endSeat = null;
+                ele.addEventListener('touchstart', function(event) {
+                    startSeat = {
+                        x: event.touches[0].pageX,
+                        y: event.touches[0].pageY,
+                    }
+                })
+
+                ele.addEventListener('touchend', function(event) {
+                    endSeat = {
+                        x: event.changedTouches[0].pageX,
+                        y: event.changedTouches[0].pageY,
+                    }
+                    if (startSeat && endSeat && dir === getDir(startSeat, endSeat)) {
+                        callback && callback(event)
+                    }
+                })
+
+                function getDir(startSeat, endSeat) {
+                    var dirX = startSeat.x - endSeat.x;
+                    var dirY = startSeat.y - endSeat.y;
+
+                    var absX = Math.abs(dirX);
+                    var absY = Math.abs(dirY);
+                    if (absX > 30 || absY > 30) {
+                        if (absX > absY) {
+                            return dirX > 0 ? 'left' : 'right';
+                        } else {
+                            return dirY > 0 ? 'up' : 'down';
+                        }
+                    }
+                }
+            }
+        }
+
+        var rotationWrap = document.querySelector('.rotation-wrap');
+        var lis = document.querySelectorAll('.rotation-wrap > li');
+
+        var index = 0;
+        myTouch.swiper(rotationWrap, 'up', function(e) {
+            index = index++ >= lis.length - 1 ? 0 : index++;
+            rotationWrap.style.transform = `translateY(-${index * lis[0].offsetHeight}px) `;
+            rotationWrap.style.transition = 'all 1s';
+
+        });
+
+        myTouch.swiper(rotationWrap, 'down', function(e) {
+            index = index-- <= 0 ? lis.length - 1 : index--;
+            rotationWrap.style.transform = `translateY(-${index * lis[0].offsetHeight}px)`;
+            rotationWrap.style.transition = 'all 1s';
+        });
+    </SCript>
+</body>
+
+</html>

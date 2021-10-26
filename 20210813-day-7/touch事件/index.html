@@ -1,0 +1,144 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-13 11:02:02
+ * @LastEditTime: 2021-08-16 11:17:41
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \HTML排版案例d:\八月没有六月好\20210813-day-7\touch事件\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touch事件</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .banner-wrap {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: nowrap;
+            width: 400px;
+            height: 200px;
+        }
+        
+        .banner {
+            position: absolute;
+            display: flex;
+            width: 2800px;
+            height: 100%;
+            white-space: nowrap;
+        }
+        
+        .banner>a {
+            width: 400px;
+            height: 100%;
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .Pager-wrap {
+            display: flex;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+        }
+        
+        .Pager-wrap .Pager {
+            width: 15px;
+            height: 15px;
+            margin: 0 2.5px;
+            border-radius: 100%;
+            background-color: rgba(0, 0, 0, .4);
+            border: 1px solid rgb(1, 51, 51);
+        }
+        
+        .active {
+            background-color: rgb(241, 30, 83) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="banner-wrap">
+            <div class="banner">
+                <a href="#"><img src="./images/1.jpg" alt=""></a>
+                <a href="#"><img src="./images/2.jpg" alt=""></a>
+                <a href="#"><img src="./images/3.jpg" alt=""></a>
+                <a href="#"><img src="./images/4.jpg" alt=""></a>
+                <a href="#"><img src="./images/5.jpg" alt=""></a>
+                <a href="#"><img src="./images/6.jpg" alt=""></a>
+                <a href="#"><img src="./images/7.jpg" alt=""></a>
+            </div>
+            <div class="Pager-wrap">
+                <div class="Pager active"></div>
+                <div class="Pager"></div>
+                <div class="Pager"></div>
+                <div class="Pager"></div>
+                <div class="Pager"></div>
+                <div class="Pager"></div>
+                <div class="Pager"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="box"></div> -->
+    <script src="./js/touch.js"></script>
+    <script>
+        var imgs = document.querySelectorAll('.banner > a');
+        var banner = document.querySelector('.banner');
+        var Pager = document.querySelectorAll('.Pager'); // 分页器按钮
+
+        var index = 0;
+
+        // 通过 touch 事件 给 banner 盒子添加 向左滑动事件
+        myTouch.swiper(banner, 'left', function() {
+            index = index++ >= imgs.length - 1 ? 0 : index++;
+
+            banner.style.transform = `translateX(-${index * imgs[0].offsetWidth}px)`; // 根据第一张图片的宽度 * 数量 实现移动
+            banner.style.transition = 'all 2s';
+
+            // 分页器按钮
+            Pager.forEach(function(val) {
+                val.classList.remove('active');
+            })
+            Pager[index].classList.add('active');
+        })
+
+
+        // 通过 touch 事件 给 banner 盒子添加 向右滑动事件
+        myTouch.swiper(banner, 'right', function() {
+            index = index-- <= 0 ? imgs.length - 1 : index--;
+
+            banner.style.transform = `translateX(-${index * imgs[0].offsetWidth}px)`; // 根据第一张图片的宽度 * 数量 实现移动
+            banner.style.transition = 'all 2s';
+
+
+            // 分页器按钮
+            Pager.forEach(function(val) {
+                val.classList.remove('active');
+            })
+            Pager[index].classList.add('active');
+        })
+    </script>
+</body>
+
+</html>
